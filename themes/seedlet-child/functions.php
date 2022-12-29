@@ -17,7 +17,5 @@ function child_scripts() {
 		[ 'seedlet-style' ],
 		wp_get_theme()->get( 'Version' )
 	);
-
-	\wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\child_scripts' );
