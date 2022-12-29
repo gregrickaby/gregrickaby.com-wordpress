@@ -31,7 +31,7 @@ mu-plugins/*
 
 # theme
 themes/*
-!/themes/child-theme/
+!/themes/seedlet-child/
 
 # artifacts
 build/
