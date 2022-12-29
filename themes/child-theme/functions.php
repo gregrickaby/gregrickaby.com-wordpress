@@ -1,2 +1,6 @@
 <?php
-// Child theme functions and definitions.
+/**
+ * Theme functions and definitions.
+ *
+ *  @package Child Theme
+ */
