@@ -19,6 +19,8 @@ vendor/
 
 # wordpress
 uploads/
+db.php
+object-cache.php
 
 # plugins
 plugins/*
