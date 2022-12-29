@@ -54,7 +54,8 @@
     "wpackagist-plugin/performance-lab": "^1.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-plugin/wordpress-seo": "^19.0",
-    "wpackagist-theme/seedlet": "^1.0"
+    "wpackagist-theme/seedlet": "^1.0",
+    "wpackagist-plugin/cloudflare": "^4.11"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "^3.0"
