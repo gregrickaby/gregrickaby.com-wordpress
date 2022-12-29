@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "at-rule-empty-line-before": null,
+    "declaration-colon-newline-after": null,
+    "declaration-no-important": true,
+    "function-parentheses-space-inside": null,
+    "function-url-quotes": null,
+    "no-descending-specificity": null,
+    "rule-empty-line-before": null,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "selector-pseudo-class-parentheses-space-inside": null,
+    "string-quotes": "single"
+  }
+}
