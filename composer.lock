@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec82a9102ebc6b6078e20a421a34fb0c",
+    "content-hash": "577a0c19d861bc9922501bc5f6276f2d",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
