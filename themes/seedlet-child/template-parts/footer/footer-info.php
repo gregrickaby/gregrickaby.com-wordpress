@@ -3,6 +3,7 @@
  * Displays footer site info.
  *
  * @package SeedletChild
+ * @since 1.0.0
  */
 
 ?>

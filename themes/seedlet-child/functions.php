@@ -2,7 +2,8 @@
 /**
  * Theme functions and definitions.
  *
- *  @package Seedlet Child
+ *  @package SeedletChild
+ *  @since 1.0.0
  */
 
 namespace SeedletChild;
