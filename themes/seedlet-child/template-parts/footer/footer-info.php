@@ -6,22 +6,34 @@
  * @since 1.0.0
  */
 
-?>
+	$has_social_nav       = has_nav_menu( 'social' );
+	$has_social_nav_items = wp_nav_menu(
+		array(
+			'theme_location' => 'social',
+			'fallback_cb'    => false,
+			'echo'           => false,
+		)
+	);
+	?>
+
+<?php if ( $has_social_nav && $has_social_nav_items ) : ?>
+	<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'social',
+				'link_before'    => '<span class="screen-reader-text">',
+				'link_after'     => '</span>' . seedlet_get_icon_svg( 'link' ),
+				'depth'          => 1,
+			)
+		);
+		?>
+	</nav><!-- .social-navigation -->
+<?php endif; ?>
 
 <div class="site-info">
-	<?php $blog_info = get_bloginfo( 'name' ); ?>
-	<?php if ( ! empty( $blog_info ) ) : ?>
-		<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">&copy 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></a><span class="comma">,</span>
-	<?php endif; ?>
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'seedlet' ) ); ?>" class="imprint">
-		<?php
-		/* translators: %s: WordPress. */
-		printf( esc_html__( 'Proudly powered by %s.', 'seedlet' ), 'WordPress' );
-		?>
-	</a>
-	<?php
-	if ( function_exists( 'the_privacy_policy_link' ) ) {
-		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-	}
-	?>
+	Copyright &copy; 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?>
+	Greg Rickaby. All rights reserved.
+	&middot;
+	<a href="https://gregrickaby.com/feed/">RSS feed</a>
 </div><!-- .site-info -->
