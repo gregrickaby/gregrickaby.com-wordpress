@@ -32,8 +32,13 @@
 <?php endif; ?>
 
 <div class="site-info">
-	Copyright &copy; 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?>
-	Greg Rickaby. All rights reserved.
-	&middot;
-	<a href="https://gregrickaby.com/feed/">RSS feed</a>
+	<p>
+		Copyright &copy; 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?>
+		Greg Rickaby.
+		&middot;
+		<a href="https://gregrickaby.com/feed/">RSS feed</a>
+	</p>
+	<p>
+		Unless otherwise noted, all content on this site is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons BY-NC-ND 4.0</a>.
+	</p>
 </div><!-- .site-info -->

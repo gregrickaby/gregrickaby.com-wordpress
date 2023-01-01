@@ -327,6 +327,10 @@ li {
   font-size: var(--global--font-size-sm);
 }
 
+.site-info p {
+  margin-bottom: var(--global--spacing-vertical);
+}
+
 @media screen and (max-width: 652px) {
   .wp-block-image .alignright {
     float: none;
