@@ -20,3 +20,6 @@ function child_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\child_scripts' );
+
+// Enable carousel stats.
+add_filter( 'jetpack_enable_carousel_stats', '__return_true' );
