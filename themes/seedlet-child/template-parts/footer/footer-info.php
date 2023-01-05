@@ -33,7 +33,7 @@
 
 <div class="site-info">
 	<p>
-		Copyright &copy; 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?>
+		Copyright &copy; 2008-<?php echo esc_html( gmdate( 'Y' ) ); ?>
 		Greg Rickaby.
 		&middot;
 		<a href="https://gregrickaby.com/feed/">RSS feed</a>
