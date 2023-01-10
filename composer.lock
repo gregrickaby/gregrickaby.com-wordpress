@@ -252,15 +252,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "11.6",
+            "version": "11.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/11.6"
+                "reference": "tags/11.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.11.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.11.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -324,15 +324,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.27",
+            "version": "4.18.28",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.27"
+                "reference": "tags/4.18.28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.27.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.28.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -342,15 +342,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "19.13",
+            "version": "19.14",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/19.13"
+                "reference": "tags/19.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.13.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.14.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
