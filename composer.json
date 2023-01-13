@@ -48,14 +48,14 @@
     "americaneagle/wordpress-seo-premium": "^18.0",
     "americaneagle/wp-migrate-db-pro": "^2.0",
     "wpackagist-plugin/akismet": "^5.0",
-    "wpackagist-plugin/jetpack": "^11.0",
     "wpackagist-plugin/limit-login-attempts": "^1.0",
     "wpackagist-plugin/media-library-assistant": "^3.0",
     "wpackagist-plugin/performance-lab": "^1.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-plugin/wordpress-seo": "^19.0",
     "wpackagist-theme/seedlet": "^1.0",
-    "wpackagist-plugin/cloudflare": "^4.11"
+    "wpackagist-plugin/cloudflare": "^4.11",
+    "wpackagist-plugin/gallery-block-lightbox": "^1.12"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "^3.0"
