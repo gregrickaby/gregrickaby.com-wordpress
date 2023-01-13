@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6fe0e321485bb95d1358688950a723d",
+    "content-hash": "db9ce6279977a81258e497ff2d1d4b7e",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
@@ -231,24 +231,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/cloudflare",
-            "version": "4.11.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/cloudflare/",
-                "reference": "tags/4.11.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare.4.11.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/cloudflare/"
         },
         {
             "name": "wpackagist-plugin/gallery-block-lightbox",
