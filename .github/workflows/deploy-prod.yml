@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  THEME_DIR: themes/seedlet-child/
+  THEME_DIR: ./themes/seedlet-child/
 
 jobs:
   deployment:
