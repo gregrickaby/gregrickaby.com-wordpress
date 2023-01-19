@@ -1,7 +1,9 @@
-*.min.{js,jsx,ts,tsx,md,html,json,yml}
-!/.*.{js,jsx,ts,tsx,md,html,json,yml}
-
+.*.js
+*.min.js
+.*.json
+.cache/
+acf-json/
 build/
+dist/
 node_modules/
 vendor/
-dist/
