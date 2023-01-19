@@ -9,7 +9,6 @@
  */
 
 $hide_featured_img = get_field( 'hide_featured_image' );
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

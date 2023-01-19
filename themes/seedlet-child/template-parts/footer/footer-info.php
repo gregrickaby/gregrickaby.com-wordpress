@@ -6,17 +6,16 @@
  * @since 1.0.0
  */
 
-	$has_social_nav       = has_nav_menu( 'social' );
-	$has_social_nav_items = wp_nav_menu(
-		array(
-			'theme_location' => 'social',
-			'fallback_cb'    => false,
-			'echo'           => false,
-		)
-	);
-	?>
+$has_social_nav       = has_nav_menu( 'social' );
+$has_social_nav_items = wp_nav_menu(
+	array(
+		'theme_location' => 'social',
+		'fallback_cb'    => false,
+		'echo'           => false,
+	)
+);
 
-<?php if ( $has_social_nav && $has_social_nav_items ) : ?>
+if ( $has_social_nav && $has_social_nav_items ) : ?>
 	<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'seedlet' ); ?>">
 		<?php
 		wp_nav_menu(

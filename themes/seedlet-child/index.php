@@ -38,9 +38,8 @@ get_header();
 
 		} else {
 
-				// If no content, include the "No posts found" template.
-				get_template_part( 'template-parts/content/content-none' );
-
+			// If no content, include the "No posts found" template.
+			get_template_part( 'template-parts/content/content-none' );
 		}
 		?>
 
