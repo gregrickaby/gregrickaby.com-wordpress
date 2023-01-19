@@ -6,27 +6,28 @@ on:
 
   workflow_dispatch:
 
-env:
-  THEME_DIR: themes/seedlet-child/
-
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "themes/seedlet-child"
 
     strategy:
       matrix:
         php-versions: ["8.1"]
+        node-versions: ["lts/*"]
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node ${{matrix.node-versions}}
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: ${{matrix.node-versions}}
           cache: "npm"
-          cache-dependency-path: $THEME_DIR
+          cache-dependency-path: "**/package-lock.json"
 
       - name: Setup PHP ${{ matrix.php-versions }}
         uses: shivammathur/setup-php@v2
@@ -49,16 +50,11 @@ jobs:
 
       - name: Install Theme Dependencies
         run: |
-          cd $THEME_DIR
           composer install
           npm i --ignore-scripts
 
       - name: Lint Theme
-        run: |
-          cd $THEME_DIR
-          npm run lint
+        run: npm run lint
 
       - name: Test Theme Build
-        run: |
-          cd $THEME_DIR
-          npm run build
+        run: npm run build
