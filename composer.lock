@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c83720ab3c896794583f89dc609cb1c2",
+    "content-hash": "fb4ebd19e713643745d4b50c48124a58",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
@@ -231,24 +231,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/gallery-block-lightbox",
-            "version": "1.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gallery-block-lightbox/",
-                "reference": "tags/1.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gallery-block-lightbox.1.12.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gallery-block-lightbox/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
