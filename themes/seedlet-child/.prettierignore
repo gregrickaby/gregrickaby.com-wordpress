@@ -4,6 +4,5 @@
 .cache/
 acf-json/
 build/
-dist/
 node_modules/
 vendor/

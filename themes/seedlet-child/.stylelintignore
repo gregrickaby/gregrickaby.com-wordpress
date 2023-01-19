@@ -1,9 +1,9 @@
 .*.js
 *.min.js
 .*.json
+*.config.js
 .cache/
 acf-json/
 build/
-dist/
 node_modules/
 vendor/
