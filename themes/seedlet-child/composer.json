@@ -2,7 +2,7 @@
   "name": "gregrickaby/seedlet-child",
   "description": "A custom child theme for Seedlet.",
   "type": "theme",
-  "license": "GPL-3.0-only",
+  "license": "GPL-2.0-or-later",
   "homepage": "https://gregrickaby.com",
   "authors": [
     {
