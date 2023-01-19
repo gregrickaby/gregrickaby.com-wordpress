@@ -27,7 +27,6 @@ jobs:
         with:
           node-version: ${{matrix.node-versions}}
           cache: "npm"
-          cache-dependency-path: "**/package-lock.json"
 
       - name: Setup PHP ${{ matrix.php-versions }}
         uses: shivammathur/setup-php@v2
