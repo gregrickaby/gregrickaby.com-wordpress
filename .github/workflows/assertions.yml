@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  THEME_DIR: themes/seedlet-child/
+
 jobs:
   deployment:
     runs-on: ubuntu-latest
@@ -18,15 +21,24 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+          cache-dependency-path: $THEME_DIR
+
       - name: Setup PHP ${{ matrix.php-versions }}
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-versions }}
           tools: phpcs, composer:v2
 
-      - name: Get Composer Cache Directory
+      - name: Configure Composer
         id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+        run: |
+          echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache Dependencies
         uses: actions/cache@v3
@@ -37,16 +49,16 @@ jobs:
 
       - name: Install Theme Dependencies
         run: |
-          cd themes/seedlet-child
+          cd $THEME_DIR
           composer install
           npm i --ignore-scripts
 
       - name: Lint Theme
         run: |
-          cd themes/seedlet-child
+          cd $THEME_DIR
           npm run lint
 
       - name: Test Theme Build
         run: |
-          cd themes/seedlet-child
+          cd $THEME_DIR
           npm run build
