@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{matrix.node-versions}}
           cache: "npm"
-          cache-dependency-path: "${{ THEME_DIR }}/package-lock.json"
+          cache-dependency-path: "${{ env.THEME_DIR }}/package-lock.json"
 
       - name: Setup PHP ${{ matrix.php-versions }}
         uses: shivammathur/setup-php@v2
@@ -54,7 +54,7 @@ jobs:
 
       - name: Build Theme
         run: |
-          cd $THEME_DIR
+          cd ${{ env.THEME_DIR }}
           composer install
           npm i --ignore-scripts
           npm run build
