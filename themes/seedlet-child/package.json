@@ -1,0 +1,41 @@
+{
+  "name": "seedlet-child",
+  "version": "1.0.0",
+  "description": "A child theme for Seedlet.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregrickaby/gregrickaby.com.git"
+  },
+  "keywords": [
+    "wordpress",
+    "child",
+    "theme"
+  ],
+  "author": "Greg Rickaby",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/gregrickaby/gregrickaby.com/issues"
+  },
+  "homepage": "https://github.com/gregrickaby/gregrickaby.com#readme",
+  "scripts": {
+    "build": "wp-scripts build",
+    "dev": "rimraf build && wp-scripts start",
+    "format": "wp-scripts format",
+    "lint": "run-s lint:css lint:js lint:php",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:php": "composer run lint",
+    "postinstall": "composer install && npm run build",
+    "start": "wp-scripts start"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.31"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^25.2.0",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.1.1",
+    "run-all": "^1.0.1"
+  }
+}
