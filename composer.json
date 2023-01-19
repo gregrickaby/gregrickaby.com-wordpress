@@ -2,7 +2,7 @@
   "name": "gregrickaby/dotcom",
   "description": "My personal website.",
   "type": "project",
-  "license": "GPL-3.0-only",
+  "license": "GPL-2.0-or-later",
   "homepage": "https://gregrickaby.com",
   "authors": [
     {
