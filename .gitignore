@@ -35,3 +35,6 @@ themes/*
 
 # artifacts
 build/
+
+# typescript
+*.tsbuildinfo
