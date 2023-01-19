@@ -22,10 +22,11 @@
     "build": "wp-scripts build",
     "dev": "rimraf build && wp-scripts start",
     "format": "wp-scripts format",
-    "lint": "run-s lint:css lint:js lint:php",
+    "lint": "run-p lint:css lint:js lint:tsc lint:php",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
     "lint:php": "composer run lint",
+    "lint:tsc": "tsc --noEmit",
     "postinstall": "composer install && npm run build",
     "start": "wp-scripts start"
   },
@@ -34,8 +35,9 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^25.2.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.3",
     "rimraf": "^4.1.1",
-    "run-all": "^1.0.1"
+    "typescript": "^4.9.4"
   }
 }
