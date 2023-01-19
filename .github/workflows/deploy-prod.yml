@@ -36,10 +36,16 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name: Install Dependencies
+      - name: Install WordPress Plugins
         run: |
           echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
           composer install --prefer-dist --no-dev
+
+      - name: Build Theme
+        run: |
+          cd themes/seedlet-child
+          npm i --ignore-scripts
+          npm run build
 
       - name: SSH Deploy
         uses: easingthemes/ssh-deploy@v2
