@@ -8,7 +8,7 @@
  * @since 1.0.3
  */
 
-$hide_featured_img = get_field( 'hide_featured_image' );
+$seedlet_hide_featured_img = get_field( 'hide_featured_image' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -22,7 +22,7 @@ $hide_featured_img = get_field( 'hide_featured_image' );
 		<?php endif; ?>
 	</header>
 
-	<?php ( $hide_featured_img ) ? '' : seedlet_post_thumbnail(); ?>
+	<?php ( $seedlet_hide_featured_img ) ? '' : seedlet_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
