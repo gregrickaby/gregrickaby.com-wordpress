@@ -6,7 +6,7 @@
  *  @since 1.0.0
  */
 
-namespace SeedletChild;
+namespace SeedletChild\Functions;
 
 /**
  * Enqueue child styles and scripts.
@@ -31,3 +31,34 @@ function child_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\child_scripts' );
+
+/**
+ * Only load block styles when they're rendered.
+ *
+ * @link https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/
+ */
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
+/**
+ * Remove generator meta tags.
+ *
+ * @link https://developer.wordpress.org/reference/functions/the_generator/
+ */
+add_filter( 'the_generator', '__return_false' );
+
+/**
+ * Disable XML RPC.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/xmlrpc_enabled/
+ */
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/**
+ * Change default REST-API header from "null" to "*".
+ *
+ * @link https://w3c.github.io/webappsec-cors-for-developers/#avoid-returning-access-control-allow-origin-null
+ */
+function cors_control() {
+	header( 'Access-Control-Allow-Origin: *' );
+}
+add_action( 'rest_api_init', __NAMESPACE__ . '\cors_control' );
