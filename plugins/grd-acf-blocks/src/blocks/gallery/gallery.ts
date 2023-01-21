@@ -1,2 +1,2 @@
-import './fancybox'
+import './fancybox/index'
 import './gallery.css'
