@@ -1,0 +1,45 @@
+{
+  "name": "@gregrickaby/acf-blocks",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Custom ACF Blocks for WordPress",
+  "author": "Greg Rickaby <greg@gregrickaby.com>",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "acf",
+    "blocks"
+  ],
+  "homepage": "https://github.com/gregrickaby/gregrickaby.com#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregrickaby/gregrickaby.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gregrickaby/gregrickaby.com/issues"
+  },
+  "main": "build/index.js",
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.31"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^25.2.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.3",
+    "rimraf": "^4.1.1",
+    "stylelint-config-prettier": "^9.0.4",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "dev": "npm run start",
+    "format": "wp-scripts format",
+    "lint": "run-p lint:css lint:js lint:tsc lint:pkg-json lint:php",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:php": "composer run lint",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "lint:tsc": "tsc --noEmit",
+    "postinstall": "composer install && npm run build",
+    "start": "rimraf build && wp-scripts start"
+  }
+}

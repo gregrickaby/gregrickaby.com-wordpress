@@ -1,0 +1,11 @@
+.acf-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 16px;
+}
+
+.acf-block-gallery-item {
+  max-width: 300px;
+}

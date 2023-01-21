@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "acf/gallery",
+  "title": "ACF Gallery Block",
+  "description": "A gallery block powered by ACF's gallery field.",
+  "category": "theme",
+  "icon": "format-gallery",
+  "textdomain": "acf-blocks",
+  "script": "file:./gallery.ts",
+  "style": "file:./gallery.css",
+  "keywords": ["acf", "custom", "gallery"],
+  "acf": {
+    "blockVersion": 2,
+    "mode": "auto",
+    "renderTemplate": "../../plugins/grd-acf-blocks/src/blocks/gallery/gallery.php",
+    "postTypes": ["post"]
+  },
+  "supports": {
+    "anchor": true
+  }
+}
