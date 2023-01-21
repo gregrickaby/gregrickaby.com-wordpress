@@ -51,25 +51,3 @@ export function customizeDownloadButton(): boolean | void {
   // Add the download attribute.
   downloadButton.setAttribute('download', '')
 }
-
-/**
- * Customize the caption.
- *
- * Use the alt text as the caption.
- *
- * @param {Object} slide The slide object.
- * @return {string}     The caption.
- */
-export function customizeCaption(slide: Slide): string | boolean {
-  // Get the alt text from the image.
-  const alt =
-    slide?.$trigger?.origTarget?.alt || slide?.$trigger?.origTarget?.title
-
-  // Check if the alt text exists.
-  if (!alt) {
-    return false
-  }
-
-  // Return the alt text as a caption.
-  return `<p>${alt}</p>`
-}

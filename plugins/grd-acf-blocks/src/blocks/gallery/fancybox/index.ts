@@ -29,9 +29,6 @@ Fancybox.bind('[data-fancybox="gallery"]', {
       'close'
     ]
   },
-  caption: (slide: Slide) => {
-    customizeCaption(slide)
-  },
   on: {
     '*': () => {
       customizeDownloadButton()
