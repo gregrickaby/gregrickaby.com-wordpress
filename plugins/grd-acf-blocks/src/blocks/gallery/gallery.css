@@ -1,11 +1,11 @@
-.acf-block-gallery {
+.grd-acf-block-gallery {
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: start;
   gap: 16px;
+  justify-content: center;
 }
 
-.acf-block-gallery-item {
+.grd-acf-block-gallery-item {
   max-width: 300px;
 }
