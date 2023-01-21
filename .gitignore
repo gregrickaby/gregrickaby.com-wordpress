@@ -24,6 +24,7 @@ object-cache.php
 
 # plugins
 plugins/*
+!/plugins/grd-acf-blocks/
 
 # mu-plugins
 mu-plugins/*
