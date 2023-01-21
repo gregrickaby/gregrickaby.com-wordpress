@@ -28,7 +28,7 @@ plugins/*
 
 # mu-plugins
 mu-plugins/*
-!/mu-plugins/must-use.php
+!/mu-plugins/grd-must-use.php
 
 # theme
 themes/*
