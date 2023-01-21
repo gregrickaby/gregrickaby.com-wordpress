@@ -23,7 +23,7 @@
   "config": {
     "process-timeout": 600,
     "platform": {
-      "php": "8.1"
+      "php": "8.0"
     },
     "allow-plugins": {
       "composer/installers": true,
@@ -48,13 +48,14 @@
     "americaneagle/wordpress-seo-premium": "^18.0",
     "americaneagle/wp-migrate-db-pro": "^2.5",
     "wpackagist-plugin/akismet": "^5.0",
+    "wpackagist-plugin/gutenberg": "^15.0",
     "wpackagist-plugin/limit-login-attempts": "^1.0",
     "wpackagist-plugin/media-library-assistant": "^3.0",
     "wpackagist-plugin/performance-lab": "^1.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-plugin/wordpress-seo": "^19.0",
-    "wpackagist-theme/seedlet": "^1.0",
-    "wpackagist-plugin/wp-super-cache": "^1.9"
+    "wpackagist-plugin/wp-super-cache": "^1.9",
+    "wpackagist-theme/seedlet": "^1.0"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "^3.0"

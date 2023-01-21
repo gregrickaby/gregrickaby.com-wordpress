@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb4ebd19e713643745d4b50c48124a58",
+    "content-hash": "d582a29496c2d4df948b4e062d5d6999",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
-            "version": "6.0.6",
+            "version": "6.0.7",
             "dist": {
                 "type": "zip",
-                "url": "https://aepackagist.wpengine.com/satispress/advanced-custom-fields-pro/6.0.6",
-                "shasum": "f4ca2a684d2e2f938bb8de2fed9e175f7d9e487d"
+                "url": "https://aepackagist.wpengine.com/satispress/advanced-custom-fields-pro/6.0.7",
+                "shasum": "2eab20bf6a472225be40c0b7bfbb10f7aa870a38"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -233,6 +233,24 @@
             "homepage": "https://wordpress.org/plugins/akismet/"
         },
         {
+            "name": "wpackagist-plugin/gutenberg",
+            "version": "15.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gutenberg/",
+                "reference": "tags/15.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.15.0.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gutenberg/"
+        },
+        {
             "name": "wpackagist-plugin/limit-login-attempts",
             "version": "1.7.1",
             "source": {
@@ -256,11 +274,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "trunk"
+                "reference": "tags/3.05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1672173109"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.05.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -387,7 +405,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.1"
+        "php": "8.0"
     },
     "plugin-api-version": "2.3.0"
 }
