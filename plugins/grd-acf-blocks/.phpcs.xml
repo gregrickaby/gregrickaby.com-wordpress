@@ -26,6 +26,8 @@
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 		<!-- Allow short prefixes. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
+		<!-- Allow short ternary operator. -->
+		<exclude name="WordPress.PHP.DisallowShortTernary"/>
 	</rule>
 
 	<!-- Use WordPress "Docs" Coding Standards. -->
