@@ -1,0 +1,60 @@
+name: Plugin Assertions
+
+on:
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  theme-assertions:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "plugins/grd-acf-blocks"
+
+    strategy:
+      matrix:
+        php-versions: ["8.0"]
+        node-versions: ["lts/*"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node ${{matrix.node-versions}}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-versions}}
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+
+      - name: Setup PHP ${{ matrix.php-versions }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: phpcs, composer:v2
+
+      - name: Configure Composer
+        id: composer-cache
+        run: |
+          echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Plugin Dependencies
+        run: |
+          composer install
+          npm i --ignore-scripts
+
+      - name: Lint Plugin
+        run: npm run lint
+
+      - name: Test Plugin Build
+        run: npm run build

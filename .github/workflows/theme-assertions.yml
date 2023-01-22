@@ -1,4 +1,4 @@
-name: Assertions
+name: Theme Assertions
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
+  theme-assertions:
     runs-on: ubuntu-latest
     defaults:
       run:
