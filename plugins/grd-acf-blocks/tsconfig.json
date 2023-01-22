@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Seedlet Child",
+  "display": "@gregrickaby/acf-blocks",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
