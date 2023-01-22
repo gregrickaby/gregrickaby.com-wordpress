@@ -38,7 +38,7 @@ if ( ! empty( $block['align'] ) ) {
 $photos = get_field( 'photos' );
 
 // Return early if no photos.
-if ( ! $photos ) {
+if ( empty( $photos ) ) {
 	return;
 }
 ?>
@@ -50,30 +50,48 @@ if ( ! $photos ) {
 	foreach ( $photos as $photo ) :
 
 		// Get photo data.
-		$alt     = $photo['alt'] ? $photo['alt'] : $photo['title'];
-		$caption = $photo['caption'] ? $photo['caption'] : $alt;
+		$photo_id   = $photo['ID'];
+		$alt        = $photo['alt'] ?: $photo['title'];
+		$caption    = $photo['caption'] ? $photo['caption'] : $alt;
+		$srcset     = wp_get_attachment_image_srcset( $photo_id );
+		$image_meta = get_post_meta( $photo_id, '_wp_attachment_metadata' );
 
 		// Get Exif data.
-		$image_meta    = get_post_meta( $photo['id'], '_wp_attachment_metadata' );
-		$camera        = $image_meta[0]['image_meta']['camera'] ? $image_meta[0]['image_meta']['camera'] : '';
-		$aperture      = $image_meta[0]['image_meta']['aperture'] ? $image_meta[0]['image_meta']['aperture'] : '';
-		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) : '';
-		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? $image_meta[0]['image_meta']['focal_length'] : '';
-		$iso           = $image_meta[0]['image_meta']['iso'] ? $image_meta[0]['image_meta']['iso'] : '';
+		$aperture      = $image_meta[0]['image_meta']['aperture'] ? "ƒ/{$image_meta[0]['image_meta']['aperture']} |" : '';
+		$camera        = $image_meta[0]['image_meta']['camera'] ?: '';
+		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? "{$image_meta[0]['image_meta']['focal_length']}mm |" : '';
+		$iso           = $image_meta[0]['image_meta']['iso'] ? "ISO {$image_meta[0]['image_meta']['iso']} |" : '';
+		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) . 'sec |' : '';
 
 		// Build Exif string.
-		$exif = "ƒ/{$aperture} | {$focal_length}mm | {$shutter_speed} sec | ISO {$iso} | {$camera}";
+		$exif = sprintf(
+			'%s %s %s %s %s',
+			$focal_length,
+			$aperture,
+			$shutter_speed,
+			$iso,
+			$camera
+		);
+
+		// Build caption for Fancybox.
+		$fancy_caption = sprintf(
+			'<p>%s</p><span class="exif">%s</span>',
+			$caption,
+			$exif
+		)
 		?>
 
-		<figure class="grd-acf-block-gallery-item">
+		<figure class="grd-acf-block-image">
 			<a
-				data-caption='&lt;p&gt;<?php echo esc_html( $caption ); ?>&lt;/p&gt; &lt;span class="exif"&gt;<?php echo esc_html( $exif ); ?>&lt;/span&gt;'
+				data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
 				data-fancybox="gallery"
-				href="<?php echo esc_url( wp_get_original_image_url( $photo['ID'] ) ); ?>"
+				data-slug="<?php echo esc_attr( $photo_id ); ?>"
+				data-srcset="<?php echo esc_attr( $srcset ); ?>"
+				href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
 			>
-			<?php echo wp_get_attachment_image( $photo['ID'] ); ?>
+			<?php echo wp_get_attachment_image( $photo_id ); ?>
 			<?php if ( $caption ) : ?>
-				<figcaption class="grd-acf-block-gallery-item__caption"><?php echo esc_html( $caption ); ?></figcaption>
+				<figcaption class="grd-acf-block-caption"><?php echo esc_html( $caption ); ?></figcaption>
 			<?php endif; ?>
 			</a>
 		</figure>
