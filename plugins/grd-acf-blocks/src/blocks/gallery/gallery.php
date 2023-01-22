@@ -91,7 +91,7 @@ if ( ! empty( $block['align'] ) ) {
 		<figure class="grd-acf-block-image">
 			<a
 				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
-				data-fancybox="gallery"
+				data-fancybox
 				data-slug="<?php echo \esc_attr( $photo_id ); ?>"
 				data-srcset="<?php echo \esc_attr( $srcset ); ?>"
 				href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
