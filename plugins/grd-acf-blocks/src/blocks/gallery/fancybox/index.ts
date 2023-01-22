@@ -1,11 +1,6 @@
 import {Fancybox} from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox.css'
-import {Slide} from './types'
-import {
-  customizeCaption,
-  customizeDownloadButton,
-  disableRightClick
-} from './utils'
+import {disableRightClick} from './utils'
 
 /**
  * Initialize Fancybox.
@@ -30,9 +25,6 @@ Fancybox.bind('[data-fancybox="gallery"]', {
     ]
   },
   on: {
-    '*': () => {
-      customizeDownloadButton()
-    },
     load: () => {
       disableRightClick()
     }
