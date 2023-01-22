@@ -1,6 +1,6 @@
 {
   "name": "gregrickaby/acf-blocks",
-  "description": "Custom ACF Blocks for WordPress",
+  "description": "Custom ACF Blocks for WordPress.",
   "type": "theme",
   "license": "GPL-2.0-or-later",
   "homepage": "https://gregrickaby.com",
@@ -26,7 +26,6 @@
     "phospr/fraction": "dev-master"
   },
   "require-dev": {
-    "php": "^8.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
     "wp-cli/wp-cli-bundle": "^2.5",
