@@ -15,6 +15,15 @@
 
 namespace Grd\Acf\Blocks;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Autoload classes.
+ */
+require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+
 /**
  * Register ACF blocks.
  *
