@@ -9,6 +9,7 @@ on:
 
 env:
   THEME_DIR: themes/seedlet-child
+  PLUGIN_DIR: plugins/grd-acf-blocks
 
 jobs:
   deployment:
@@ -55,6 +56,13 @@ jobs:
       - name: Build Theme
         run: |
           cd ${{ env.THEME_DIR }}
+          composer install
+          npm i --ignore-scripts
+          npm run build
+
+      - name: Build Plugin
+        run: |
+          cd ${{ env.PLUGIN_DIR }}
           composer install
           npm i --ignore-scripts
           npm run build
