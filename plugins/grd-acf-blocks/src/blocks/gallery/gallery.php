@@ -9,6 +9,8 @@
  *          This is either the post ID currently being displayed inside a query loop,
  *          or the post ID of the post hosting this block.
  * @param   array $context The context provided to the block by the post or it's parent block.
+ * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
+ * @see https://www.advancedcustomfields.com/resources/acf_register_block_type/
  * @package SeedletChild
  * @since 1.0.0
  */
