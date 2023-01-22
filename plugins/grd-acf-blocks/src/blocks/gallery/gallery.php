@@ -15,6 +15,8 @@
 
 namespace Grd\Acf\Blocks\Gallery;
 
+use Phospr\Fraction;
+
 // Support custom "anchor" values.
 $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
@@ -46,47 +48,28 @@ if ( ! $photos ) {
 	foreach ( $photos as $photo ) :
 
 		// Get photo data.
-		$image_meta       = get_post_meta( $photo['id'], '_wp_attachment_metadata' );
-		$alt              = $photo['alt'] ? $photo['alt'] : $photo['title'];
-		$caption          = $photo['caption'] ? $photo['caption'] : $alt;
-		$thumbnail        = $photo['sizes']['thumbnail'];
-		$thumbnail_width  = $photo['sizes']['thumbnail-width'];
-		$thumbnail_height = $photo['sizes']['thumbnail-height'];
-		$url              = $photo['url'];
-		$original_image   = $image_meta[0]['original_image'];
-		$dominant_color   = $image_meta[0]['dominant_color'];
-		$transparency     = $image_meta[0]['transparency'];
+		$alt     = $photo['alt'] ? $photo['alt'] : $photo['title'];
+		$caption = $photo['caption'] ? $photo['caption'] : $alt;
 
 		// Get Exif data.
-		$timestamp     = $image_meta[0]['image_meta']['created_timestamp'];
-		$camera        = $image_meta[0]['image_meta']['camera'];
-		$aperture      = $image_meta[0]['image_meta']['aperture'];
-		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'];
-		$focal_length  = $image_meta[0]['image_meta']['focal_length'];
-		$iso           = $image_meta[0]['image_meta']['iso'];
-		$keywords      = $image_meta[0]['image_meta']['keywords'];
+		$image_meta    = get_post_meta( $photo['id'], '_wp_attachment_metadata' );
+		$camera        = $image_meta[0]['image_meta']['camera'] ? $image_meta[0]['image_meta']['camera'] : '';
+		$aperture      = $image_meta[0]['image_meta']['aperture'] ? $image_meta[0]['image_meta']['aperture'] : '';
+		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) : '';
+		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? $image_meta[0]['image_meta']['focal_length'] : '';
+		$iso           = $image_meta[0]['image_meta']['iso'] ? $image_meta[0]['image_meta']['iso'] : '';
 
+		// Build Exif string.
+		$exif = "ƒ/{$aperture} | {$focal_length}mm | {$shutter_speed} sec | ISO {$iso} | {$camera}";
 		?>
 
 		<figure class="grd-acf-block-gallery-item">
 			<a
-				data-caption="<?php echo esc_html( $caption ); ?>"
+				data-caption='&lt;p&gt;<?php echo esc_html( $caption ); ?>&lt;/p&gt; &lt;span class="exif"&gt;<?php echo esc_html( $exif ); ?>&lt;/span&gt;'
 				data-fancybox="gallery"
-				href="<?php echo esc_url( $url ); ?>"
+				href="<?php echo esc_url( wp_get_original_image_url( $photo['ID'] ) ); ?>"
 			>
-				<img
-					alt="<?php echo esc_attr( $alt ); ?>"
-					class="grd-acf-block-gallery-item__image <?php echo esc_attr( $transparency ? 'transparent' : 'not-transparent' ); ?>"
-					data-dominant-color="<?php echo esc_attr( $dominant_color ); ?>"
-					data-has-transparency="<?php echo esc_attr( $transparency ? 'true' : 'false' ); ?>"
-					data-id="<?php echo esc_attr( $photo['id'] ); ?>"
-					decode="async"
-					height="<?php echo esc_attr( $thumbnail_height ); ?>"
-					loading="lazy"
-					src="<?php echo esc_url( $photo['sizes']['thumbnail'] ); ?>"
-					style="--dominant-color: #<?php echo esc_attr( $dominant_color ); ?>;"
-					width="<?php echo esc_attr( $thumbnail_width ); ?>"
-				/>
+			<?php echo wp_get_attachment_image( $photo['ID'] ); ?>
 			<?php if ( $caption ) : ?>
 				<figcaption class="grd-acf-block-gallery-item__caption"><?php echo esc_html( $caption ); ?></figcaption>
 			<?php endif; ?>
