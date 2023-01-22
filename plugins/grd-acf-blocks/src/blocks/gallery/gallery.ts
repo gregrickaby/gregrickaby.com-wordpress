@@ -1,6 +1,6 @@
 import {Fancybox} from '@fancyapps/ui'
 import '@fancyapps/ui/dist/fancybox.css'
-import {disableRightClick} from './fancybox/utils'
+import {disableRightClick} from './lib/utils'
 import './gallery.css'
 
 /**
