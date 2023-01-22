@@ -9,3 +9,11 @@
 .grd-acf-block-gallery-item {
   max-width: 300px;
 }
+
+.fancybox__caption {
+  text-align: center;
+}
+
+.fancybox__caption .exif {
+  font-size: 12px;
+}
