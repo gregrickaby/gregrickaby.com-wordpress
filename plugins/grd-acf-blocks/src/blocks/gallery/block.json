@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "acf/gallery",
   "title": "ACF Gallery Block",
-  "description": "A gallery block powered by ACF's gallery field.",
+  "description": "A gallery block powered by ACF's gallery field and Fancybox.",
   "category": "theme",
   "icon": "format-gallery",
   "textdomain": "acf-blocks",

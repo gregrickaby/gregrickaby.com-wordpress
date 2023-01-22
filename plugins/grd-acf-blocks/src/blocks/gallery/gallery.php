@@ -1,6 +1,6 @@
 <?php
 /**
- * Gallery block.
+ * ACF Block: Gallery
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
@@ -11,18 +11,33 @@
  * @param   array $context The context provided to the block by the post or it's parent block.
  * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
  * @see https://www.advancedcustomfields.com/resources/acf_register_block_type/
- * @package SeedletChild
+ * @see https://fancyapps.com/docs/ui/fancybox
+ *
+ * @package Grd\Acf\Blocks
  * @since 1.0.0
  */
 
 namespace Grd\Acf\Blocks\Gallery;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// Import dependencies.
 use Phospr\Fraction;
+
+// Get photos.
+$photos = \get_field( 'photos' );
+
+// Return early if no photos.
+if ( empty( $photos ) ) {
+	return;
+}
 
 // Support custom "anchor" values.
 $anchor = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+	$anchor = 'id="' . \esc_attr( $block['anchor'] ) . '" ';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
@@ -33,17 +48,9 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
 	$class_name .= ' align' . $block['align'];
 }
-
-// Get photos.
-$photos = get_field( 'photos' );
-
-// Return early if no photos.
-if ( empty( $photos ) ) {
-	return;
-}
 ?>
 
-<div <?php echo esc_attr( $anchor ); ?> class="<?php echo esc_attr( $class_name ); ?>">
+<div <?php echo \esc_attr( $anchor ); ?> class="<?php echo \esc_attr( $class_name ); ?>">
 	<?php
 
 	// Loop through photos.
@@ -53,8 +60,8 @@ if ( empty( $photos ) ) {
 		$photo_id   = $photo['ID'];
 		$alt        = $photo['alt'] ?: $photo['title'];
 		$caption    = $photo['caption'] ? $photo['caption'] : $alt;
-		$srcset     = wp_get_attachment_image_srcset( $photo_id );
-		$image_meta = get_post_meta( $photo_id, '_wp_attachment_metadata' );
+		$srcset     = \wp_get_attachment_image_srcset( $photo_id );
+		$image_meta = \get_post_meta( $photo_id, '_wp_attachment_metadata' );
 
 		// Get Exif data.
 		$aperture      = $image_meta[0]['image_meta']['aperture'] ? "ƒ/{$image_meta[0]['image_meta']['aperture']} |" : '';
@@ -83,15 +90,15 @@ if ( empty( $photos ) ) {
 
 		<figure class="grd-acf-block-image">
 			<a
-				data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
+				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
 				data-fancybox="gallery"
-				data-slug="<?php echo esc_attr( $photo_id ); ?>"
-				data-srcset="<?php echo esc_attr( $srcset ); ?>"
-				href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
+				data-slug="<?php echo \esc_attr( $photo_id ); ?>"
+				data-srcset="<?php echo \esc_attr( $srcset ); ?>"
+				href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 			>
-			<?php echo wp_get_attachment_image( $photo_id ); ?>
+			<?php echo \wp_get_attachment_image( $photo_id ); ?>
 			<?php if ( $caption ) : ?>
-				<figcaption class="grd-acf-block-caption"><?php echo esc_html( $caption ); ?></figcaption>
+				<figcaption class="grd-acf-block-caption"><?php echo \esc_html( $caption ); ?></figcaption>
 			<?php endif; ?>
 			</a>
 		</figure>

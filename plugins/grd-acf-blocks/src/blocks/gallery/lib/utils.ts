@@ -1,5 +1,5 @@
 /**
- * Disable right-click on main image.
+ * Disable right-click on image.
  *
  * Why? Because we're displaying a lower-quality
  * WebP in the lightbox. If a user right-clicks

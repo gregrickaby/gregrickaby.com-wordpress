@@ -30,7 +30,7 @@ require_once dirname( __FILE__ ) . '/vendor/autoload.php';
  * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
  * @see https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#blockjson-support
  */
-function register_acf_blocks() {
+function register_acf_blocks(): void {
 	\register_block_type( __DIR__ . '/build/blocks/gallery' );
 }
 add_action( 'acf/init', __NAMESPACE__ . '\register_acf_blocks' );
