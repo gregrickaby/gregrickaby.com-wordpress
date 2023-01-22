@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  theme-assertions:
+  plugin-assertions:
     runs-on: ubuntu-latest
     defaults:
       run:
