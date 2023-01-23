@@ -66,7 +66,7 @@ if ( ! empty( $block['align'] ) ) {
 		// Get Exif data.
 		$aperture      = $image_meta[0]['image_meta']['aperture'] ? "ƒ/{$image_meta[0]['image_meta']['aperture']} |" : '';
 		$camera        = $image_meta[0]['image_meta']['camera'] ?: '';
-		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? "{$image_meta[0]['image_meta']['focal_length']}mm |" : '';
+		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? round( 1 * $image_meta[0]['image_meta']['focal_length'] ) . 'mm |' : '';
 		$iso           = $image_meta[0]['image_meta']['iso'] ? "ISO {$image_meta[0]['image_meta']['iso']} |" : '';
 		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) . 'sec |' : '';
 
