@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d582a29496c2d4df948b4e062d5d6999",
+    "content-hash": "495f3f938d9fc78666dfb41a9a526355",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
@@ -46,11 +46,11 @@
         },
         {
             "name": "americaneagle/wp-migrate-db-pro",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://aepackagist.wpengine.com/satispress/wp-migrate-db-pro/2.5.0",
-                "shasum": "9b2a36ff32bbdded5ab4a166337a1bdd8fab1f0f"
+                "url": "https://aepackagist.wpengine.com/satispress/wp-migrate-db-pro/2.6.0",
+                "shasum": "01fc13b28838b380184af9ffa3d68d07cda1fbfb"
             },
             "require": {
                 "composer/installers": "^1.0"
@@ -231,24 +231,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "15.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/15.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.15.0.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
