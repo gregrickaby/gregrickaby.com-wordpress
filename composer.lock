@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "495f3f938d9fc78666dfb41a9a526355",
+    "content-hash": "0f9599ee3dba0733700b8a6625ede0b9",
     "packages": [
         {
             "name": "americaneagle/advanced-custom-fields-pro",
@@ -306,15 +306,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "19.14",
+            "version": "20.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/19.14"
+                "reference": "tags/20.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.14.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

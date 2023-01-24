@@ -52,7 +52,7 @@
     "wpackagist-plugin/media-library-assistant": "^3.0",
     "wpackagist-plugin/performance-lab": "^1.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
-    "wpackagist-plugin/wordpress-seo": "^19.0",
+    "wpackagist-plugin/wordpress-seo": "^20.0",
     "wpackagist-plugin/wp-super-cache": "^1.9",
     "wpackagist-theme/seedlet": "^1.0"
   },
