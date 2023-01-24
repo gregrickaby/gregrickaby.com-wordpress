@@ -27,14 +27,6 @@ add_filter( 'upload_mimes', 'grd_additional_mime_types' );
  */
 add_filter( 'acf/settings/remove_wp_meta_box', '__return_false' );
 
-
-/**
- * Only load block styles when they're rendered.
- *
- * @link https://make.wordpress.org/core/2021/07/01/block-styles-loading-enhancements-in-wordpress-5-8/
- */
-add_filter( 'should_load_separate_core_block_assets', '__return_true' );
-
 /**
  * Remove generator meta tags.
  *
