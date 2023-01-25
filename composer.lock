@@ -288,15 +288,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.28",
+            "version": "4.18.29",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.28"
+                "reference": "tags/4.18.29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.28.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.29.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
