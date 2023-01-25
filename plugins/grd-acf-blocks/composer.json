@@ -11,6 +11,11 @@
     }
   ],
   "repositories": [],
+  "autoload": {
+    "psr-4": {
+      "Grd\\Acf\\Blocks\\": "src/"
+    }
+  },
   "config": {
     "process-timeout": 600,
     "platform": {
