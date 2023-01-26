@@ -6,7 +6,7 @@
  * and saves the WebP, they're OS may not support
  * viewing it offline. Additionally, if a user
  * tries to upload that WebP to a print service,
- * chances are the big-box stores won't support it.
+ * chances are they don't support WebP.
  *
  * Alternatively, the user can click the download button
  * to get the full-quality JPG.
