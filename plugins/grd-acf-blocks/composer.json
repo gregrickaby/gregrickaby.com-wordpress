@@ -1,7 +1,7 @@
 {
   "name": "gregrickaby/acf-blocks",
   "description": "Custom ACF Blocks for WordPress.",
-  "type": "theme",
+  "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "homepage": "https://gregrickaby.com",
   "authors": [
