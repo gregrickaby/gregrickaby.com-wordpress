@@ -15,22 +15,23 @@
 
 namespace Grd\Acf\Blocks;
 
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Autoload classes.
+ * Define constants.
  */
-require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+define( 'GRD_ACF_BLOCKS_VERSION', '1.0.0' );
+define( 'GRD_ACF_BLOCKS_DIR', \trailingslashit( \plugin_dir_path( __FILE__ ) ) );
 
 /**
- * Register ACF blocks.
- *
- * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
- * @see https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#blockjson-support
+ * Autoload classes.
  */
-function register_acf_blocks(): void {
-	\register_block_type( __DIR__ . '/build/blocks/gallery' );
-}
-add_action( 'acf/init', __NAMESPACE__ . '\register_acf_blocks' );
+require __DIR__ . '/vendor/autoload.php';
+
+/**
+ * Initialize the plugin.
+ */
+$grd_acf_blocks = new Plugin();
