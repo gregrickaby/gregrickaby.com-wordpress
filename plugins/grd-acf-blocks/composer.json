@@ -13,10 +13,11 @@
   "repositories": [],
   "autoload": {
     "psr-4": {
-      "Grd\\Acf\\Blocks\\": "src/"
+      "Grd\\Acf\\Blocks\\": "src/classes"
     }
   },
   "config": {
+    "optimize-autoloader": true,
     "process-timeout": 600,
     "platform": {
       "php": "8.0"
