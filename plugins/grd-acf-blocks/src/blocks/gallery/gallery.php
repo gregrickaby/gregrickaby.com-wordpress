@@ -2,6 +2,10 @@
 /**
  * ACF Block: Gallery
  *
+ * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
+ * @see https://www.advancedcustomfields.com/resources/acf_register_block_type/
+ * @see https://fancyapps.com/docs/ui/fancybox
+ *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
  * @param   bool $is_preview True during backend preview render.
@@ -9,9 +13,6 @@
  *          This is either the post ID currently being displayed inside a query loop,
  *          or the post ID of the post hosting this block.
  * @param   array $context The context provided to the block by the post or it's parent block.
- * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
- * @see https://www.advancedcustomfields.com/resources/acf_register_block_type/
- * @see https://fancyapps.com/docs/ui/fancybox
  *
  * @package Grd\Acf\Blocks
  * @since 1.0.0
