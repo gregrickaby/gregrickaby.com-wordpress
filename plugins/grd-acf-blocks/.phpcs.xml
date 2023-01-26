@@ -28,6 +28,9 @@
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 		<!-- Allow short ternary operator. -->
 		<exclude name="WordPress.PHP.DisallowShortTernary"/>
+		<!-- Prefer to use PSR4 style class names for autoloading. -->
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 	</rule>
 
 	<!-- Use WordPress "Docs" Coding Standards. -->
