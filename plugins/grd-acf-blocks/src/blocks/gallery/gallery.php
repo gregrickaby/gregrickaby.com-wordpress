@@ -17,7 +17,7 @@
  * @since 1.0.0
  */
 
-namespace Grd\Acf\Blocks\Gallery;
+namespace Grd\Acf\Blocks;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
