@@ -12,8 +12,8 @@ namespace SeedletChild\Functions;
  * Define constants.
  */
 define( 'SEEDLET_CHILD_VERSION', '1.0.0' );
-define( 'SEEDLET_CHILD_DIR', trailingslashit( \get_stylesheet_directory() ) );
-define( 'SEEDLET_CHILD_URL', trailingslashit( \get_stylesheet_directory_uri() ) );
+define( 'SEEDLET_CHILD_DIR', \trailingslashit( \get_stylesheet_directory() ) );
+define( 'SEEDLET_CHILD_URL', \trailingslashit( \get_stylesheet_directory_uri() ) );
 
 /**
  * Enqueue child theme styles and scripts.
