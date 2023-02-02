@@ -4,100 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f9599ee3dba0733700b8a6625ede0b9",
+    "content-hash": "1c66c6b7bf019777fe009d994bef0ebe",
     "packages": [
         {
-            "name": "americaneagle/advanced-custom-fields-pro",
-            "version": "6.0.7",
-            "dist": {
-                "type": "zip",
-                "url": "https://aepackagist.wpengine.com/satispress/advanced-custom-fields-pro/6.0.7",
-                "shasum": "2eab20bf6a472225be40c0b7bfbb10f7aa870a38"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "WP Engine",
-                "homepage": "https://wpengine.com/?utm_source=wordpress.org&#038;utm_medium=referral&#038;utm_campaign=plugin_directory&#038;utm_content=advanced_custom_fields"
-            },
-            "description": "Customize WordPress with powerful, professional and intuitive fields.",
-            "homepage": "https://www.advancedcustomfields.com"
-        },
-        {
-            "name": "americaneagle/wordpress-seo-premium",
-            "version": "18.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://aepackagist.wpengine.com/satispress/wordpress-seo-premium/18.4",
-                "shasum": "e2ab81a16386be2a42617661e33b02a84059a396"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Team Yoast",
-                "homepage": "https://yoa.st/2jc"
-            },
-            "description": "The first true all-in-one SEO solution for WordPress, including on-page content analysis, XML sitemaps and much more.",
-            "homepage": "https://yoa.st/2jc"
-        },
-        {
-            "name": "americaneagle/wp-migrate-db-pro",
-            "version": "2.6.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://aepackagist.wpengine.com/satispress/wp-migrate-db-pro/2.6.0",
-                "shasum": "01fc13b28838b380184af9ffa3d68d07cda1fbfb"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "WP Engine",
-                "homepage": "https://deliciousbrains.com"
-            },
-            "description": "Migrate between any two environments. Push, pull, and export full sites. Find and replace content including serialized data. Import and back up the database.",
-            "homepage": "https://deliciousbrains.com/wp-migrate-db-pro/"
-        },
-        {
             "name": "composer/installers",
-            "version": "v1.12.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19"
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d20a64ed3c94748397ff5973488761b22f6d3f19",
-                "reference": "d20a64ed3c94748397ff5973488761b22f6d3f19",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c29dc4b93137acb82734f672c37e029dfbd95b35",
+                "reference": "c29dc4b93137acb82734f672c37e029dfbd95b35",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
             },
             "require-dev": {
                 "composer/composer": "1.6.* || ^2.0",
                 "composer/semver": "^1 || ^3",
                 "phpstan/phpstan": "^0.12.55",
                 "phpstan/phpstan-phpunit": "^0.12.16",
-                "symfony/phpunit-bridge": "^4.2 || ^5",
-                "symfony/process": "^2.3"
+                "symfony/phpunit-bridge": "^5.3",
+                "symfony/process": "^5"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
             },
             "autoload": {
                 "psr-4": {
@@ -118,7 +59,6 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "https://composer.github.io/installers/",
             "keywords": [
-                "Craft",
                 "Dolibarr",
                 "Eliasis",
                 "Hurad",
@@ -139,7 +79,6 @@
                 "Whmcs",
                 "WolfCMS",
                 "agl",
-                "aimeos",
                 "annotatecms",
                 "attogram",
                 "bitrix",
@@ -158,7 +97,6 @@
                 "grav",
                 "installer",
                 "itop",
-                "joomla",
                 "known",
                 "kohana",
                 "laravel",
@@ -167,6 +105,7 @@
                 "magento",
                 "majima",
                 "mako",
+                "matomo",
                 "mediawiki",
                 "miaoxing",
                 "modulework",
@@ -186,9 +125,7 @@
                 "silverstripe",
                 "sydes",
                 "sylius",
-                "symfony",
                 "tastyigniter",
-                "typo3",
                 "wordpress",
                 "yawik",
                 "zend",
@@ -196,7 +133,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/installers/issues",
-                "source": "https://github.com/composer/installers/tree/v1.12.0"
+                "source": "https://github.com/composer/installers/tree/v2.2.0"
             },
             "funding": [
                 {
@@ -212,7 +149,45 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-13T08:19:44+00:00"
+            "time": "2022-08-20T06:45:11+00:00"
+        },
+        {
+            "name": "wiregrasswebsites/advanced-custom-fields-pro",
+            "version": "6.0.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.wiregrasswebsites.com/satispress/advanced-custom-fields-pro/6.0.7",
+                "shasum": "bfb3414e2b58ea8d644183d4bab6bb373da51e0c"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "WP Engine",
+                "homepage": "https://wpengine.com/?utm_source=wordpress.org&#038;utm_medium=referral&#038;utm_campaign=plugin_directory&#038;utm_content=advanced_custom_fields"
+            },
+            "description": "Customize WordPress with powerful, professional and intuitive fields.",
+            "homepage": "https://www.advancedcustomfields.com"
+        },
+        {
+            "name": "wiregrasswebsites/wp-migrate-db-pro",
+            "version": "2.6.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.1",
+                "shasum": "c654e075b5b22029e4a70002794f424c1483c066"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "WP Engine",
+                "homepage": "https://deliciousbrains.com"
+            },
+            "description": "Migrate between any two environments. Push, pull, and export full sites. Find and replace content including serialized data. Import and back up the database.",
+            "homepage": "https://deliciousbrains.com/wp-migrate-db-pro/"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -231,6 +206,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
+        },
+        {
+            "name": "wpackagist-plugin/faustwp",
+            "version": "0.8.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/faustwp/",
+                "reference": "tags/0.8.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/faustwp.0.8.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/faustwp/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
@@ -252,15 +245,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.05",
+            "version": "3.06",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.05"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.05.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1675296471"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -321,6 +314,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-graphql",
+            "version": "1.13.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-graphql/",
+                "reference": "tags/1.13.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-graphql.1.13.7.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-graphql/"
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
