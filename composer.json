@@ -53,9 +53,7 @@
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-plugin/wordpress-seo": "^20.0",
     "wpackagist-plugin/wp-super-cache": "^1.9",
-    "wpackagist-theme/seedlet": "^1.0",
-    "wpackagist-plugin/faustwp": "^0.8.1",
-    "wpackagist-plugin/wp-graphql": "^1.13"
+    "wpackagist-theme/seedlet": "^1.0"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "^3.0"
