@@ -54,6 +54,4 @@ $seedlet_hide_featured_img = get_field( 'hide_featured_image' );
 		<?php seedlet_entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
 
-	<?php seedlet_author_bio(); ?>
-
 </article><!-- #post-${ID} -->
