@@ -1,13 +1,22 @@
 /**
  * Custom styles.
  */
+
+/* center all titles */
 .entry-title,
-.site-info {
+.site-info,
+.page-title {
   text-align: center;
 }
 
+/* disable border on post/page titles */
 .entry-title > a {
   border: none;
+}
+
+/* various spacing adjustments */
+.page-header {
+  margin-bottom: var(--global--spacing-vertical);
 }
 
 .site-main > article > .entry-footer {
@@ -22,10 +31,15 @@ li {
   margin-bottom: calc(var(--global--spacing-vertical) - 10);
 }
 
+.site-info p {
+  margin-bottom: var(--global--spacing-vertical);
+}
+
+/* style the article grid */
 .article-grid {
   align-items: start;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: var(--global--spacing-vertical);
   grid-template-columns: repeat(auto-fit, 300px);
   justify-content: center;
   margin: 0 auto;
@@ -41,11 +55,7 @@ li {
   font-size: var(--global--font-size-sm);
 }
 
-.site-info p {
-  margin-bottom: var(--global--spacing-vertical);
-}
-
-/* reset block styles */
+/* reset code block styles */
 .wp-block-code {
   border: none;
   margin: 0;
@@ -53,6 +63,7 @@ li {
   padding: 0;
 }
 
+/* style code blocks */
 .wp-block-preformatted,
 .wp-block-code code {
   background: var(--global--color-tertiary);
@@ -71,6 +82,7 @@ li {
   word-wrap: break-word;
 }
 
+/* remove float from alignright images */
 @media screen and (max-width: 652px) {
   .wp-block-image .alignright {
     float: none;
