@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "805f910aaeeea54c59045cd4e701f3ca",
+    "content-hash": "7cba28bc07652966511f5f5c1b3ce728",
     "packages": [
         {
             "name": "composer/installers",
@@ -231,11 +231,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "trunk"
+                "reference": "tags/3.06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1675296471"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.06.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -245,15 +245,15 @@
         },
         {
             "name": "wpackagist-plugin/performance-lab",
-            "version": "1.9.0",
+            "version": "2.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/1.9.0"
+                "reference": "tags/2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.1.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.0.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -263,15 +263,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.29",
+            "version": "4.18.31",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.29"
+                "reference": "tags/4.18.31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.29.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.31.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -337,15 +337,15 @@
     "packages-dev": [
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.11.1",
+            "version": "3.11.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.11.1"
+                "reference": "tags/3.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.11.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.11.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
