@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cba28bc07652966511f5f5c1b3ce728",
+    "content-hash": "2b9a7ade9c78c5f3eb5534d2ccbe8962",
     "packages": [
         {
             "name": "composer/installers",
@@ -172,11 +172,11 @@
         },
         {
             "name": "wiregrasswebsites/wp-migrate-db-pro",
-            "version": "2.6.1",
+            "version": "2.6.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.1",
-                "shasum": "c654e075b5b22029e4a70002794f424c1483c066"
+                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.3",
+                "shasum": "8b71f2b834bcce109a2b24a72a868bbc093c664e"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -191,21 +191,39 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "5.0.2",
+            "version": "5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/5.0.2"
+                "reference": "tags/5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.5.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
+        },
+        {
+            "name": "wpackagist-plugin/all-in-one-seo-pack",
+            "version": "4.3.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
+                "reference": "tags/4.3.4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.4.3.4.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
@@ -245,15 +263,15 @@
         },
         {
             "name": "wpackagist-plugin/performance-lab",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/2.0.0"
+                "reference": "tags/2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.0.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.1.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -263,15 +281,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.31",
+            "version": "4.18.36",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.31"
+                "reference": "tags/4.18.36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.31.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.36.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -280,34 +298,16 @@
             "homepage": "https://wordpress.org/plugins/real-media-library-lite/"
         },
         {
-            "name": "wpackagist-plugin/wordpress-seo",
-            "version": "20.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/20.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.20.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
-        },
-        {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.9.3",
+            "version": "1.9.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.9.3"
+                "reference": "tags/1.9.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.9.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.9.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -337,15 +337,15 @@
     "packages-dev": [
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.11.2",
+            "version": "3.12.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.11.2"
+                "reference": "tags/3.12.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.11.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.12.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
