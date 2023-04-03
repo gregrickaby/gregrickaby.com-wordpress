@@ -32,12 +32,6 @@ if ( $seedlet_has_social_nav && $seedlet_has_social_nav_items ) : ?>
 
 <div class="site-info">
 	<p>
-		Copyright &copy; 2008-<?php echo esc_html( gmdate( 'Y' ) ); ?>
-		Greg Rickaby
-		&middot;
-		<a href="https://gregrickaby.com/feed/">RSS feed</a>
-	</p>
-	<p>
 		Unless otherwise noted, all content on this site is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons BY-NC-ND 4.0</a>.
 	</p>
 </div><!-- .site-info -->
