@@ -245,15 +245,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.06",
+            "version": "3.07",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.06"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.06.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1680486783"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
