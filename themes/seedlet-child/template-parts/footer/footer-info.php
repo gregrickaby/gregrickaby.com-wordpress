@@ -33,7 +33,7 @@ if ( $seedlet_has_social_nav && $seedlet_has_social_nav_items ) : ?>
 <div class="site-info">
 	<p>
 		Copyright &copy; 2008-<?php echo esc_html( gmdate( 'Y' ) ); ?>
-		Greg Rickaby.
+		Greg Rickaby
 		&middot;
 		<a href="https://gregrickaby.com/feed/">RSS feed</a>
 	</p>
