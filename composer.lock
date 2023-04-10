@@ -153,11 +153,11 @@
         },
         {
             "name": "wiregrasswebsites/advanced-custom-fields-pro",
-            "version": "6.0.7",
+            "version": "6.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.wiregrasswebsites.com/satispress/advanced-custom-fields-pro/6.0.7",
-                "shasum": "bfb3414e2b58ea8d644183d4bab6bb373da51e0c"
+                "url": "https://packagist.wiregrasswebsites.com/satispress/advanced-custom-fields-pro/6.1.3",
+                "shasum": "d51ffe07f4d8d47d2030bf0959d4e6dbed6e7bc1"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -172,11 +172,11 @@
         },
         {
             "name": "wiregrasswebsites/wp-migrate-db-pro",
-            "version": "2.6.3",
+            "version": "2.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.3",
-                "shasum": "8b71f2b834bcce109a2b24a72a868bbc093c664e"
+                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.4",
+                "shasum": "5d73925c309483c419a618ac59d56346b4ada743"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -227,15 +227,15 @@
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
-            "version": "1.7.1",
+            "version": "1.7.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/limit-login-attempts/",
-                "reference": "tags/1.7.1"
+                "reference": "tags/1.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts.1.7.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts.1.7.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -249,11 +249,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "trunk"
+                "reference": "tags/3.07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1680486783"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.07.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
