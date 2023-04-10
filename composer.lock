@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b9a7ade9c78c5f3eb5534d2ccbe8962",
+    "content-hash": "c19db3209422debe84bafc3d90b6b51a",
     "packages": [
         {
             "name": "composer/installers",
@@ -152,11 +152,11 @@
             "time": "2022-08-20T06:45:11+00:00"
         },
         {
-            "name": "wiregrasswebsites/advanced-custom-fields-pro",
+            "name": "gregrickaby/advanced-custom-fields-pro",
             "version": "6.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.wiregrasswebsites.com/satispress/advanced-custom-fields-pro/6.1.3",
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.3",
                 "shasum": "d51ffe07f4d8d47d2030bf0959d4e6dbed6e7bc1"
             },
             "require": {
@@ -171,11 +171,30 @@
             "homepage": "https://www.advancedcustomfields.com"
         },
         {
-            "name": "wiregrasswebsites/wp-migrate-db-pro",
+            "name": "gregrickaby/all-in-one-seo-pack-pro",
+            "version": "4.3.4.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.4.1",
+                "shasum": "0e56b7b03c65ba8bd4dcf63ec4d4d21196bcaa5b"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "All in One SEO Team",
+                "homepage": "https://aioseo.com/"
+            },
+            "description": "SEO for WordPress. Features like XML Sitemaps, SEO for custom post types, SEO for blogs, business sites, ecommerce sites, and much more. More than 100 million downloads since 2007.",
+            "homepage": "https://aioseo.com/"
+        },
+        {
+            "name": "gregrickaby/wp-migrate-db-pro",
             "version": "2.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.wiregrasswebsites.com/satispress/wp-migrate-db-pro/2.6.4",
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.4",
                 "shasum": "5d73925c309483c419a618ac59d56346b4ada743"
             },
             "require": {
@@ -188,6 +207,25 @@
             },
             "description": "Migrate between any two environments. Push, pull, and export full sites. Find and replace content including serialized data. Import and back up the database.",
             "homepage": "https://deliciousbrains.com/wp-migrate-db-pro/"
+        },
+        {
+            "name": "gregrickaby/wpforms",
+            "version": "1.8.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.1",
+                "shasum": "ea61299f27a27554b1c79fb8580b4ccded1146c7"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "WPForms",
+                "homepage": "https://wpforms.com"
+            },
+            "description": "Beginner friendly WordPress contact form plugin. Use our Drag & Drop form builder to create your WordPress forms.",
+            "homepage": "https://wpforms.com"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -206,24 +244,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/all-in-one-seo-pack",
-            "version": "4.3.4.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/all-in-one-seo-pack/",
-                "reference": "tags/4.3.4.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-seo-pack.4.3.4.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/all-in-one-seo-pack/"
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts",
@@ -362,7 +382,7 @@
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "8.0"
+        "php": "8.1"
     },
     "plugin-api-version": "2.3.0"
 }

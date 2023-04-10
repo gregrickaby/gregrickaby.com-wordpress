@@ -1,9 +1,9 @@
 {
-  "name": "gregrickaby/dotcom",
-  "description": "My personal website.",
+  "name": "gregrickaby/blog",
+  "description": "My blog.",
   "type": "project",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://gregrickaby.com",
+  "homepage": "https://blog.gregrickaby.com",
   "authors": [
     {
       "name": "Greg Rickaby",
@@ -13,7 +13,7 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://packagist.wiregrasswebsites.com/satispress/"
+      "url": "https://packages.gregrickaby.com/satispress/"
     },
     {
       "type": "composer",
@@ -23,7 +23,7 @@
   "config": {
     "process-timeout": 600,
     "platform": {
-      "php": "8.0"
+      "php": "8.1"
     },
     "allow-plugins": {
       "composer/installers": true,
@@ -44,16 +44,17 @@
     }
   },
   "require": {
-    "wiregrasswebsites/advanced-custom-fields-pro": "^6.0",
-    "wiregrasswebsites/wp-migrate-db-pro": "^2.5",
+    "gregrickaby/advanced-custom-fields-pro": "^6.0",
+    "gregrickaby/all-in-one-seo-pack-pro": "^4.0",
+    "gregrickaby/wp-migrate-db-pro": "^2.5",
+    "gregrickaby/wpforms": "^1.0",
     "wpackagist-plugin/akismet": "^5.0",
     "wpackagist-plugin/limit-login-attempts": "^1.0",
     "wpackagist-plugin/media-library-assistant": "^3.0",
     "wpackagist-plugin/performance-lab": "^2.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-plugin/wp-super-cache": "^1.9",
-    "wpackagist-theme/seedlet": "^1.0",
-    "wpackagist-plugin/all-in-one-seo-pack": "4.3.4.1"
+    "wpackagist-theme/seedlet": "^1.0"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "^3.0"
