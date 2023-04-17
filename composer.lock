@@ -153,11 +153,11 @@
         },
         {
             "name": "gregrickaby/advanced-custom-fields-pro",
-            "version": "6.1.3",
+            "version": "6.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.3",
-                "shasum": "d51ffe07f4d8d47d2030bf0959d4e6dbed6e7bc1"
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.4",
+                "shasum": "27f18e9e7b1b461d0eb98a818f9fdcac5440eb80"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.4.1",
+            "version": "4.3.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.4.1",
-                "shasum": "0e56b7b03c65ba8bd4dcf63ec4d4d21196bcaa5b"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.5.1",
+                "shasum": "8fc97895394c78c9ccfda85da3a83707532c3bd9"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -210,11 +210,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.1.1",
+            "version": "1.8.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.1",
-                "shasum": "ea61299f27a27554b1c79fb8580b4ccded1146c7"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.2",
+                "shasum": "9218e70669c83434bfe6c43bafe6dd00ffeb7866"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
