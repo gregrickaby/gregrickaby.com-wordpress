@@ -27,7 +27,4 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer default-max-width">
-		<?php seedlet_entry_meta_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-${ID} -->
