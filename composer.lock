@@ -195,7 +195,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.4",
-                "shasum": "5d73925c309483c419a618ac59d56346b4ada743"
+                "shasum": "a351e601a247a5e16625132cd8e5b39895af2963"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -214,7 +214,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.2",
-                "shasum": "9218e70669c83434bfe6c43bafe6dd00ffeb7866"
+                "shasum": "b816080bd57623c3c765b27750328a28842f607c"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -283,15 +283,15 @@
         },
         {
             "name": "wpackagist-plugin/performance-lab",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/2.1.0"
+                "reference": "tags/2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.1.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.2.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.36",
+            "version": "4.18.37",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.36"
+                "reference": "tags/4.18.37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.36.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.37.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
