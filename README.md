@@ -1,3 +1,3 @@
 # My blog
 
-<https://blog.gregrickaby.com>
+<https://gregrickaby.com/blog>
