@@ -52,6 +52,8 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 <div <?php echo \esc_attr( $anchor ); ?> class="<?php echo \esc_attr( $class_name ); ?>">
+	<div class="grd-acf-block-grid">
+		<div class="grd-acf-block-grid-sizer"></div>
 	<?php
 
 	// Loop through photos.
@@ -97,13 +99,10 @@ if ( ! empty( $block['align'] ) ) {
 				data-srcset="<?php echo \esc_attr( $srcset ); ?>"
 				href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 			>
-			<?php echo \wp_get_attachment_image( $photo_id ); ?>
-			<?php if ( $caption ) : ?>
-				<figcaption class="grd-acf-block-caption"><?php echo \esc_html( $caption ); ?></figcaption>
-			<?php endif; ?>
+			<?php echo \wp_get_attachment_image( $photo_id, 'medium' ); ?>
 			</a>
-		</figure>
-
+		</figure><!-- .grd-acf-block-image -->
 	<?php endforeach; ?>
-</div>
+	</div><!-- .grd-acf-block-grid -->
+</div><!-- .grd-acf-block-gallery -->
 <?php

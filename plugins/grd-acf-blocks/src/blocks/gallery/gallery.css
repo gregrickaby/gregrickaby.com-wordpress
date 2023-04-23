@@ -1,19 +1,20 @@
-.grd-acf-block-gallery {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
+/* Make the .alignwide gallery a little wider */
+.grd-acf-block-gallery.alignwide {
+  max-width: calc(100% - 30%);
 }
 
-.grd-acf-block-image {
-  max-width: 300px;
+/* These values are passed to Masonry */
+.grd-acf-block-image,
+.grd-acf-block-grid-sizer {
+  width: 20%;
 }
 
+/* Center the captions inside Fancybox */
 .fancybox__caption {
   text-align: center;
 }
 
+/* Make the caption text smaller */
 .fancybox__caption .exif {
   font-size: 12px;
 }
