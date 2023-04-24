@@ -1,7 +1,7 @@
 {
   "name": "@gregrickaby/acf-blocks",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Custom ACF Blocks for WordPress",
   "author": "Greg Rickaby <greg@gregrickaby.com>",
   "license": "GPL-2.0-or-later",

@@ -5,6 +5,8 @@
  * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
  * @see https://www.advancedcustomfields.com/resources/acf_register_block_type/
  * @see https://fancyapps.com/docs/ui/fancybox
+ * @see https://masonry.desandro.com/
+ * @see https://imagesloaded.desandro.com/
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
