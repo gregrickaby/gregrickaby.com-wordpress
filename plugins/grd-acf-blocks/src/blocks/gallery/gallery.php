@@ -34,26 +34,11 @@ $photos = \get_field( 'photos' );
 if ( empty( $photos ) ) {
 	return;
 }
-
-// Support custom "anchor" values.
-$anchor = '';
-if ( ! empty( $block['anchor'] ) ) {
-	$anchor = 'id="' . \esc_attr( $block['anchor'] ) . '" ';
-}
-
-// Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'grd-acf-block-gallery';
-if ( ! empty( $block['className'] ) ) {
-	$class_name .= ' ' . $block['className'];
-}
-if ( ! empty( $block['align'] ) ) {
-	$class_name .= ' align' . $block['align'];
-}
 ?>
 
-<div <?php echo \esc_attr( $anchor ); ?> class="<?php echo \esc_attr( $class_name ); ?>">
+<div id="grd_acf_block_gallery">
 	<div class="grd-acf-block-grid">
-		<div class="grd-acf-block-grid-sizer"></div>
+		<div class="grd-acf-block-grid__sizer"></div>
 	<?php
 
 	// Loop through photos.
@@ -91,7 +76,7 @@ if ( ! empty( $block['align'] ) ) {
 		)
 		?>
 
-		<figure class="grd-acf-block-image">
+		<figure class="grd-acf-block__image">
 			<a
 				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
 				data-fancybox
@@ -101,8 +86,12 @@ if ( ! empty( $block['align'] ) ) {
 			>
 			<?php echo \wp_get_attachment_image( $photo_id, 'medium' ); ?>
 			</a>
-		</figure><!-- .grd-acf-block-image -->
+
+			<?php if ( $caption ) : ?>
+				<figcaption class="grd-acf-block__image_caption"><?php echo \esc_html( $caption ); ?></figcaption>
+			<?php endif; ?>
+		</figure><!-- .grd-acf-block__image -->
 	<?php endforeach; ?>
 	</div><!-- .grd-acf-block-grid -->
-</div><!-- .grd-acf-block-gallery -->
+</div><!-- #grd_acf_block_gallery-->
 <?php
