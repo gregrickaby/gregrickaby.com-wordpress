@@ -17,6 +17,9 @@
     "postTypes": ["post"]
   },
   "supports": {
-    "anchor": true
+    "anchor": false,
+    "align": false,
+    "className": false,
+    "customClassName": false
   }
 }
