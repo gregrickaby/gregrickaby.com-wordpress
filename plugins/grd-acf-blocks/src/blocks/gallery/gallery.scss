@@ -1,0 +1,41 @@
+/* The primary container for the gallery. */
+#grd_acf_block_gallery {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  /* These values are passed to Masonry. */
+  .grd-acf-block__image,
+  .grd-acf-block-grid__sizer {
+    padding: 12px;
+    width: 33%;
+  }
+
+  /* Optional captions. */
+  .grd-acf-block__image_caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    color: #fff;
+    display: none;
+    padding: 12px;
+    position: absolute;
+    max-width: 90%;
+    text-align: left;
+  }
+
+  /* Display the caption on hover. */
+  .grd-acf-block__image:hover {
+    .grd-acf-block__image_caption {
+      display: block;
+    }
+  }
+}
+
+/* Center the captions inside Fancybox */
+.fancybox__caption {
+  text-align: center;
+
+  /* Make the caption text smaller */
+  & .exif {
+    font-size: 12px;
+  }
+}
