@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.5.1",
+            "version": "4.3.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.5.1",
-                "shasum": "8fc97895394c78c9ccfda85da3a83707532c3bd9"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.6.1",
+                "shasum": "c85e6a4f37b9784276f00c92c8431ebbad5ca44b"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
-            "version": "2.6.4",
+            "version": "2.6.5",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.4",
-                "shasum": "a351e601a247a5e16625132cd8e5b39895af2963"
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.5",
+                "shasum": "37aab3cebd72da06e0e9b7add56ff58ef4db9fe1"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.37",
+            "version": "4.18.38",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.37"
+                "reference": "tags/4.18.38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.37.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.38.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
