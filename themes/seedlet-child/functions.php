@@ -37,4 +37,4 @@ function scripts() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\scripts', 9999 );
