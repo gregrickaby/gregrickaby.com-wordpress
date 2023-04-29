@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Download WordPress for PHP Intelephense stubbing.
+npx degit wordpress/wordpress ./.stubs/wordpress --force
+
+# Install project dependencies.
+npm i
+composer install
+cd plugins/grd-acf-blocks
+npm i
+composer install
+cd ../../
+cd themes/seedlet-child
+npm i
+composer install
+cd ../../
+
+# Start the environment.
+npm start
+
+# Activate plugins and the theme.
+npx wp-env run cli wp plugin activate --all
+npx wp-env run cli wp theme activate seedlet-child
