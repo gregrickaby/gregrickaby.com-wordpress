@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c19db3209422debe84bafc3d90b6b51a",
+    "content-hash": "672ea207f525689b553d92efaea85995",
     "packages": [
         {
             "name": "composer/installers",
@@ -301,39 +301,21 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.18.38",
+            "version": "4.19.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.18.38"
+                "reference": "tags/4.19.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.18.38.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.19.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/real-media-library-lite/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.9.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.9.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.9.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-super-cache/"
         },
         {
             "name": "wpackagist-theme/seedlet",
@@ -357,15 +339,15 @@
     "packages-dev": [
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.12.1",
+            "version": "3.12.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.12.1"
+                "reference": "tags/3.12.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.12.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.12.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

@@ -1,9 +1,9 @@
 {
-  "name": "gregrickaby/blog",
+  "name": "gregrickaby/gregrickaby.com-blog",
   "description": "My blog.",
   "type": "project",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://blog.gregrickaby.com",
+  "homepage": "https://gregrickaby.com/blog",
   "authors": [
     {
       "name": "Greg Rickaby",
@@ -53,7 +53,6 @@
     "wpackagist-plugin/media-library-assistant": "^3.0",
     "wpackagist-plugin/performance-lab": "^2.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
-    "wpackagist-plugin/wp-super-cache": "^1.9",
     "wpackagist-theme/seedlet": "^1.0"
   },
   "require-dev": {
