@@ -76,4 +76,4 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_PATH }}
-          EXCLUDE: "php.ini,.wpe-env.json,.env,.phpcs.xml,gregrickaby.com-blog.code-workspace,install,.htaccess,README.md,.git*,.gitattributes,.github/,.vscode/,.gitignore,advanced-cache.php,auth.json,cache/,composer.json,composer.lock,db.php,debug.log,mu-plugins/mu-plugin.php,mysql.sql,node_modules/,object-cache.php,package-lock.json,package.json,themes/twenty*,upgrade/,uploads/,wp-cache-config.php"
+          EXCLUDE: "php.ini,.wpe-env.json,.env,.phpcs.xml,gregrickaby.com.code-workspace,install,.htaccess,README.md,.git*,.gitattributes,.github/,.vscode/,.gitignore,advanced-cache.php,auth.json,cache/,composer.json,composer.lock,db.php,debug.log,mu-plugins/mu-plugin.php,mysql.sql,node_modules/,object-cache.php,package-lock.json,package.json,themes/twenty*,upgrade/,uploads/,wp-cache-config.php"
