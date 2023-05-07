@@ -1,9 +1,9 @@
 {
-  "name": "gregrickaby/gregrickaby.com-blog",
-  "description": "My blog.",
+  "name": "gregrickaby/gregrickaby.com",
+  "description": "My blog",
   "type": "project",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://gregrickaby.com/blog",
+  "homepage": "https://gregrickaby.com/",
   "authors": [
     {
       "name": "Greg Rickaby",
