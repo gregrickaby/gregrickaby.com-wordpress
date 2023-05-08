@@ -2,15 +2,14 @@
  * Custom styles.
  */
 :root {
-  /* dark mode */
-  --global--color-background-dark: #1f1f1f;
-  --global--color-foreground-dark: #fff;
-
   /* make wide width a little wider */
   --responsive--alignwide-width: min(
     calc(100vw - 2 * var(--global--spacing-horizontal)),
     990px
   );
+
+  /* wpforms */
+  --wpforms-field-border-radius: 0 !important; /* stylelint-disable-line */
 }
 
 /* center all titles */
@@ -96,6 +95,11 @@ li {
   word-wrap: break-word;
 }
 
+/* wpforms */
+.wpforms-container .wpforms-field-label {
+  font-weight: 400;
+}
+
 /* remove float from alignright images */
 @media screen and (max-width: 652px) {
   .wp-block-image .alignright {
@@ -105,76 +109,25 @@ li {
 
 /* dark mode */
 @media (prefers-color-scheme: dark) {
-  body,
-  .primary-navigation > div {
-    background: var(--global--color-background-dark);
-    color: var(--global--color-foreground-dark);
-  }
+  :root {
+    --global--color-background: #2b2b2b;
+    --global--color-foreground: #fff;
+    --global--color-tertiary: #3a3a3a;
 
-  .site-title,
-  .site-title a:link {
-    color: var(--global--color-foreground-dark);
-    text-shadow: 1px 0px 0px var(--global--color-background-dark);
-  }
+    --global--color-border: var(--global--color-tertiary);
+    --global--color-primary: var(--global--color-foreground);
+    --global--color-foreground-low-contrast: var(--global--color-foreground);
+    --global--color-background-dark: var(--global--color-background);
 
-  .menu-button-container .button,
-  .primary-navigation .menu-item > a,
-  .pagination .nav-links > *,
-  .navigation a,
-  .social-navigation a,
-  .entry-footer a,
-  a {
-    color: var(--global--color-foreground-dark);
+    --form--background-color: var(--global--color-foreground);
+    --form--color-text: var(--global--color-background);
+    --form--border-color: var(--global--color-tertiary);
 
-    &:visited,
-    &:active {
-      color: var(--global--color-foreground-dark);
-    }
-
-    &:hover {
-      color: var(--global--color-foreground-dark);
-    }
-  }
-
-  .site-description,
-  .entry-title,
-  .site-footer > .site-info,
-  .page-title,
-  .wp-block-image figcaption,
-  .post-navigation .meta-nav,
-  .comment-meta .comment-metadata,
-  .wp-block-preformatted,
-  .wp-block-code code,
-  .entry-footer,
-  div.wpforms-container-full .wpforms-field-label {
-    color: var(--global--color-foreground-dark);
-  }
-
-  .wp-block-preformatted,
-  .wp-block-code code {
-    background: #2b2b2b3f;
-  }
-
-  input[type='text'],
-  input[type='email'],
-  input[type='url'],
-  input[type='password'],
-  input[type='search'],
-  input[type='number'],
-  input[type='tel'],
-  input[type='range'],
-  input[type='date'],
-  input[type='month'],
-  input[type='week'],
-  input[type='time'],
-  input[type='datetime'],
-  input[type='datetime-local'],
-  input[type='color'],
-  textarea {
-    color: var(--global--color-foreground-dark);
-
-    &:focus {
-      color: var(--global--color-foreground-dark);
-    }
+    --wpforms-label-color: var(
+      --global--color-primary
+    ) !important; /* stylelint-disable-line */
+    --wpforms-label-sublabel-color: var(
+      --global--color-primary
+    ) !important; /* stylelint-disable-line */
   }
 }
