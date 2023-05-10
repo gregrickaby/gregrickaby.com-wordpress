@@ -42,8 +42,11 @@ li {
 }
 
 .site-info p {
-  font-size: 0.75rem;
   margin-bottom: var(--global--spacing-vertical);
+
+  &.license {
+    font-size: 0.75em;
+  }
 }
 
 /* style the article grid */
