@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.6.1",
+            "version": "4.3.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.6.1",
-                "shasum": "c85e6a4f37b9784276f00c92c8431ebbad5ca44b"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.7",
+                "shasum": "22f0817b82536e983a7abb6026cc4049cd4e71e4"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
-            "version": "2.6.5",
+            "version": "2.6.6",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.5",
-                "shasum": "37aab3cebd72da06e0e9b7add56ff58ef4db9fe1"
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.6",
+                "shasum": "59f07da20510b0e7beefdc33e2effcce4924a435"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
