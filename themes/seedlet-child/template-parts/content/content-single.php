@@ -14,12 +14,12 @@ $seedlet_hide_featured_img = get_field( 'hide_featured_image' );
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header default-max-width">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( ! is_page() ) : ?>
 		<div class="entry-meta">
-			<?php seedlet_entry_meta_header(); ?>
+			<?php the_date(); ?>
 		</div><!-- .meta-info -->
 		<?php endif; ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
 	<?php ( $seedlet_hide_featured_img ) ? '' : seedlet_post_thumbnail(); ?>
