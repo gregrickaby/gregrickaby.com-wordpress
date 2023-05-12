@@ -24,6 +24,11 @@
   border: none;
 }
 
+.entry-meta {
+  font-size: var(--global--font-size-sm);
+  text-align: center;
+}
+
 /* various spacing adjustments */
 .page-header {
   margin-bottom: var(--global--spacing-vertical);
@@ -101,6 +106,16 @@ li {
 /* wpforms */
 .wpforms-container .wpforms-field-label {
   font-weight: 400;
+}
+
+@media only screen and (min-width: 482px) {
+  .site-main > article > .entry-header {
+    margin-bottom: calc(var(--global--spacing-vertical) * 3);
+
+    .entry-title {
+      font-size: var(--global--font-size-xxxl);
+    }
+  }
 }
 
 /* remove float from alignright images */
