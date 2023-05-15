@@ -283,15 +283,15 @@
         },
         {
             "name": "wpackagist-plugin/performance-lab",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/2.2.0"
+                "reference": "tags/2.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.3.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.19.0",
+            "version": "4.19.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.19.0"
+                "reference": "tags/4.19.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.19.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.19.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
