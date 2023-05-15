@@ -57,14 +57,14 @@ jobs:
         run: |
           cd ${{ env.THEME_DIR }}
           composer install
-          npm i --ignore-scripts
+          npm i --ignore-scripts --legacy-peer-deps
           npm run build
 
       - name: Build Plugin
         run: |
           cd ${{ env.PLUGIN_DIR }}
           composer install
-          npm i --ignore-scripts
+          npm i --ignore-scripts --legacy-peer-deps
           npm run build
 
       - name: Deploy to Production
