@@ -51,7 +51,7 @@ jobs:
       - name: Install Theme Dependencies
         run: |
           composer install
-          npm i --ignore-scripts
+          npm i --ignore-scripts --legacy-peer-deps
 
       - name: Lint Theme
         run: npm run lint
