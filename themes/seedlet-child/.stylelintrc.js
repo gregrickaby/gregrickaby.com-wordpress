@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['stylelint-config-prettier'],
+  extends: ['@wordpress/stylelint-config/scss', 'stylelint-config-prettier'],
   rules: {
     'at-rule-empty-line-before': null,
     'declaration-colon-newline-after': null,
@@ -7,6 +7,7 @@ module.exports = {
     'function-parentheses-space-inside': null,
     'no-descending-specificity': null,
     'string-quotes': 'single',
-    'selector-pseudo-class-parentheses-space-inside': null
+    'selector-pseudo-class-parentheses-space-inside': null,
+    'rule-empty-line-before': null
   }
 }

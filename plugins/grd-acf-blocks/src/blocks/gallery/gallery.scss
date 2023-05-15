@@ -1,17 +1,17 @@
 /* The primary container for the gallery. */
-#grd_acf_block_gallery {
+#grd-acf-block-gallery {
   margin: 0 auto;
   max-width: 1200px;
 
   /* These values are passed to Masonry. */
-  .grd-acf-block__image,
-  .grd-acf-block-grid__sizer {
+  .grd-acf-block-image,
+  .grd-acf-block-grid-sizer {
     padding: 12px;
     width: 33%;
   }
 
   /* Optional captions. */
-  .grd-acf-block__image_caption {
+  .grd-acf-block-image-caption {
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
     color: #fff;
@@ -23,19 +23,19 @@
   }
 
   /* Display the caption on hover. */
-  .grd-acf-block__image:hover {
-    .grd-acf-block__image_caption {
+  .grd-acf-block-image:hover {
+    .grd-acf-block-image-caption {
       display: block;
     }
   }
 }
 
 /* Center the captions inside Fancybox */
-.fancybox__caption {
+.fancybox-caption {
   text-align: center;
 
   /* Make the caption text smaller */
-  & .exif {
+  .exif {
     font-size: 12px;
   }
 }

@@ -9,6 +9,14 @@
     "acf",
     "blocks"
   ],
+  "homepage": "https://github.com/gregrickaby/gregrickaby.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregrickaby/gregrickaby.com"
+  },
+  "bugs": {
+    "url": "https://github.com/gregrickaby/gregrickaby.com/issues"
+  },
   "main": "build/index.js",
   "dependencies": {
     "@fancyapps/ui": "4.0.31",

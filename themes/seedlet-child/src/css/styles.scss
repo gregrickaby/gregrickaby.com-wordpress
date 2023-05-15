@@ -2,13 +2,11 @@
  * Custom styles.
  */
 :root {
-  /* make wide width a little wider */
   --responsive--alignwide-width: min(
     calc(100vw - 2 * var(--global--spacing-horizontal)),
     990px
   );
 
-  /* wpforms */
   --wpforms-field-border-radius: 0 !important; /* stylelint-disable-line */
 }
 
@@ -63,9 +61,7 @@ li {
   justify-content: center;
   margin: 0 auto;
   max-width: 960px;
-}
 
-.article-grid {
   .entry-title {
     font-size: var(--global--font-size-xl);
     text-align: left;

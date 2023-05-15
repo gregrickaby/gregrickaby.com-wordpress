@@ -38,9 +38,9 @@ if ( empty( $photos ) ) {
 }
 ?>
 
-<div id="grd_acf_block_gallery">
+<div id="grd-acf-block-gallery">
 	<div class="grd-acf-block-grid">
-		<div class="grd-acf-block-grid__sizer"></div>
+		<div class="grd-acf-block-grid-sizer"></div>
 	<?php
 
 	// Loop through photos.
@@ -78,7 +78,7 @@ if ( empty( $photos ) ) {
 		)
 		?>
 
-		<figure class="grd-acf-block__image">
+		<figure class="grd-acf-block-image">
 			<a
 				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
 				data-fancybox
@@ -90,7 +90,7 @@ if ( empty( $photos ) ) {
 			</a>
 
 			<?php if ( $caption ) : ?>
-				<figcaption class="grd-acf-block__image_caption"><?php echo \esc_html( $caption ); ?></figcaption>
+				<figcaption class="grd-acf-block-image-caption"><?php echo \esc_html( $caption ); ?></figcaption>
 			<?php endif; ?>
 		</figure><!-- .grd-acf-block__image -->
 	<?php endforeach; ?>

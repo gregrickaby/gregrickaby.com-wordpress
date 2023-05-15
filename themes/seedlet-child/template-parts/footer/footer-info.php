@@ -31,7 +31,7 @@ if ( $seedlet_has_social_nav && $seedlet_has_social_nav_items ) : ?>
 <?php endif; ?>
 
 <div class="site-info">
-	<p>&copy; 2007-<?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?></p>
+	<p>&copy; 2007-<?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?></p>
 	<p class="license">
 		Unless otherwise noted, all content on this site is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license">Creative Commons BY-NC-ND 4.0</a>.
 	</p>
