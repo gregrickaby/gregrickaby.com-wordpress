@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
    * @see https://masonry.desandro.com/options.html
    */
   const masonryGrid = new Masonry(gallery, {
-    itemSelector: '.grd-acf-block__image',
-    columnWidth: '.grd-acf-block-grid__sizer',
+    itemSelector: '.grd-acf-block-image',
+    columnWidth: '.grd-acf-block-grid-sizer',
     percentPosition: true
   })
 

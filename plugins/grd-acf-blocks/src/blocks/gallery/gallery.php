@@ -38,7 +38,7 @@ if ( empty( $photos ) ) {
 }
 ?>
 
-<div id="grd-acf-block-gallery">
+<div class="grd-acf-block-gallery">
 	<div class="grd-acf-block-grid">
 		<div class="grd-acf-block-grid-sizer"></div>
 	<?php
