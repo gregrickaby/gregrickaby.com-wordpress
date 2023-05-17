@@ -38,7 +38,7 @@ if ( empty( $photos ) ) {
 }
 ?>
 
-<div class="grd-acf-block-gallery">
+<div id="grd-acf-block-gallery">
 	<div class="grd-acf-block-grid">
 		<div class="grd-acf-block-grid-sizer"></div>
 	<?php
@@ -90,7 +90,17 @@ if ( empty( $photos ) ) {
 			</a>
 
 			<?php if ( $caption ) : ?>
-				<figcaption class="grd-acf-block-image-caption"><?php echo \esc_html( $caption ); ?></figcaption>
+				<figcaption class="grd-acf-block-image-caption">
+					<a
+						data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
+						data-fancybox
+						data-slug="<?php echo \esc_attr( $photo_id ); ?>"
+						data-srcset="<?php echo \esc_attr( $srcset ); ?>"
+						href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
+					>
+					<?php echo \esc_html( $caption ); ?>
+					</a>
+				</figcaption>
 			<?php endif; ?>
 		</figure><!-- .grd-acf-block__image -->
 	<?php endforeach; ?>
