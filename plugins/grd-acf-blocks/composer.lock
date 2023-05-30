@@ -1828,16 +1828,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.23",
+            "version": "v5.4.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "90f21e27d0d88ce38720556dd164d4a1e4c3934c"
+                "reference": "560fc3ed7a43e6d30ea94a07d77f9a60b8ed0fb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/90f21e27d0d88ce38720556dd164d4a1e4c3934c",
-                "reference": "90f21e27d0d88ce38720556dd164d4a1e4c3934c",
+                "url": "https://api.github.com/repos/symfony/console/zipball/560fc3ed7a43e6d30ea94a07d77f9a60b8ed0fb8",
+                "reference": "560fc3ed7a43e6d30ea94a07d77f9a60b8ed0fb8",
                 "shasum": ""
             },
             "require": {
@@ -1907,7 +1907,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.4.23"
+                "source": "https://github.com/symfony/console/tree/v5.4.24"
             },
             "funding": [
                 {
@@ -1923,7 +1923,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-24T18:47:29+00:00"
+            "time": "2023-05-26T05:13:16+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -2613,16 +2613,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v6.2.10",
+            "version": "v6.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "b34cdbc9c5e75d45a3703e63a48ad07aafa8bf2e"
+                "reference": "97ae9721bead9d1a39b5650e2f4b7834b93b539c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/b34cdbc9c5e75d45a3703e63a48ad07aafa8bf2e",
-                "reference": "b34cdbc9c5e75d45a3703e63a48ad07aafa8bf2e",
+                "url": "https://api.github.com/repos/symfony/process/zipball/97ae9721bead9d1a39b5650e2f4b7834b93b539c",
+                "reference": "97ae9721bead9d1a39b5650e2f4b7834b93b539c",
                 "shasum": ""
             },
             "require": {
@@ -2654,7 +2654,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v6.2.10"
+                "source": "https://github.com/symfony/process/tree/v6.2.11"
             },
             "funding": [
                 {
@@ -2670,7 +2670,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-18T13:56:57+00:00"
+            "time": "2023-05-19T07:42:48+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -2920,16 +2920,16 @@
         },
         {
             "name": "wp-cli/checksum-command",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/checksum-command.git",
-                "reference": "1a44dfbd3f962283a93ba547142300c98956d811"
+                "reference": "18e31d61216f1195eaceb945cca92a1dcccf0fbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/1a44dfbd3f962283a93ba547142300c98956d811",
-                "reference": "1a44dfbd3f962283a93ba547142300c98956d811",
+                "url": "https://api.github.com/repos/wp-cli/checksum-command/zipball/18e31d61216f1195eaceb945cca92a1dcccf0fbe",
+                "reference": "18e31d61216f1195eaceb945cca92a1dcccf0fbe",
                 "shasum": ""
             },
             "require": {
@@ -2973,9 +2973,9 @@
             "homepage": "https://github.com/wp-cli/checksum-command",
             "support": {
                 "issues": "https://github.com/wp-cli/checksum-command/issues",
-                "source": "https://github.com/wp-cli/checksum-command/tree/v2.2.0"
+                "source": "https://github.com/wp-cli/checksum-command/tree/v2.2.1"
             },
-            "time": "2023-03-24T20:57:16+00:00"
+            "time": "2023-05-23T16:58:15+00:00"
         },
         {
             "name": "wp-cli/config-command",
@@ -3052,16 +3052,16 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.1.11",
+            "version": "v2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "e3212a3e18fe4affabc54c76cc6a59f3d8059d24"
+                "reference": "505f92c20b26196803582c45f3bba99f8c8e1952"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/e3212a3e18fe4affabc54c76cc6a59f3d8059d24",
-                "reference": "e3212a3e18fe4affabc54c76cc6a59f3d8059d24",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/505f92c20b26196803582c45f3bba99f8c8e1952",
+                "reference": "505f92c20b26196803582c45f3bba99f8c8e1952",
                 "shasum": ""
             },
             "require": {
@@ -3117,22 +3117,22 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.1.11"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.12"
             },
-            "time": "2023-04-27T09:50:50+00:00"
+            "time": "2023-05-24T10:50:40+00:00"
         },
         {
             "name": "wp-cli/cron-command",
-            "version": "v2.2.1",
+            "version": "v2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/cron-command.git",
-                "reference": "a72c43d49703aa5f458cb64df9065e1540e0e394"
+                "reference": "c63ac49baf425b13a80875e092feaebd9c75c932"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/a72c43d49703aa5f458cb64df9065e1540e0e394",
-                "reference": "a72c43d49703aa5f458cb64df9065e1540e0e394",
+                "url": "https://api.github.com/repos/wp-cli/cron-command/zipball/c63ac49baf425b13a80875e092feaebd9c75c932",
+                "reference": "c63ac49baf425b13a80875e092feaebd9c75c932",
                 "shasum": ""
             },
             "require": {
@@ -3186,9 +3186,9 @@
             "homepage": "https://github.com/wp-cli/cron-command",
             "support": {
                 "issues": "https://github.com/wp-cli/cron-command/issues",
-                "source": "https://github.com/wp-cli/cron-command/tree/v2.2.1"
+                "source": "https://github.com/wp-cli/cron-command/tree/v2.2.2"
             },
-            "time": "2023-02-17T17:03:53+00:00"
+            "time": "2023-05-25T16:11:42+00:00"
         },
         {
             "name": "wp-cli/db-command",
@@ -3333,16 +3333,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.5.0",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "ca979c45ccb69c010bbbd6d4eee9df1ff4c839da"
+                "reference": "4c0b4846baf193d9a3992386b89a381496983eb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/ca979c45ccb69c010bbbd6d4eee9df1ff4c839da",
-                "reference": "ca979c45ccb69c010bbbd6d4eee9df1ff4c839da",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/4c0b4846baf193d9a3992386b89a381496983eb1",
+                "reference": "4c0b4846baf193d9a3992386b89a381496983eb1",
                 "shasum": ""
             },
             "require": {
@@ -3538,9 +3538,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.5.0"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.5.1"
             },
-            "time": "2023-05-18T10:23:46+00:00"
+            "time": "2023-05-30T13:42:30+00:00"
         },
         {
             "name": "wp-cli/eval-command",

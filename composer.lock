@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.7",
+            "version": "4.3.8",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.7",
-                "shasum": "22f0817b82536e983a7abb6026cc4049cd4e71e4"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.8",
+                "shasum": "dc074ea2b30cdb0a9b1abd3e82ec5f99832057fe"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
-            "version": "2.6.6",
+            "version": "2.6.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.6",
-                "shasum": "59f07da20510b0e7beefdc33e2effcce4924a435"
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.7",
+                "shasum": "506d901ebc06ab704e518b7507699cb36c4f7ebe"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -210,11 +210,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.1.2",
+            "version": "1.8.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.2",
-                "shasum": "b816080bd57623c3c765b27750328a28842f607c"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.3",
+                "shasum": "01a50d1c94659bf26e4e5b473e3174147beac46b"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.20.2",
+            "version": "4.20.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.20.2"
+                "reference": "tags/4.20.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.20.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.20.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
