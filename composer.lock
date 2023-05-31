@@ -210,11 +210,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.1.3",
+            "version": "1.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.1.3",
-                "shasum": "01a50d1c94659bf26e4e5b473e3174147beac46b"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.2",
+                "shasum": "606357f84b7503e9caffca1c99b529b1d8bd8a9f"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
