@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
-            "version": "2.6.7",
+            "version": "2.6.8",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.7",
-                "shasum": "506d901ebc06ab704e518b7507699cb36c4f7ebe"
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.8",
+                "shasum": "19b77dd506dd6c5d97d43a1951e377575e1535c3"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
