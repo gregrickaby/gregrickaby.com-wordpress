@@ -1,9 +1,9 @@
 import {Fancybox} from '@fancyapps/ui'
-import Masonry from 'masonry-layout'
+import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import imagesLoaded from 'imagesloaded'
-import '@fancyapps/ui/dist/fancybox.css'
-import {disableRightClick} from './lib/utils'
+import Masonry from 'masonry-layout'
 import './gallery.scss'
+import {disableRightClick} from './lib/utils'
 
 /**
  * Wait for the the initial HTML document to be completely loaded.
@@ -51,20 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
   Fancybox.bind('[data-fancybox]', {
     animated: false,
     groupAll: true,
-    infinite: false,
-    preload: 3,
+    defaultDisplay: 'flex',
     Toolbar: {
-      display: [
-        'zoom',
-        'slideshow',
-        'fullscreen',
-        'download',
-        'thumbs',
-        'close'
-      ]
+      display: {
+        left: ['infobar'],
+        middle: [
+          'zoomIn',
+          'zoomOut',
+          'toggle1to1',
+          'rotateCCW',
+          'rotateCW',
+          'flipX',
+          'flipY'
+        ],
+        right: ['slideshow', 'thumbs', 'download', 'close']
+      }
     },
     on: {
-      load: () => {
+      loaded: () => {
         disableRightClick()
       }
     }

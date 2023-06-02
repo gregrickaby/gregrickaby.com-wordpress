@@ -30,12 +30,14 @@
   }
 }
 
-/* Center the captions inside Fancybox */
-.fancybox-caption {
+/* stylelint-disable */
+/* Center the captions inside Fancybox. */
+.fancybox__caption {
   text-align: center;
 
-  /* Make the caption text smaller */
+  /* Make the caption text smaller. */
   .exif {
     font-size: 12px;
   }
 }
+/* stylelint-enable */
