@@ -4,7 +4,7 @@
   "name": "acf/gallery",
   "title": "ACF Gallery Block",
   "description": "A gallery block powered by ACF's gallery field and Fancybox.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "category": "theme",
   "icon": "format-gallery",
   "textdomain": "acf-blocks",
