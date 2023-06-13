@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.8",
+            "version": "4.3.9.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.8",
-                "shasum": "dc074ea2b30cdb0a9b1abd3e82ec5f99832057fe"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.9.1",
+                "shasum": "646bca007f5baa0d55e65e2c47a996d86acbf6f8"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -210,11 +210,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.2",
+            "version": "1.8.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.2",
-                "shasum": "606357f84b7503e9caffca1c99b529b1d8bd8a9f"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.2.1",
+                "shasum": "6b5a3fb60bb436b53f0b08a17b2e52e22e623cf0"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.20.3",
+            "version": "4.20.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.20.3"
+                "reference": "tags/4.20.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.20.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.20.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
