@@ -83,7 +83,6 @@ if ( empty( $photos ) ) {
 				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
 				data-fancybox
 				data-slug="<?php echo \esc_attr( $photo_id ); ?>"
-				data-srcset="<?php echo \esc_attr( $srcset ); ?>"
 				href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 			>
 			<?php echo \wp_get_attachment_image( $photo_id, 'medium' ); ?>
@@ -93,9 +92,7 @@ if ( empty( $photos ) ) {
 				<figcaption class="grd-acf-block-image-caption">
 					<a
 						data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
-						data-fancybox
 						data-slug="<?php echo \esc_attr( $photo_id ); ?>"
-						data-srcset="<?php echo \esc_attr( $srcset ); ?>"
 						href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 					>
 					<?php echo \esc_html( $caption ); ?>

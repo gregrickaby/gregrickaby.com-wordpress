@@ -3,7 +3,6 @@ import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import imagesLoaded from 'imagesloaded'
 import Masonry from 'masonry-layout'
 import './gallery.scss'
-import {disableRightClick} from './lib/utils'
 
 /**
  * Wait for the the initial HTML document to be completely loaded.
@@ -65,11 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
           'flipY'
         ],
         right: ['slideshow', 'thumbs', 'download', 'close']
-      }
-    },
-    on: {
-      loaded: () => {
-        disableRightClick()
       }
     }
   })
