@@ -31,11 +31,13 @@
 }
 
 /* stylelint-disable */
-/* Center the captions inside Fancybox. */
+.fancybox__container {
+  z-index: 9999;
+}
+
 .fancybox__caption {
   text-align: center;
 
-  /* Make the caption text smaller. */
   .exif {
     font-size: 12px;
   }
