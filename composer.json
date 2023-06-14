@@ -51,7 +51,6 @@
     "wpackagist-plugin/akismet": "^5.0",
     "wpackagist-plugin/limit-login-attempts": "^1.0",
     "wpackagist-plugin/media-library-assistant": "^3.0",
-    "wpackagist-plugin/performance-lab": "^2.0",
     "wpackagist-plugin/real-media-library-lite": "^4.0",
     "wpackagist-theme/seedlet": "^1.0"
   },
