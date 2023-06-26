@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.3.9.1",
+            "version": "4.4.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.3.9.1",
-                "shasum": "646bca007f5baa0d55e65e2c47a996d86acbf6f8"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.0.1",
+                "shasum": "5419af3f17df54466d9bae1abc5a0c7c26744e05"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -229,15 +229,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "5.1",
+            "version": "5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/5.1"
+                "reference": "tags/5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/akismet.5.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -265,15 +265,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.07",
+            "version": "3.08",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.07"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.07.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1687742148"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -283,15 +283,15 @@
         },
         {
             "name": "wpackagist-plugin/performance-lab",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/2.3.0"
+                "reference": "tags/2.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
