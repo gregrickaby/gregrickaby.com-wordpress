@@ -153,11 +153,11 @@
         },
         {
             "name": "gregrickaby/advanced-custom-fields-pro",
-            "version": "6.1.6",
+            "version": "6.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.6",
-                "shasum": "1500f523815c38ab04ee29a7c1f4e40949ad6604"
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.7",
+                "shasum": "f152886de8cf3e560ffa6c77bc5f2cdc865f7999"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.4.0.1",
+            "version": "4.4.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.0.1",
-                "shasum": "5419af3f17df54466d9bae1abc5a0c7c26744e05"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.0.3",
+                "shasum": "bb5e2a014771c1a5d61a62d41b76d433a84a3031"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -210,11 +210,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.2.1",
+            "version": "1.8.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.2.1",
-                "shasum": "6b5a3fb60bb436b53f0b08a17b2e52e22e623cf0"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.2.2",
+                "shasum": "89438af28cdb12cbfddb81f9031b4f4ee8561c49"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -265,7 +265,7 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.08",
+            "version": "3.09",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
@@ -273,7 +273,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1687742148"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1687808931"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
