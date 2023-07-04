@@ -38,11 +38,13 @@ if ( empty( $photos ) ) {
 }
 ?>
 
-<div id="grd-acf-block-gallery">
+<section id="grd-acf-block-gallery">
 	<div class="grd-acf-block-grid">
 		<div class="grd-acf-block-grid-sizer"></div>
 	<?php
 
+	// Start counter.
+	$i = 1;
 	// Loop through photos.
 	foreach ( $photos as $photo ) :
 
@@ -75,32 +77,39 @@ if ( empty( $photos ) ) {
 			'<p>%s</p><span class="exif">%s</span>',
 			$caption,
 			$exif
-		)
+		);
 		?>
 
-		<figure class="grd-acf-block-image">
+		<figure class="grd-acf-block-image" data-image-number="<?php echo esc_attr( $i ); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 			<a
 				data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
 				data-fancybox
 				data-slug="<?php echo \esc_attr( $photo_id ); ?>"
 				href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 			>
-			<?php echo \wp_get_attachment_image( $photo_id, 'medium' ); ?>
+				<?php echo \wp_get_attachment_image( $photo_id, 'medium' ); ?>
 			</a>
 
 			<?php if ( $caption ) : ?>
 				<figcaption class="grd-acf-block-image-caption">
 					<a
 						data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
+						data-fancybox
 						data-slug="<?php echo \esc_attr( $photo_id ); ?>"
 						href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
+						title="<?php echo \esc_attr( $caption ); ?>"
 					>
 					<?php echo \esc_html( $caption ); ?>
 					</a>
 				</figcaption>
 			<?php endif; ?>
-		</figure><!-- .grd-acf-block__image -->
-	<?php endforeach; ?>
-	</div><!-- .grd-acf-block-grid -->
-</div><!-- #grd_acf_block_gallery-->
+		</figure>
+		<?php
+		// Increment counter.
+		$i++;
+
+		endforeach;
+	?>
+	</div>
+</section>
 <?php

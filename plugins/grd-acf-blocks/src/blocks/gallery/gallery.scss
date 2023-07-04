@@ -1,32 +1,67 @@
 /* The primary container for the gallery. */
 #grd-acf-block-gallery {
   margin: 0 auto;
-  max-width: 1200px;
 
-  /* These values are passed to Masonry. */
+  /* These values are passed to Masonry! */
   .grd-acf-block-image,
   .grd-acf-block-grid-sizer {
-    padding: 12px;
-    width: 33%;
+    margin-bottom: 24px;
+    width: 98%;
+  }
+
+  @media screen and (min-width: 768px) {
+    .grd-acf-block-image,
+    .grd-acf-block-grid-sizer {
+      width: 45%;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .grd-acf-block-image,
+    .grd-acf-block-grid-sizer {
+      width: 30%;
+    }
+  }
+
+  @media screen and (min-width: 1360px) {
+    .grd-acf-block-image,
+    .grd-acf-block-grid-sizer {
+      width: 31.777%;
+    }
+  }
+
+  /* Each image. */
+  .grd-acf-block-image {
+    a {
+      cursor: zoom-in;
+    }
+
+    /* Make the image a bit more interesting. */
+    img {
+      backface-visibility: hidden;
+      border-radius: 3px;
+      box-shadow: none;
+      transition: all 0.2s linear;
+
+      /* Scale image and add box shadow. */
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 0;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+      }
+    }
   }
 
   /* Optional captions. */
   .grd-acf-block-image-caption {
-    background-color: rgba(0, 0, 0, 0.7);
-    bottom: 0;
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 4px;
     color: #fff;
-    display: none;
     padding: 12px;
     position: absolute;
     max-width: 90%;
     text-align: left;
-  }
-
-  /* Display the caption on hover. */
-  .grd-acf-block-image:hover {
-    .grd-acf-block-image-caption {
-      display: block;
-    }
   }
 }
 
