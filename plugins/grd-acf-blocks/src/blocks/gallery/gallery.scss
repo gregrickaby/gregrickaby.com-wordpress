@@ -32,25 +32,25 @@
   /* Each image. */
   .grd-acf-block-image {
     a {
+      color: #fff;
       cursor: zoom-in;
+      text-decoration: none;
     }
 
-    /* Make the image a bit more interesting. */
     img {
       backface-visibility: hidden;
       border-radius: 3px;
       box-shadow: none;
       transition: all 0.2s linear;
+    }
 
-      /* Scale image and add box shadow. */
-      &:hover {
+    &:hover {
+      img {
         border-radius: 0;
         box-shadow: 1px 1px 6px var(--grd-acf-color-transparent);
         transform: scale(1.05);
       }
-    }
 
-    &:hover {
       .grd-acf-block-image-caption {
         opacity: 1;
         visibility: visible;
@@ -64,6 +64,7 @@
     background-color: var(--grd-acf-color-transparent);
     bottom: 4px;
     color: #fff;
+    font-size: 14px;
     font-style: normal;
     max-width: 90%;
     opacity: 0;
