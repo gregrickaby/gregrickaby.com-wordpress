@@ -1,0 +1,175 @@
+# Copyright (C) 2023 Greg Rickaby
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Insta Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/insta\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-07-04T19:41:51+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: insta-theme\n"
+
+#. Theme Name of the theme
+msgid "Insta Theme"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://github.com/gregrickaby/gregrickaby-com/"
+msgstr ""
+
+#. Description of the theme
+msgid "A custom theme for WordPress."
+msgstr ""
+
+#. Author of the theme
+msgid "Greg Rickaby"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://gregrickaby.com"
+msgstr ""
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:22
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:31
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:49
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:36
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:42
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:69
+msgid "Comments are closed."
+msgstr ""
+
+#. translators: %s: creative commons link.
+#: footer.php:24
+msgid "Unless otherwise noted, all content on this site is licensed under %s"
+msgstr ""
+
+#: footer.php:30
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:33
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:85
+msgid "Primary"
+msgstr ""
+
+#: functions.php:158
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:160
+msgid "Add widgets here."
+msgstr ""
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#. translators: %s: post author.
+#: inc/template-tags.php:47
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:64
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:67
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:71
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:74
+msgid "Tagged with %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:84
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:22
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:24
+msgid "👈 Previous Post:"
+msgstr ""
+
+#: single.php:25
+msgid "Next Post:"
+msgstr ""
+
+#: template-parts/content-home.php:37
+msgid "👉 Continue reading"
+msgstr ""
+
+#: template-parts/content-none.php:15
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:45
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:27
+#: template-parts/content.php:55
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:42
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""

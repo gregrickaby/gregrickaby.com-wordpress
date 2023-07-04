@@ -1,0 +1,349 @@
+/* theme custom properties */
+:root {
+  --insta-color-background: #fff;
+  --insta-color-background: color(display-p3 1 1 1);
+  --insta-color-foreground: #2b2b2b;
+  --insta-color-primary: #2b2b2b;
+  --insta-color-secondary: #808080;
+  --insta-color-tertiary: #d5d5d5;
+  --insta-color-code: #f5f5f5;
+
+  --insta-font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
+    roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --insta-font-serif: georgia, cambria, 'Times New Roman', times, serif;
+  --insta-font-mono: menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  --insta-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+
+  --insta-space-xs: 0.25rem;
+  --insta-space-sm: 0.5rem;
+  --insta-space-md: 1.25rem;
+  --insta-space-lg: 2rem;
+  --insta-space-xl: 4rem;
+
+  --insta-font-xs: 0.5rem;
+  --insta-font-sm: 0.75rem;
+  --insta-font-md: 18px;
+  --insta-font-lg: 1.25rem;
+  --insta-font-xl: 1.75rem;
+  --insta-font-xxl: 2rem;
+
+  --insta-alignmedium: min(calc(100vw - 2 * var(--insta-space-md)), 768px);
+  --insta-alignwide: min(calc(100vw - 2 * var(--insta-space-lg)), 990px);
+  --insta-alignfull: min(calc(100vw - 2 * var(--insta-space-xl)), 1280px);
+}
+
+/* --- html reset --- */
+html {
+  font-family: var(--insta-font-sans);
+  font-size: var(--insta-font-md);
+  line-height: 1.65;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--insta-color-primary);
+
+  &:hover {
+    color: var(--insta-color-secondary);
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+optgroup,
+select,
+textarea {
+  padding: var(--insta-space-sm);
+  width: 100%;
+}
+
+/* --- theme layout --- */
+body {
+  background: var(--insta-color-background);
+  color: var(--insta-color-foreground);
+  margin: 0;
+  padding: 0;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  gap: var(--insta-space-lg);
+
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+/* --- header --- */
+.site-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 1024px) {
+    min-width: 210px;
+    padding: 0 var(--insta-space-lg);
+    position: sticky;
+    top: var(--insta-space-xl);
+  }
+
+  .site-branding {
+    @media screen and (min-width: 1024px) {
+      margin: 0 0 var(--insta-space-lg) 0;
+    }
+
+    .site-title {
+      font-size: var(--insta-font-xl);
+      font-weight: 700;
+      margin: 0 0 var(--insta-space-sm) 0;
+
+      a {
+        color: var(--insta-color-primary);
+        text-decoration: none;
+      }
+    }
+
+    .site-description {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .main-navigation {
+    ul {
+      list-style: none;
+      padding: var(--insta-space-sm) var(--insta-space-md);
+      text-align: center;
+
+      @media screen and (min-width: 1024px) {
+        list-style: disc;
+        padding: 0;
+        text-align: left;
+      }
+
+      li {
+        display: inline-flex;
+
+        @media screen and (min-width: 1024px) {
+          display: list-item;
+        }
+
+        a {
+          padding: var(--insta-space-sm) var(--insta-space-xs);
+        }
+      }
+    }
+  }
+}
+
+/* --- content --- */
+.site-main {
+  margin: 0;
+  padding: var(--insta-space-lg);
+
+  @media screen and (min-width: 1024px) {
+    padding: var(--insta-space-lg) var(--insta-space-lg) 0 0;
+  }
+
+  .hentry {
+    border-bottom: 1px solid var(--insta-color-tertiary);
+    margin: 0 0 var(--insta-space-lg) 0;
+    max-width: 880px;
+  }
+
+  .entry-title {
+    font-size: var(--insta-font-xl);
+    margin-top: 0;
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+
+  .entry-meta {
+    font-style: italic;
+    margin: var(--insta-space-md) 0;
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+
+  .updated:not(.published) {
+    display: none;
+  }
+
+  .entry-content {
+    font-size: var(--insta-font-md);
+    margin: 0 auto;
+    max-width: 880px;
+  }
+
+  .wp-block-image.size-medium {
+    max-width: var(--insta-alignmedium);
+    margin: 0 auto;
+  }
+
+  .wide-max-width,
+  .alignwide {
+    max-width: var(--insta-alignwide);
+    margin: 0 auto;
+  }
+
+  figcaption {
+    font-size: var(--insta-font-md);
+    font-style: italic;
+  }
+
+  .wp-block-code {
+    border: none;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+  }
+
+  .wp-block-preformatted,
+  .wp-block-code code {
+    background: var(--insta-color-code);
+    border: 1px solid var(--insta-color-secondary);
+    border-left: 3px solid var(--insta-color-secondary);
+    color: var(--insta-color-foreground);
+    display: block;
+    font-family: var(--insta-font-mono);
+    font-size: var(--insta-font-xs);
+    line-height: var(--insta-line-height-body);
+    margin-bottom: var(--insta-space-md);
+    overflow: auto;
+    padding: var(--insta-space-md);
+    page-break-inside: avoid;
+    white-space: pre;
+    word-wrap: break-word;
+  }
+
+  .wp-block-video video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .entry-footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: var(--insta-space-md) 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--insta-space-lg) 0;
+  }
+}
+
+/*--- comments --- */
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .comment {
+    border-left: 4px solid var(--insta-color-secondary);
+    margin: var(--insta-space-lg) 0;
+    padding-left: var(--insta-space-sm);
+  }
+
+  .comment-meta,
+  .comment-author {
+    align-items: center;
+    display: flex;
+    gap: var(--insta-space-sm);
+    justify-content: space-between;
+  }
+
+  .comment-metadata {
+    font-style: italic;
+  }
+
+  .comment-reply-title {
+    align-items: center;
+    display: flex;
+    font-style: italic;
+    gap: var(--insta-space-lg);
+  }
+}
+
+/* --- footer --- */
+.site-footer {
+  font-size: var(--insta-font-sm);
+  margin: 0;
+  padding: 0 var(--insta-space-lg) var(--insta-space-lg);
+  text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 0 var(--insta-space-lg);
+  }
+}
+
+/* --- accessibility --- */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: var(--insta-color-background);
+  border-radius: 3px;
+  box-shadow: var(--insta-box-shadow);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+#primary[tabindex='-1']:focus {
+  outline: 0;
+}
+
+/* --- dark mode --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --insta-color-background: #2b2b2b;
+    --insta-color-foreground: #fff;
+    --insta-color-foreground: color(display-p3 1 1 1);
+
+    --insta-color-primary: #fff;
+    --insta-color-primary: color(display-p3 1 1 1);
+
+    --insta-color-secondary: #808080;
+    --insta-color-tertiary: #d5d5d5;
+    --insta-color-code: #0f0f0f;
+  }
+}
