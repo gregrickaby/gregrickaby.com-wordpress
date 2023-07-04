@@ -34,6 +34,7 @@ mu-plugins/*
 # theme
 themes/*
 !/themes/seedlet-child/
+!/themes/insta/
 
 # artifacts
 build/
