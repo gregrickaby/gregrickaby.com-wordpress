@@ -1,32 +1,31 @@
-/* The primary container for the gallery. */
+:root {
+  --grd-acf-block-gutter: 24px;
+  --grd-acf-color-transparent: rgba(0, 0, 0, 0.5);
+}
+
 #grd-acf-block-gallery {
   margin: 0 auto;
 
-  /* These values are passed to Masonry! */
+  /* Single column on mobile. */
   .grd-acf-block-image,
   .grd-acf-block-grid-sizer {
-    margin-bottom: 24px;
-    width: 98%;
+    margin-bottom: var(--grd-acf-block-gutter);
+    width: calc(100% - var(--grd-acf-block-gutter));
   }
 
+  /* Two columns on tablet. */
   @media screen and (min-width: 768px) {
     .grd-acf-block-image,
     .grd-acf-block-grid-sizer {
-      width: 45%;
+      width: calc(50% - var(--grd-acf-block-gutter));
     }
   }
 
-  @media screen and (min-width: 960px) {
+  /* Three columns on desktop. */
+  @media screen and (min-width: 1280px) {
     .grd-acf-block-image,
     .grd-acf-block-grid-sizer {
-      width: 30%;
-    }
-  }
-
-  @media screen and (min-width: 1360px) {
-    .grd-acf-block-image,
-    .grd-acf-block-grid-sizer {
-      width: 31.777%;
+      width: calc(33% - var(--grd-acf-block-gutter));
     }
   }
 
@@ -45,9 +44,16 @@
 
       /* Scale image and add box shadow. */
       &:hover {
-        transform: scale(1.05);
         border-radius: 0;
-        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 1px 6px var(--grd-acf-color-transparent);
+        transform: scale(1.05);
+      }
+    }
+
+    &:hover {
+      .grd-acf-block-image-caption {
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -55,13 +61,18 @@
   /* Optional captions. */
   .grd-acf-block-image-caption {
     backface-visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--grd-acf-color-transparent);
     bottom: 4px;
     color: #fff;
+    font-style: normal;
+    max-width: 90%;
+    opacity: 0;
     padding: 12px;
     position: absolute;
-    max-width: 90%;
     text-align: left;
+    text-shadow: 1px 1px 6px var(--grd-acf-color-transparent);
+    transition: all 0.2s linear;
+    visibility: hidden;
   }
 }
 
