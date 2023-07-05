@@ -94,7 +94,6 @@ if ( empty( $photos ) ) {
 				<figcaption class="grd-acf-block-image-caption">
 					<a
 						data-caption="<?php echo \esc_attr( $fancy_caption ); ?>"
-						data-fancybox
 						data-slug="<?php echo \esc_attr( $photo_id ); ?>"
 						href="<?php echo \esc_url( \wp_get_original_image_url( $photo_id ) ); ?>"
 						title="<?php echo \esc_attr( $caption ); ?>"
