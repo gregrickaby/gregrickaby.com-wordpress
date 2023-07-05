@@ -15,6 +15,7 @@
     monospace;
 
   --insta-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  --insta-border-radius: 3px;
 
   --insta-space-xs: 0.25rem;
   --insta-space-sm: 0.5rem;
@@ -61,8 +62,33 @@ input[type='url'],
 optgroup,
 select,
 textarea {
-  padding: var(--insta-space-sm);
+  border-radius: var(--insta-border-radius);
+  border: 1px solid var(--insta-color-tertiary);
+  color: var(--insta-color-foreground);
+  font-size: var(--insta-font-md);
+  font-weight: 400;
+  padding: var(--insta-space-sm) var(--insta-space-sm);
   width: 100%;
+}
+
+input[type='submit'],
+input[type='button'],
+button {
+  background-color: var(--insta-color-primary);
+  border-radius: var(--insta-border-radius);
+  border: none;
+  color: var(--insta-color-background);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--insta-font-md);
+  font-weight: 700;
+  padding: var(--insta-space-sm) var(--insta-space-md);
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--insta-color-secondary);
+  }
 }
 
 /* --- theme layout --- */
@@ -222,7 +248,7 @@ body {
     color: var(--insta-color-foreground);
     display: block;
     font-family: var(--insta-font-mono);
-    font-size: var(--insta-font-xs);
+    font-size: var(--insta-font-sm);
     line-height: var(--insta-line-height-body);
     margin-bottom: var(--insta-space-md);
     overflow: auto;
@@ -279,6 +305,14 @@ body {
     display: flex;
     font-style: italic;
     gap: var(--insta-space-lg);
+  }
+
+  .comment-form {
+    width: 100%;
+
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+    }
   }
 }
 
