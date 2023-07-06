@@ -255,16 +255,21 @@ body {
   .entry-header {
     display: flex;
     flex-direction: column;
-    gap: var(--insta-space-xs);
+    gap: var(--insta-space-md);
     align-items: center;
     justify-content: center;
     margin-bottom: var(--insta-space-lg);
 
     .entry-title {
-      font-size: 3rem;
+      font-size: 2.25rem;
+      line-height: 1;
       margin: 0;
       text-align: center;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+      @media screen and (min-width: 1024px) {
+        font-size: 3.5rem;
+      }
     }
 
     .entry-meta {
@@ -330,8 +335,8 @@ body {
   }
 
   .entry-footer {
-    align-items: center;
     display: flex;
+    gap: var(--insta-space-md);
     justify-content: space-between;
     margin: var(--insta-space-md) 0;
   }
@@ -341,6 +346,12 @@ body {
     justify-content: space-between;
     margin: var(--insta-space-lg) 0;
   }
+}
+
+/* --- font awesome ---*/
+.fa-solid,
+.fa-regular {
+  margin-right: 4px;
 }
 
 /*--- comments --- */
