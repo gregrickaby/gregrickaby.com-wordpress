@@ -34,7 +34,7 @@
 
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
-		<a href="<?php the_permalink(); ?>"><?php esc_html_e( '👉 Continue reading', 'insta-theme' ); ?>...</a>
+		👉 <a class="continue-reading" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Continue reading', 'insta-theme' ); ?>...</a>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
