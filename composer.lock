@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.4.0.3",
+            "version": "4.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.0.3",
-                "shasum": "bb5e2a014771c1a5d61a62d41b76d433a84a3031"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.1",
+                "shasum": "5f76e97ad2ae88e88f1ab9bed7ba01d59f688dc9"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -269,11 +269,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "trunk"
+                "reference": "tags/3.09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1687808931"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.09.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.20.4",
+            "version": "4.21.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.20.4"
+                "reference": "tags/4.21.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.20.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
