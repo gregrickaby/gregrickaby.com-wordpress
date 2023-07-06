@@ -64,25 +64,28 @@ if ( ! function_exists( 'insta_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'insta-theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<p class="cat-links">' . esc_html__( 'Posted in %1$s', 'insta-theme' ) . '</p>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<p class="cat-links"><i class="fa-solid fa-folder-open"></i>' . esc_html__( '%1$s', 'insta-theme' ) . '</p>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'insta-theme' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<p class="tags-links">' . esc_html__( 'Tagged with %1$s', 'insta-theme' ) . '</p>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<p class="tags-links"><i class="fa-solid fa-tag"></i>' . esc_html__( '%1$s', 'insta-theme' ) . '</p>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<p class="comments-link">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'insta-theme' ),
+						__( '<i class="fa-solid fa-comment"></i>Comment<span class="screen-reader-text"> on %s</span>', 'insta-theme' ),
 						[
+							'i'    => array(
+								'class' => array(),
+							),
 							'span' => array(
 								'class' => array(),
 							),
@@ -91,7 +94,7 @@ if ( ! function_exists( 'insta_entry_footer' ) ) :
 					wp_kses_post( get_the_title() )
 				)
 			);
-			echo '</span>';
+			echo '</p>';
 		}
 	}
 endif;
