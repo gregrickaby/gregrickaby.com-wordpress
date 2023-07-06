@@ -25,6 +25,13 @@ function scripts() {
 	$asset_file = require INSTA_THEME_DIR . 'build/index.asset.php';
 
 	wp_enqueue_style(
+		'google-fonts',
+		'//fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;700&display=swaps',
+		[],
+		$asset_file['version']
+	);
+
+	wp_enqueue_style(
 		'insta-theme-styles',
 		INSTA_THEME_URL . 'build/index.css',
 		[],
@@ -186,4 +193,3 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
