@@ -32,6 +32,13 @@ function scripts() {
 	);
 
 	wp_enqueue_style(
+		'font-awesome',
+		'//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+		[],
+		$asset_file['version']
+	);
+
+	wp_enqueue_style(
 		'insta-theme-styles',
 		INSTA_THEME_URL . 'build/index.css',
 		[],
