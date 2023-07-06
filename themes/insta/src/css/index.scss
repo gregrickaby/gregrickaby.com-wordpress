@@ -1,18 +1,16 @@
 /* theme custom properties */
 :root {
-  --insta-color-background: #fff;
-  --insta-color-background: color(display-p3 1 1 1);
-  --insta-color-foreground: #2b2b2b;
-  --insta-color-primary: #2b2b2b;
+  --insta-color-primary: #111;
   --insta-color-secondary: #808080;
-  --insta-color-tertiary: #d5d5d5;
+  --insta-color-tertiary: #466b45;
   --insta-color-code: #f5f5f5;
 
-  --insta-font-sans: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
-    roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --insta-font-serif: georgia, cambria, 'Times New Roman', times, serif;
-  --insta-font-mono: menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+  --insta-color-background: #fff;
+  --insta-color-background: color(display-p3 1 1 1);
+
+  --insta-font-sans: 'Poppins', sans-serif;
+  --insta-font-serif: 'Lora', serif;
+  --insta-font-mono: monospace;
 
   --insta-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   --insta-border-radius: 3px;
@@ -35,7 +33,7 @@
   --insta-alignfull: min(calc(100vw - 2 * var(--insta-space-xl)), 1280px);
 }
 
-/* --- html reset --- */
+/* --- custom resets --- */
 html {
   font-family: var(--insta-font-sans);
   font-size: var(--insta-font-md);
@@ -43,11 +41,21 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--insta-font-serif);
+  font-weight: 700;
+}
+
 a {
   color: var(--insta-color-primary);
 
   &:hover {
-    color: var(--insta-color-secondary);
+    color: var(--insta-color-tertiary);
   }
 }
 
@@ -63,12 +71,17 @@ optgroup,
 select,
 textarea {
   border-radius: var(--insta-border-radius);
-  border: 1px solid var(--insta-color-tertiary);
-  color: var(--insta-color-foreground);
+  border: 1px solid var(--insta-color-primary);
+  color: var(--insta-color-primary);
   font-size: var(--insta-font-md);
   font-weight: 400;
   padding: var(--insta-space-sm) var(--insta-space-sm);
   width: 100%;
+
+  &:focus {
+    border-color: var(--insta-color-tertiary);
+    outline: none;
+  }
 }
 
 input[type='submit'],
@@ -87,14 +100,14 @@ button {
   text-decoration: none;
 
   &:hover {
-    background-color: var(--insta-color-secondary);
+    background-color: var(--insta-color-tertiary);
   }
 }
 
 /* --- theme layout --- */
 body {
   background: var(--insta-color-background);
-  color: var(--insta-color-foreground);
+  color: var(--insta-color-primary);
   margin: 0;
   padding: 0;
 }
@@ -115,9 +128,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  padding-top: var(--insta-space-lg);
 
   @media screen and (min-width: 1024px) {
-    min-width: 210px;
+    min-width: 230px;
     padding: 0 var(--insta-space-lg);
     position: sticky;
     top: var(--insta-space-xl);
@@ -128,15 +143,25 @@ body {
       margin: 0 0 var(--insta-space-lg) 0;
     }
 
+    .custom-logo {
+      border-radius: 50%;
+      height: 100px;
+      transition: all 0.4s linear;
+      width: 100px;
+
+      &:hover {
+        transform: rotate(360deg);
+
+        @media (prefers-reduced-motion) {
+          transform: none;
+        }
+      }
+    }
+
     .site-title {
-      font-size: var(--insta-font-xl);
+      font-size: var(--insta-font-xxl);
       font-weight: 700;
       margin: 0 0 var(--insta-space-sm) 0;
-
-      a {
-        color: var(--insta-color-primary);
-        text-decoration: none;
-      }
     }
 
     .site-description {
@@ -152,9 +177,7 @@ body {
       text-align: center;
 
       @media screen and (min-width: 1024px) {
-        list-style: disc;
         padding: 0;
-        text-align: left;
       }
 
       li {
@@ -165,7 +188,44 @@ body {
         }
 
         a {
-          padding: var(--insta-space-sm) var(--insta-space-xs);
+          color: var(--insta-color-primary);
+          position: relative;
+          text-decoration: underline;
+
+          &:hover {
+            color: var(--insta-color-tertiary);
+          }
+
+          @media screen and (min-width: 1024px) {
+            text-decoration: none;
+
+            @media (prefers-reduced-motion) {
+              text-decoration: underline;
+            }
+
+            &::after {
+              background-color: var(--insta-color-tertiary);
+              bottom: 0;
+              content: '';
+              height: 2px;
+              left: 0;
+              position: absolute;
+              transition: width 0.2s linear;
+              width: 0;
+            }
+
+            &:hover {
+              color: var(--insta-color-tertiary);
+
+              &::after {
+                width: 100%;
+
+                @media (prefers-reduced-motion) {
+                  width: 0;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -185,30 +245,36 @@ body {
     border-bottom: 1px solid var(--insta-color-tertiary);
     margin: 0 0 var(--insta-space-lg) 0;
     max-width: 880px;
-  }
-
-  .entry-title {
-    font-size: var(--insta-font-xl);
-    margin-top: 0;
-    text-align: center;
 
     @media screen and (min-width: 1024px) {
-      text-align: left;
+      padding-top: var(--insta-space-lg);
     }
   }
 
-  .entry-meta {
-    font-style: italic;
-    margin: var(--insta-space-md) 0;
-    text-align: center;
+  .entry-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--insta-space-xs);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--insta-space-lg);
 
-    @media screen and (min-width: 1024px) {
-      text-align: left;
+    .entry-title {
+      font-size: 3rem;
+      margin: 0;
+      text-align: center;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
-  }
 
-  .updated:not(.published) {
-    display: none;
+    .entry-meta {
+      font-style: italic;
+      font-size: var(--insta-font-sm);
+      text-align: center;
+    }
+
+    .updated:not(.published) {
+      display: none;
+    }
   }
 
   .entry-content {
@@ -245,7 +311,7 @@ body {
     background: var(--insta-color-code);
     border: 1px solid var(--insta-color-secondary);
     border-left: 3px solid var(--insta-color-secondary);
-    color: var(--insta-color-foreground);
+    color: var(--insta-color-primary);
     display: block;
     font-family: var(--insta-font-mono);
     font-size: var(--insta-font-sm);
@@ -364,20 +430,4 @@ body {
 
 #primary[tabindex='-1']:focus {
   outline: 0;
-}
-
-/* --- dark mode --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --insta-color-background: #2b2b2b;
-    --insta-color-foreground: #fff;
-    --insta-color-foreground: color(display-p3 1 1 1);
-
-    --insta-color-primary: #fff;
-    --insta-color-primary: color(display-p3 1 1 1);
-
-    --insta-color-secondary: #808080;
-    --insta-color-tertiary: #d5d5d5;
-    --insta-color-code: #0f0f0f;
-  }
 }
