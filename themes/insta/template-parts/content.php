@@ -8,7 +8,6 @@
  *  @since 1.0.0
  */
 
-$insta_hide_featured_img = get_field( 'hide_featured_image' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -31,7 +30,7 @@ $insta_hide_featured_img = get_field( 'hide_featured_image' );
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php ( $insta_hide_featured_img ) ? '' : insta_post_thumbnail(); ?>
+	<?php insta_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -39,8 +38,11 @@ $insta_hide_featured_img = get_field( 'hide_featured_image' );
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'insta-theme' ),
+					__( '<i class="fa-solid fa-hand-point-right"></i>Continue reading<span class="screen-reader-text"> "%s"</span>', 'insta-theme' ),
 					array(
+						'i'    => array(
+							'class' => array(),
+						),
 						'span' => array(
 							'class' => array(),
 						),

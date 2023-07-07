@@ -36,7 +36,7 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			insta_post_navigation();
 
 		else :
 

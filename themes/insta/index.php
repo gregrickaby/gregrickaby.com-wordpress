@@ -33,11 +33,11 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content', 'home' );
+				get_template_part( 'template-parts/content' );
 
 			endwhile;
 
-			the_posts_navigation();
+			insta_post_navigation();
 
 		else :
 

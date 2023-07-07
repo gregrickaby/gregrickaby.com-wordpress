@@ -107,7 +107,11 @@ if ( ! function_exists( 'insta_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function insta_post_thumbnail() {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+
+		// Has the admin checked the box to hide the featured image?
+		$insta_hide_featured_img = get_field( 'hide_featured_image' );
+
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() || $insta_hide_featured_img ) {
 			return;
 		}
 
@@ -137,5 +141,19 @@ if ( ! function_exists( 'insta_post_thumbnail' ) ) :
 
 			<?php
 		endif; // End is_singular().
+	}
+endif;
+
+if ( ! function_exists( 'insta_post_navigation' ) ) :
+	/**
+	 * Post navigation (previous / next post) for single posts.
+	 */
+	function insta_post_navigation() {
+		the_posts_navigation(
+			[
+				'prev_text' => __( '<i class="fa-solid fa-angle-left"></i>Older Posts', 'insta-theme' ),
+				'next_text' => __( 'Newer Posts<i class="fa-solid fa-angle-right"></i>', 'insta-theme' ),
+			]
+		);
 	}
 endif;

@@ -7,8 +7,6 @@
  *  @package InstaTheme
  *  @since 1.0.0
  */
-
-$insta_hide_featured_img = get_field( 'hide_featured_image' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,7 +14,7 @@ $insta_hide_featured_img = get_field( 'hide_featured_image' );
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php ( $insta_hide_featured_img ) ? '' : insta_post_thumbnail(); ?>
+	<?php insta_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
