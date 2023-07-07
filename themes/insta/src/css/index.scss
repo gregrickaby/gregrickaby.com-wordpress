@@ -67,6 +67,10 @@ img {
 input[type='text'],
 input[type='email'],
 input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
 optgroup,
 select,
 textarea {
@@ -102,6 +106,10 @@ button {
   &:hover {
     background-color: var(--insta-color-tertiary);
   }
+}
+
+input[type='search'] {
+  width: 80%;
 }
 
 /* --- theme layout --- */
@@ -242,7 +250,8 @@ body {
     padding: var(--insta-space-lg) var(--insta-space-lg) 0 0;
   }
 
-  .hentry {
+  .hentry,
+  .page-content {
     border-bottom: 1px solid var(--insta-color-tertiary);
     margin: 0 0 var(--insta-space-lg) 0;
     max-width: 880px;
@@ -283,6 +292,23 @@ body {
     }
   }
 
+  .page-header {
+    @media screen and (min-width: 1024px) {
+      padding-top: var(--insta-space-lg);
+    }
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+    line-height: 1;
+    margin: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+    @media screen and (min-width: 1024px) {
+      font-size: 3rem;
+    }
+  }
+
   .entry-content {
     font-size: var(--insta-font-md);
     margin: 0 auto;
@@ -313,7 +339,8 @@ body {
   }
 
   .wp-block-preformatted,
-  .wp-block-code code {
+  .wp-block-code code,
+  pre {
     background: var(--insta-color-code);
     border: 1px solid var(--insta-color-secondary);
     border-left: 3px solid var(--insta-color-secondary);
@@ -334,6 +361,12 @@ body {
     aspect-ratio: 16 / 9;
   }
 
+  .wp-element-caption {
+    font-size: var(--insta-font-sm);
+    font-style: italic;
+    text-align: center;
+  }
+
   .entry-footer {
     display: flex;
     gap: var(--insta-space-md);
@@ -348,13 +381,31 @@ body {
   }
 }
 
-/* --- font awesome ---*/
-.fa-solid,
-.fa-regular {
-  margin-right: 4px;
+/* --- search and archives --- */
+.archive,
+.search-results {
+  .page-title {
+    font-family: var(--insta-font-sans);
+    text-align: center;
+    margin-bottom: var(--insta-space-lg);
+  }
 }
 
 /*--- comments --- */
+.comments-area {
+  border-bottom: 1px solid var(--insta-color-tertiary);
+  margin: 0 0 var(--insta-space-lg) 0;
+  max-width: 880px;
+}
+
+.comment-reply-title,
+.comments-title {
+  font-family: var(--insta-font-sans);
+  font-size: var(--insta-font-lg);
+  font-weight: 700;
+  margin: 0 0 var(--insta-space-lg) 0;
+}
+
 .comment-list {
   list-style: none;
   margin: 0;
@@ -375,6 +426,7 @@ body {
   }
 
   .comment-metadata {
+    font-size: var(--insta-font-sm);
     font-style: italic;
   }
 
@@ -442,4 +494,10 @@ body {
 
 #primary[tabindex='-1']:focus {
   outline: 0;
+}
+
+/* --- font awesome ---*/
+.fa-solid,
+.fa-regular {
+  margin: 0 4px;
 }
