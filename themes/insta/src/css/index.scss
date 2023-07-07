@@ -328,6 +328,12 @@ body {
     max-width: var(--insta-content-width);
   }
 
+  .wp-block-image {
+    a {
+      display: inline-block;
+    }
+  }
+
   .wp-block-image.size-medium {
     max-width: var(--insta-alignmedium);
     margin: 0 auto;
