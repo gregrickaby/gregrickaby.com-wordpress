@@ -329,14 +329,19 @@ body {
   }
 
   .wp-block-image {
-    a {
-      display: inline-block;
-    }
-  }
+    display: flex;
+    flex-direction: column;
 
-  .wp-block-image.size-medium {
-    max-width: var(--insta-alignmedium);
-    margin: 0 auto;
+    img,
+    &.has-custom-border img {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &.size-medium {
+      max-width: var(--insta-alignmedium);
+      margin: 0 auto;
+    }
   }
 
   .wide-max-width,
