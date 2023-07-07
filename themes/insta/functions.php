@@ -117,18 +117,6 @@ function insta_setup() {
 		]
 	);
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'insta_custom_background_args',
-			[
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			]
-		)
-	);
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -140,8 +128,8 @@ function insta_setup() {
 	add_theme_support(
 		'custom-logo',
 		[
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 100,
+			'width'       => 100,
 			'flex-width'  => true,
 			'flex-height' => true,
 		]
@@ -180,11 +168,6 @@ function insta_widgets_init() {
 	);
 }
 add_action( 'widgets_init', __NAMESPACE__ . '\insta_widgets_init' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
