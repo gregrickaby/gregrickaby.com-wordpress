@@ -15,6 +15,8 @@
   --insta-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   --insta-border-radius: 3px;
 
+  --insta-content-width: 770px;
+
   --insta-space-xs: 0.25rem;
   --insta-space-sm: 0.5rem;
   --insta-space-md: 1.25rem;
@@ -47,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--insta-font-serif);
+  font-family: var(--insta-font-sans);
   font-weight: 700;
 }
 
@@ -167,7 +169,6 @@ body {
     }
 
     .site-title {
-      font-family: var(--insta-font-sans);
       font-size: var(--insta-font-xxl);
       font-weight: 700;
       margin: 0 0 var(--insta-space-sm) 0;
@@ -254,8 +255,7 @@ body {
   .page-content {
     border-bottom: 1px solid var(--insta-color-tertiary);
     margin: 0 0 var(--insta-space-lg) 0;
-    max-width: 880px;
-
+    max-width: var(--insta-content-width);
     @media screen and (min-width: 1024px) {
       padding-top: var(--insta-space-lg);
     }
@@ -270,6 +270,7 @@ body {
     margin-bottom: var(--insta-space-lg);
 
     .entry-title {
+      font-family: var(--insta-font-serif);
       font-size: 2.25rem;
       line-height: 1;
       margin: 0;
@@ -278,6 +279,14 @@ body {
 
       @media screen and (min-width: 1024px) {
         font-size: 3.5rem;
+      }
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -299,6 +308,7 @@ body {
   }
 
   .page-title {
+    font-family: var(--insta-font-serif);
     font-size: 2.25rem;
     line-height: 1;
     margin: 0;
@@ -312,7 +322,7 @@ body {
   .entry-content {
     font-size: var(--insta-font-md);
     margin: 0 auto;
-    max-width: 880px;
+    max-width: var(--insta-content-width);
   }
 
   .wp-block-image.size-medium {
@@ -372,6 +382,11 @@ body {
     gap: var(--insta-space-md);
     justify-content: space-between;
     margin: var(--insta-space-md) 0;
+
+    i,
+    a {
+      font-size: 0.8rem;
+    }
   }
 
   .nav-links {
@@ -385,9 +400,10 @@ body {
 .archive,
 .search-results {
   .page-title {
+    color: var(--insta-color-tertiary);
     font-family: var(--insta-font-sans);
-    text-align: center;
     margin-bottom: var(--insta-space-lg);
+    text-align: center;
   }
 }
 
@@ -395,7 +411,7 @@ body {
 .comments-area {
   border-bottom: 1px solid var(--insta-color-tertiary);
   margin: 0 0 var(--insta-space-lg) 0;
-  max-width: 880px;
+  max-width: var(--insta-content-width);
 }
 
 .comment-reply-title,
