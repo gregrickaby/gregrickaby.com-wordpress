@@ -199,6 +199,7 @@ body {
 
         a {
           color: var(--insta-color-primary);
+          padding: var(--insta-space-sm);
           position: relative;
           text-decoration: underline;
 
@@ -208,6 +209,7 @@ body {
 
           @media screen and (min-width: 1024px) {
             text-decoration: none;
+            padding: 0;
 
             @media (prefers-reduced-motion) {
               text-decoration: underline;
@@ -256,6 +258,7 @@ body {
     border-bottom: 1px solid var(--insta-color-tertiary);
     margin: 0 0 var(--insta-space-lg) 0;
     max-width: var(--insta-content-width);
+
     @media screen and (min-width: 1024px) {
       padding-top: var(--insta-space-lg);
     }
