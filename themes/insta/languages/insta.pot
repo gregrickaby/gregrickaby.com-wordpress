@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-06T14:35:28+00:00\n"
+"POT-Creation-Date: 2023-07-07T14:33:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: insta-theme\n"
@@ -82,19 +82,19 @@ msgstr ""
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:99
 msgid "Primary"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:160
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:162
 msgid "Add widgets here."
 msgstr ""
 
-#: header.php:26
+#: header.php:32
 msgid "Skip to content"
 msgstr ""
 
@@ -116,8 +116,10 @@ msgid ", "
 msgstr ""
 
 #. translators: 1: list of categories.
+#. translators: 1: list of tags.
 #: inc/template-tags.php:67
-msgid "Posted in %1$s"
+#: inc/template-tags.php:74
+msgid "%1$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
@@ -126,31 +128,22 @@ msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#. translators: 1: list of tags.
-#: inc/template-tags.php:74
-msgid "Tagged with %1$s"
-msgstr ""
-
 #. translators: %s: post title
 #: inc/template-tags.php:84
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgid "<i class=\"fa-solid fa-comment\"></i>Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:154
+msgid "<i class=\"fa-solid fa-angle-left\"></i>Older Posts"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgid "Newer Posts<i class=\"fa-solid fa-angle-right\"></i>"
 msgstr ""
 
 #. translators: %s: search query.
 #: search.php:22
 msgid "Search Results for: %s"
-msgstr ""
-
-#: single.php:24
-msgid "👈 Previous Post:"
-msgstr ""
-
-#: single.php:25
-msgid "Next Post:"
-msgstr ""
-
-#: template-parts/content-home.php:37
-msgid "👉 Continue reading"
 msgstr ""
 
 #: template-parts/content-none.php:15
@@ -170,12 +163,12 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:27
-#: template-parts/content.php:55
+#: template-parts/content-page.php:25
+#: template-parts/content.php:57
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:42
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: template-parts/content.php:41
+msgid "<i class=\"fa-solid fa-hand-point-right\"></i>Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
