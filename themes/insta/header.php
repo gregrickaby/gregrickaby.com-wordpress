@@ -21,7 +21,7 @@
 	<link rel="preconnect" href="//fonts.googleapis.com">
 	<link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 	<link rel="preconnect" href="//cdnjs.cloudflare.com" crossorigin>
-	<link rel="preload" href="//gregrickaby.test/wp-content/uploads/2015/03/cropped-greg-kermit.webp" as="image" type="image/webp">
+	<link rel="preload" href="//gregrickaby.com/wp-content/uploads/2015/03/cropped-greg-kermit.webp" as="image" type="image/webp">
 	<link rel="preload" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" type="text/css">
 
 	<?php wp_head(); ?>
