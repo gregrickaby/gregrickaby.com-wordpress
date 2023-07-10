@@ -373,7 +373,6 @@ body {
     font-family: var(--insta-font-mono);
     font-size: var(--insta-font-sm);
     line-height: var(--insta-line-height-body);
-    margin-bottom: var(--insta-space-md);
     overflow: auto;
     padding: var(--insta-space-md);
     page-break-inside: avoid;
@@ -441,6 +440,10 @@ body {
   margin: 0;
   padding: 0;
 
+  .children {
+    list-style: none;
+  }
+
   .comment {
     border-left: 4px solid var(--insta-color-secondary);
     margin: var(--insta-space-lg) 0;
@@ -458,6 +461,10 @@ body {
   .comment-metadata {
     font-size: var(--insta-font-sm);
     font-style: italic;
+  }
+
+  .comment-content {
+    word-break: break-all;
   }
 
   .comment-reply-title {
