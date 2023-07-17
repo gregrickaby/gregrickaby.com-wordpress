@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
-            "version": "2.6.8",
+            "version": "2.6.9",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.8",
-                "shasum": "19b77dd506dd6c5d97d43a1951e377575e1535c3"
+                "url": "https://packages.gregrickaby.com/satispress/wp-migrate-db-pro/2.6.9",
+                "shasum": "af00dca9e4d95d78f6d2285ec47081cd44d247dc"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -339,15 +339,15 @@
     "packages-dev": [
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.13.0",
+            "version": "3.13.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.13.0"
+                "reference": "tags/3.13.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.13.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.13.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
