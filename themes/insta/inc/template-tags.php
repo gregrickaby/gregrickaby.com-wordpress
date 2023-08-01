@@ -64,14 +64,14 @@ if ( ! function_exists( 'insta_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'insta-theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<p class="cat-links"><i class="fa-solid fa-folder-open"></i>' . esc_html__( '%1$s', 'insta-theme' ) . '</p>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<p class="cat-links"><i class="fa-solid fa-folder-open"></i>%1$s</p>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'insta-theme' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<p class="tags-links"><i class="fa-solid fa-tag"></i>' . esc_html__( '%1$s', 'insta-theme' ) . '</p>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<p class="tags-links"><i class="fa-solid fa-tag"></i>%1$s</p>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
