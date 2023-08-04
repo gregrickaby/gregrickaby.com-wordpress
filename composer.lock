@@ -153,11 +153,11 @@
         },
         {
             "name": "gregrickaby/advanced-custom-fields-pro",
-            "version": "6.1.7",
+            "version": "6.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.7",
-                "shasum": "f152886de8cf3e560ffa6c77bc5f2cdc865f7999"
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.8",
+                "shasum": "ca35c705f40fc974090072c7ca4cdc43bc43cbcb"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.4.2",
+            "version": "4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.2",
-                "shasum": "627c08b292fb9972426277ebda48ba8fd37d6ba1"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.3",
+                "shasum": "98314529ca5bee66f9ba0aa8a3a443390c6c1ccc"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -301,15 +301,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.21.1",
+            "version": "4.21.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.21.1"
+                "reference": "tags/4.21.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
