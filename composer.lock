@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "884a427ccef94e311164d2b250ec126d",
+    "content-hash": "836f18f99557b008e12a9404cb5cbfff",
     "packages": [
         {
             "name": "composer/installers",
@@ -169,6 +169,25 @@
             },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
             "homepage": "https://www.advancedcustomfields.com"
+        },
+        {
+            "name": "gregrickaby/aioseo-redirects",
+            "version": "1.2.12",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.2.12",
+                "shasum": "bcf69bede3698586fe6066cdf19f59d5600ed154"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "All in One SEO Team",
+                "homepage": "https://aioseo.com"
+            },
+            "description": "Adds a redirection manager to AIOSEO.",
+            "homepage": "https://aioseo.com"
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",

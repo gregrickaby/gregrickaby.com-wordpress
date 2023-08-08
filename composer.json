@@ -44,6 +44,7 @@
     }
   },
   "require": {
+    "gregrickaby/aioseo-redirects": "^1.2",
     "gregrickaby/advanced-custom-fields-pro": "^6.0",
     "gregrickaby/all-in-one-seo-pack-pro": "^4.0",
     "gregrickaby/wp-migrate-db-pro": "^2.5",
