@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-18T22:12:09+00:00\n"
+"POT-Creation-Date: 2023-08-10T13:19:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: insta-theme\n"
@@ -115,13 +115,6 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#. translators: 1: list of categories.
-#. translators: 1: list of tags.
-#: inc/template-tags.php:67
-#: inc/template-tags.php:74
-msgid "%1$s"
-msgstr ""
-
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:71
 msgctxt "list item separator"
@@ -163,7 +156,7 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:25
+#: template-parts/content-page.php:26
 #: template-parts/content.php:57
 msgid "Pages:"
 msgstr ""
