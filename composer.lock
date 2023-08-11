@@ -153,11 +153,11 @@
         },
         {
             "name": "gregrickaby/advanced-custom-fields-pro",
-            "version": "6.1.8",
+            "version": "6.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.1.8",
-                "shasum": "ca35c705f40fc974090072c7ca4cdc43bc43cbcb"
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.2.0",
+                "shasum": "4590d355976a4f70c4b6475c4117f4d1985c2964"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -229,11 +229,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.3",
+            "version": "1.8.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.3",
-                "shasum": "0b47504f69a3db6d9053980b15510187e970f510"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.3.1",
+                "shasum": "dbbc150cb9725bfb7bcef3fc7dea35720a5dff69"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
