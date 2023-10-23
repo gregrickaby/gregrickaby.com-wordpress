@@ -1,5 +1,5 @@
 # My blog
 
-<https://gregrickaby.com/>
+<https://gregrickaby.com/blog>
 
 ---
