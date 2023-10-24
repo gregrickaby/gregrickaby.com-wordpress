@@ -15,35 +15,38 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        php-versions: ["8.1"]
-        node-versions: ["lts/*"]
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node ${{matrix.node-versions}}
+      - name: Setup SSH Key
+        env:
+          PRIVATE_KEY: ${{ secrets.REMOTE_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+          ssh-keyscan -H ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-versions}}
+          node-version: "lts/*"
           cache: "npm"
-          cache-dependency-path: "${{ env.THEME_DIR }}/package-lock.json"
 
-      - name: Setup PHP ${{ matrix.php-versions }}
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: "8.1"
           tools: composer:v2
 
-      - name: Configure Composer
+      - name: Setup Composer
         id: composer-cache
         run: |
           echo '${{ secrets.COMPOSER_AUTH }}' > $GITHUB_WORKSPACE/auth.json
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
-      - name: Cache Dependencies
+      - name: Cache Composer Dependencies
         uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
@@ -57,23 +60,17 @@ jobs:
         run: |
           cd ${{ env.THEME_DIR }}
           composer install
-          npm i --ignore-scripts --legacy-peer-deps
+          npm ci --ignore-scripts
           npm run build
 
       - name: Build Plugin
         run: |
           cd ${{ env.PLUGIN_DIR }}
           composer install
-          npm i --ignore-scripts --legacy-peer-deps
+          npm ci --ignore-scripts
           npm run build
 
-      - name: Deploy to Production
-        uses: easingthemes/ssh-deploy@v2
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.REMOTE_PRIVATE_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
-          SOURCE: "./"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_PATH }}
-          EXCLUDE: ".phpcs.xml,.htaccess,README.md,.git*,.gitattributes,.github/,.vscode/,.gitignore,advanced-cache.php,auth.json,cache/,composer.json,composer.lock,db.php,debug.log,mu-plugins/mu-plugin.php,mysql.sql,node_modules/,object-cache.php,package-lock.json,package.json,themes/twenty*,upgrade/,uploads/,wp-cache-config.php"
+      - name: Deploy to Prod
+        run: |
+          set -e
+          rsync -avz --exclude-from='.rsync-exclude' -e "ssh -i private_key.pem" ./ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH }}
