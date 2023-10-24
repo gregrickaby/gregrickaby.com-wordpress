@@ -1,0 +1,42 @@
+# Version control
+
+.git\*
+.gitattributes
+.gitignore
+
+# GitHub configuration
+
+.github/
+
+# VS Code configuration
+
+.vscode/
+
+# Miscellaneous
+
+.htaccess
+README.md
+auth.json
+composer.json
+composer.lock
+db.php
+debug.log
+mysql.sql
+phpcs.xml
+
+# Node modules and package files
+
+node_modules/
+package-lock.json
+package.json
+
+# WordPress specific
+
+advanced-cache.php
+cache/
+mu-plugins/wp-migrate-db-pro-compatibility.php
+object-cache.php
+themes/twenty\*
+upgrade/
+uploads/
+wp-cache-config.php
