@@ -73,4 +73,4 @@ jobs:
       - name: Deploy to Prod
         run: |
           set -e
-          rsync -avz --exclude-from='.rsync-exclude' -e "ssh -i private_key.pem" ./ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH }}
+          rsync -avz --delete --exclude-from='.rsync-exclude' -e "ssh -i private_key.pem" ./ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_PATH }}
