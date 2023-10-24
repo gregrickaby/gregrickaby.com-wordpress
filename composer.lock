@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/aioseo-redirects",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.3.0",
-                "shasum": "1196d23f853d469d898e887d81b3a17897c328a0"
+                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.3.1",
+                "shasum": "c94b26c6d03aecc495d74e64815596dc00e788fc"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.4.8",
+            "version": "4.4.9",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.8",
-                "shasum": "7dc59b3769044da4e7ba9f4eb7263d2f5f486dc8"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.9",
+                "shasum": "b6a8f1e6aa2efc42f672c26d1bf7da0575e67205"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -229,11 +229,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.4",
+            "version": "1.8.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.4",
-                "shasum": "94efee5715b318dbcdd6dd0724c0a3716538c6a7"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.4.1",
+                "shasum": "3e3737a9d76637a99e9f74b58985108f126f16db"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
