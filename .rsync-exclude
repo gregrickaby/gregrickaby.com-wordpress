@@ -1,6 +1,6 @@
 # Version control
 
-.git\*
+.git/
 .gitattributes
 .gitignore
 
@@ -15,6 +15,7 @@
 # Miscellaneous
 
 .htaccess
+.rsync-exclude
 README.md
 auth.json
 composer.json
@@ -23,6 +24,7 @@ db.php
 debug.log
 mysql.sql
 phpcs.xml
+private_key.pem
 
 # Node modules and package files
 
