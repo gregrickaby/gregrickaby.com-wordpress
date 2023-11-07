@@ -191,11 +191,11 @@
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.4.9.2",
+            "version": "4.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.4.9.2",
-                "shasum": "2ef88b07c5a2eea3db42affbf4320769996fa8c3"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.5.0",
+                "shasum": "ae1fc85f029700831fdcf3f600732122eb6fb74a"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -320,15 +320,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.21.15",
+            "version": "4.21.16",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.21.15"
+                "reference": "tags/4.21.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.15.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.16.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
