@@ -229,11 +229,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.5",
+            "version": "1.8.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.5",
-                "shasum": "345517e57c9015f0b61a63468e602226f728e226"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.5.1",
+                "shasum": "e42551b93d25e64702f0e2aab619cda45afaa8e1"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -284,15 +284,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.12",
+            "version": "3.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.12"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.12.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1699841642"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -358,15 +358,15 @@
     "packages-dev": [
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.14.1",
+            "version": "3.15.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.14.1"
+                "reference": "tags/3.15.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.14.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.15.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
