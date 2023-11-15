@@ -153,11 +153,11 @@
         },
         {
             "name": "gregrickaby/advanced-custom-fields-pro",
-            "version": "6.2.2",
+            "version": "6.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.2.2",
-                "shasum": "f3bcbe7de4544a51a2f07300b0fbb97659129c94"
+                "url": "https://packages.gregrickaby.com/satispress/advanced-custom-fields-pro/6.2.3",
+                "shasum": "91e8e52cecaa861954004a44c87706ccacfdf039"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
