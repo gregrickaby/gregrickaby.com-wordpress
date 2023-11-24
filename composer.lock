@@ -172,11 +172,11 @@
         },
         {
             "name": "gregrickaby/aioseo-redirects",
-            "version": "1.3.1",
+            "version": "1.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.3.1",
-                "shasum": "c94b26c6d03aecc495d74e64815596dc00e788fc"
+                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.3.2",
+                "shasum": "da36a177b7e05d7c721629615a489e9c88d4abfd"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -186,16 +186,16 @@
                 "name": "All in One SEO Team",
                 "homepage": "https://aioseo.com"
             },
-            "description": "Adds a redirection manager to AIOSEO.",
+            "description": "Adds redirection support to AIOSEO.",
             "homepage": "https://aioseo.com"
         },
         {
             "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.5.0",
+            "version": "4.5.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.5.0",
-                "shasum": "ae1fc85f029700831fdcf3f600732122eb6fb74a"
+                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.5.1.1",
+                "shasum": "6f59285a607e246fb7fc6b1c728d9e25a4e1275a"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -229,11 +229,11 @@
         },
         {
             "name": "gregrickaby/wpforms",
-            "version": "1.8.5.1",
+            "version": "1.8.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.5.1",
-                "shasum": "e42551b93d25e64702f0e2aab619cda45afaa8e1"
+                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.5.2",
+                "shasum": "8d646e882d205b2cce18f4041a6180f96845c952"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -288,11 +288,11 @@
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "trunk"
+                "reference": "tags/3.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1699841642"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.13.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -320,15 +320,15 @@
         },
         {
             "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.21.16",
+            "version": "4.21.19",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.21.16"
+                "reference": "tags/4.21.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.16.zip"
+                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.19.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
