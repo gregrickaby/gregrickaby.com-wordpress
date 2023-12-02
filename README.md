@@ -1,5 +1,5 @@
-# My blog
+# The WordPress backend to my headless site
 
-<https://gregrickaby.com/blog>
+<https://gregrickaby.com/>
 
 ---
