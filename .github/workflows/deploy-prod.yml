@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup SSH Key
         env:
@@ -29,10 +29,11 @@ jobs:
           ssh-keyscan -H ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
           cache: "npm"
+          cache-dependency-path: ${{ env.THEME_DIR }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
