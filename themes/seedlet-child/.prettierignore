@@ -1,8 +1,0 @@
-.*.js
-*.min.js
-.*.json
-.cache/
-acf-json/
-build/
-node_modules/
-vendor/

@@ -4,8 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "836f18f99557b008e12a9404cb5cbfff",
+    "content-hash": "ffbd0af4b748aaf1c70d37e8578cce04",
     "packages": [
+        {
+            "name": "ashhitch/wp-graphql-yoast-seo",
+            "version": "v4.22.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ashhitch/wp-graphql-yoast-seo.git",
+                "reference": "56600b12d3c2a0b73cb3b73020e23d4d9d5ad858"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ashhitch/wp-graphql-yoast-seo/zipball/56600b12d3c2a0b73cb3b73020e23d4d9d5ad858",
+                "reference": "56600b12d3c2a0b73cb3b73020e23d4d9d5ad858",
+                "shasum": ""
+            },
+            "require": {
+                "phpcompatibility/phpcompatibility-wp": "^2.1"
+            },
+            "require-dev": {
+                "automattic/vipwpcs": "^2.2",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "wp-graphql/wp-graphql": "Required to return data via GraphQl",
+                "yoast/wordpress-seo": "Required to provide SEO data to this plugin"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Ash Hitchcock",
+                    "email": "hello@ashleyhitchcock.co.uk"
+                }
+            ],
+            "description": "Query Yoast SEO data with wp-graphql",
+            "support": {
+                "issues": "https://github.com/ashhitch/wp-graphql-yoast-seo/issues",
+                "source": "https://github.com/ashhitch/wp-graphql-yoast-seo/tree/v4.22.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/hafowuvo",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/ashhitch",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-06-30T20:18:04+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v2.2.0",
@@ -171,42 +225,80 @@
             "homepage": "https://www.advancedcustomfields.com"
         },
         {
-            "name": "gregrickaby/aioseo-redirects",
-            "version": "1.3.2",
+            "name": "gregrickaby/nextjs-wordpress-plugin",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gregrickaby/nextjs-wordpress-plugin.git",
+                "reference": "e16cac60936a125d073274bb5d9eb6898d8283ce"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/aioseo-redirects/1.3.2",
-                "shasum": "da36a177b7e05d7c721629615a489e9c88d4abfd"
+                "url": "https://api.github.com/repos/gregrickaby/nextjs-wordpress-plugin/zipball/e16cac60936a125d073274bb5d9eb6898d8283ce",
+                "reference": "e16cac60936a125d073274bb5d9eb6898d8283ce",
+                "shasum": ""
             },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "wp-coding-standards/wpcs": "^2.3"
             },
             "type": "wordpress-plugin",
-            "authors": {
-                "name": "All in One SEO Team",
-                "homepage": "https://aioseo.com"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Rickaby",
+                    "email": "greg@gregrickaby.com"
+                }
+            ],
+            "description": "A plugin to help turn WordPress into a headless CMS.",
+            "homepage": "https://github.com/gregrickaby/nextjs-wordpress-plugin",
+            "support": {
+                "issues": "https://github.com/gregrickaby/nextjs-wordpress-plugin/issues",
+                "source": "https://github.com/gregrickaby/nextjs-wordpress-plugin/tree/1.0.4"
             },
-            "description": "Adds redirection support to AIOSEO.",
-            "homepage": "https://aioseo.com"
+            "time": "2023-10-21T20:52:59+00:00"
         },
         {
-            "name": "gregrickaby/all-in-one-seo-pack-pro",
-            "version": "4.5.1.1",
+            "name": "gregrickaby/nextjs-wordpress-theme",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gregrickaby/nextjs-wordpress-theme.git",
+                "reference": "82506caf41fbb5f0694a987fc41a92190d6871f5"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/all-in-one-seo-pack-pro/4.5.1.1",
-                "shasum": "6f59285a607e246fb7fc6b1c728d9e25a4e1275a"
+                "url": "https://api.github.com/repos/gregrickaby/nextjs-wordpress-theme/zipball/82506caf41fbb5f0694a987fc41a92190d6871f5",
+                "reference": "82506caf41fbb5f0694a987fc41a92190d6871f5",
+                "shasum": ""
             },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "phpcompatibility/phpcompatibility-wp": "^2.1",
+                "wp-coding-standards/wpcs": "^2.3"
             },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "All in One SEO Team",
-                "homepage": "https://aioseo.com/"
+            "type": "wordpress-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Rickaby",
+                    "email": "greg@gregrickaby.com"
+                }
+            ],
+            "description": "A plugin to help turn WordPress into a headless CMS.",
+            "homepage": "https://github.com/gregrickaby/nextjs-wordpress-theme",
+            "support": {
+                "issues": "https://github.com/gregrickaby/nextjs-wordpress-theme/issues",
+                "source": "https://github.com/gregrickaby/nextjs-wordpress-theme/tree/1.0.1"
             },
-            "description": "SEO for WordPress. Features like XML Sitemaps, SEO for custom post types, SEO for blogs, business sites, ecommerce sites, and much more. More than 100 million downloads since 2007.",
-            "homepage": "https://aioseo.com/"
+            "time": "2023-10-21T20:43:43+00:00"
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",
@@ -228,23 +320,299 @@
             "homepage": "https://deliciousbrains.com/wp-migrate-db-pro/"
         },
         {
-            "name": "gregrickaby/wpforms",
-            "version": "1.8.5.2",
+            "name": "phpcompatibility/php-compatibility",
+            "version": "9.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
+                "reference": "9fb324479acf6f39452e0655d2429cc0d3914243"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.gregrickaby.com/satispress/wpforms/1.8.5.2",
-                "shasum": "8d646e882d205b2cce18f4041a6180f96845c952"
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/9fb324479acf6f39452e0655d2429cc0d3914243",
+                "reference": "9fb324479acf6f39452e0655d2429cc0d3914243",
+                "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.0 || ^2.0"
+                "php": ">=5.3",
+                "squizlabs/php_codesniffer": "^2.3 || ^3.0.2"
+            },
+            "conflict": {
+                "squizlabs/php_codesniffer": "2.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "homepage": "https://github.com/wimg",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCompatibility/PHPCompatibility/graphs/contributors"
+                }
+            ],
+            "description": "A set of sniffs for PHP_CodeSniffer that checks for PHP cross-version compatibility.",
+            "homepage": "http://techblog.wimgodden.be/tag/codesniffer/",
+            "keywords": [
+                "compatibility",
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCompatibility/PHPCompatibility/issues",
+                "source": "https://github.com/PHPCompatibility/PHPCompatibility"
+            },
+            "time": "2019-12-27T09:44:58+00:00"
+        },
+        {
+            "name": "phpcompatibility/phpcompatibility-paragonie",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git",
+                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityParagonie/zipball/bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
+                "reference": "bba5a9dfec7fcfbd679cfaf611d86b4d3759da26",
+                "shasum": ""
+            },
+            "require": {
+                "phpcompatibility/php-compatibility": "^9.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "paragonie/random_compat": "dev-master",
+                "paragonie/sodium_compat": "dev-master"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "role": "lead"
+                }
+            ],
+            "description": "A set of rulesets for PHP_CodeSniffer to check for PHP cross-version compatibility issues in projects, while accounting for polyfills provided by the Paragonie polyfill libraries.",
+            "homepage": "http://phpcompatibility.com/",
+            "keywords": [
+                "compatibility",
+                "paragonie",
+                "phpcs",
+                "polyfill",
+                "standards",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie/issues",
+                "source": "https://github.com/PHPCompatibility/PHPCompatibilityParagonie"
+            },
+            "time": "2022-10-25T01:46:02+00:00"
+        },
+        {
+            "name": "phpcompatibility/phpcompatibility-wp",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCompatibility/PHPCompatibilityWP.git",
+                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibilityWP/zipball/b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
+                "reference": "b6c1e3ee1c35de6c41a511d5eb9bd03e447480a5",
+                "shasum": ""
+            },
+            "require": {
+                "phpcompatibility/php-compatibility": "^9.0",
+                "phpcompatibility/phpcompatibility-paragonie": "^1.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7"
+            },
+            "suggest": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7 || This Composer plugin will sort out the PHP_CodeSniffer 'installed_paths' automatically.",
+                "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "role": "lead"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "role": "lead"
+                }
+            ],
+            "description": "A ruleset for PHP_CodeSniffer to check for PHP cross-version compatibility issues in projects, while accounting for polyfills provided by WordPress.",
+            "homepage": "http://phpcompatibility.com/",
+            "keywords": [
+                "compatibility",
+                "phpcs",
+                "standards",
+                "static analysis",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCompatibility/PHPCompatibilityWP/issues",
+                "source": "https://github.com/PHPCompatibility/PHPCompatibilityWP"
+            },
+            "time": "2022-10-24T09:00:36+00:00"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "3.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "reference": "ed8e00df0a83aa96acf703f8c2979ff33341f879",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "bin": [
+                "bin/phpcs",
+                "bin/phpcbf"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "https://github.com/squizlabs/PHP_CodeSniffer",
+            "keywords": [
+                "phpcs",
+                "standards",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/squizlabs/PHP_CodeSniffer/issues",
+                "source": "https://github.com/squizlabs/PHP_CodeSniffer",
+                "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
+            },
+            "time": "2023-02-22T23:07:41+00:00"
+        },
+        {
+            "name": "wp-graphql/wp-graphql-acf",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-graphql/wp-graphql-acf.git",
+                "reference": "8c6a18563bbc6dde276e1a09429b525df54fe2c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql-acf/zipball/8c6a18563bbc6dde276e1a09429b525df54fe2c2",
+                "reference": "8c6a18563bbc6dde276e1a09429b525df54fe2c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "codeception/module-asserts": "^1.0",
+                "codeception/module-cli": "^1.0",
+                "codeception/module-db": "^1.0",
+                "codeception/module-filesystem": "^1.0",
+                "codeception/module-phpbrowser": "^1.0",
+                "codeception/module-rest": "^1.2",
+                "codeception/module-webdriver": "^1.0",
+                "codeception/util-universalframework": "^1.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+                "lucatume/wp-browser": "^2.4",
+                "phpcompatibility/phpcompatibility-wp": "2.1.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^0.12.64",
+                "phpunit/phpunit": "^8.5",
+                "simpod/php-coveralls-mirror": "^3.0",
+                "squizlabs/php_codesniffer": "3.5.4",
+                "szepeviktor/phpstan-wordpress": "^0.7.1",
+                "wp-coding-standards/wpcs": "2.1.1",
+                "wp-graphql/wp-graphql-testcase": "~2.1"
             },
             "type": "wordpress-plugin",
-            "authors": {
-                "name": "WPForms",
-                "homepage": "https://wpforms.com"
+            "autoload": {
+                "psr-4": {
+                    "WPGraphQL\\ACF\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
             },
-            "description": "Beginner friendly WordPress contact form plugin. Use our Drag & Drop form builder to create your WordPress forms.",
-            "homepage": "https://wpforms.com"
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jasonbahl",
+                    "email": "jasonbahl@mac.com"
+                }
+            ],
+            "description": "Advanced Custom Fields bindings for wp-graphql",
+            "support": {
+                "issues": "https://github.com/wp-graphql/wp-graphql-acf/issues",
+                "source": "https://github.com/wp-graphql/wp-graphql-acf/tree/v0.6.1"
+            },
+            "time": "2022-09-16T16:50:00+00:00"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -301,58 +669,40 @@
             "homepage": "https://wordpress.org/plugins/media-library-assistant/"
         },
         {
-            "name": "wpackagist-plugin/performance-lab",
-            "version": "2.7.0",
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "21.6",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/performance-lab/",
-                "reference": "tags/2.7.0"
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/21.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/performance-lab.2.7.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.21.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/performance-lab/"
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         },
         {
-            "name": "wpackagist-plugin/real-media-library-lite",
-            "version": "4.21.20",
+            "name": "wpackagist-plugin/wp-graphql",
+            "version": "1.19.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/real-media-library-lite/",
-                "reference": "tags/4.21.20"
+                "url": "https://plugins.svn.wordpress.org/wp-graphql/",
+                "reference": "tags/1.19.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/real-media-library-lite.4.21.20.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-graphql.1.19.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/real-media-library-lite/"
-        },
-        {
-            "name": "wpackagist-theme/seedlet",
-            "version": "1.1.13",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/seedlet/",
-                "reference": "1.1.13"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/seedlet.1.1.13.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/seedlet/"
+            "homepage": "https://wordpress.org/plugins/wp-graphql/"
         }
     ],
     "packages-dev": [
