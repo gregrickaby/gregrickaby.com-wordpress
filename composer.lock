@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffbd0af4b748aaf1c70d37e8578cce04",
+    "content-hash": "d2d4317274813526e9331428d5b86a7f",
     "packages": [
         {
             "name": "ashhitch/wp-graphql-yoast-seo",
@@ -649,24 +649,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/limit-login-attempts/"
-        },
-        {
-            "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.13",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.13"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.13.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/media-library-assistant/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
