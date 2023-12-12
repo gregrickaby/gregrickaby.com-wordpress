@@ -19,7 +19,7 @@
   },
   "main": "build/index.js",
   "dependencies": {
-    "@fancyapps/ui": "5.0.28",
+    "@fancyapps/ui": "5.0.29",
     "imagesloaded": "^5.0.0",
     "masonry-layout": "^4.2.2"
   },
