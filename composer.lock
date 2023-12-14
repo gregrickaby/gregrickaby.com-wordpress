@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd824d07986d4bf8517688029f30da9e",
+    "content-hash": "be5e56c10b13881b80b7d3e37829be1a",
     "packages": [
         {
             "name": "ashhitch/wp-graphql-yoast-seo",
@@ -286,82 +286,6 @@
             },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
             "homepage": "https://www.advancedcustomfields.com"
-        },
-        {
-            "name": "gregrickaby/nextjs-wordpress-plugin",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gregrickaby/nextjs-wordpress-plugin.git",
-                "reference": "e16cac60936a125d073274bb5d9eb6898d8283ce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gregrickaby/nextjs-wordpress-plugin/zipball/e16cac60936a125d073274bb5d9eb6898d8283ce",
-                "reference": "e16cac60936a125d073274bb5d9eb6898d8283ce",
-                "shasum": ""
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "wp-coding-standards/wpcs": "^2.3"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Rickaby",
-                    "email": "greg@gregrickaby.com"
-                }
-            ],
-            "description": "A plugin to help turn WordPress into a headless CMS.",
-            "homepage": "https://github.com/gregrickaby/nextjs-wordpress-plugin",
-            "support": {
-                "issues": "https://github.com/gregrickaby/nextjs-wordpress-plugin/issues",
-                "source": "https://github.com/gregrickaby/nextjs-wordpress-plugin/tree/1.0.4"
-            },
-            "time": "2023-10-21T20:52:59+00:00"
-        },
-        {
-            "name": "gregrickaby/nextjs-wordpress-theme",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gregrickaby/nextjs-wordpress-theme.git",
-                "reference": "82506caf41fbb5f0694a987fc41a92190d6871f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gregrickaby/nextjs-wordpress-theme/zipball/82506caf41fbb5f0694a987fc41a92190d6871f5",
-                "reference": "82506caf41fbb5f0694a987fc41a92190d6871f5",
-                "shasum": ""
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "wp-coding-standards/wpcs": "^2.3"
-            },
-            "type": "wordpress-theme",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Greg Rickaby",
-                    "email": "greg@gregrickaby.com"
-                }
-            ],
-            "description": "A plugin to help turn WordPress into a headless CMS.",
-            "homepage": "https://github.com/gregrickaby/nextjs-wordpress-theme",
-            "support": {
-                "issues": "https://github.com/gregrickaby/nextjs-wordpress-theme/issues",
-                "source": "https://github.com/gregrickaby/nextjs-wordpress-theme/tree/1.0.1"
-            },
-            "time": "2023-10-21T20:43:43+00:00"
         },
         {
             "name": "gregrickaby/wp-migrate-db-pro",

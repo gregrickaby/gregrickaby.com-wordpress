@@ -46,8 +46,6 @@
   "require": {
     "ashhitch/wp-graphql-yoast-seo": "^4.22",
     "gregrickaby/advanced-custom-fields-pro": "^6.0",
-    "gregrickaby/nextjs-wordpress-plugin": "^1.0",
-    "gregrickaby/nextjs-wordpress-theme": "^1.0",
     "gregrickaby/wp-migrate-db-pro": "^2.5",
     "wp-graphql/wp-graphql-acf": "^0.6.1",
     "wpackagist-plugin/akismet": "^5.0",
