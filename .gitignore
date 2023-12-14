@@ -26,6 +26,7 @@ object-cache.php
 # plugins
 plugins/*
 !/plugins/grd-acf-blocks/
+!/plugins/nextjs-wordpress-plugin
 
 # mu-plugins
 mu-plugins/*
@@ -35,6 +36,7 @@ mu-plugins/*
 themes/*
 !/themes/seedlet-child/
 !/themes/insta/
+!/themes/nextjs-wordpress-theme
 
 # artifacts
 build/
