@@ -26,14 +26,12 @@ function set_headless_preview_link( string $link, WP_Post $post ): string {
 		return $link;
 	}
 
-	// Preview link will have format: <domain>/preview/<post_id>.
-	return add_query_arg(
-		[
-			'token' => NEXTJS_PREVIEW_SECRET,
-			'id'    => $post->ID,
-		],
-		NEXTJS_FRONTEND_URL . 'preview/' . $post->ID
-	);
+	$base_url   = NEXTJS_FRONTEND_URL;
+	$base_url   = rtrim( $base_url, '/' );
+	$secret_key = NEXTJS_PREVIEW_SECRET;
+
+	// Preview link will have format: <domain>/preview/<post_id>?secret=<secret_key>.
+	return esc_url_raw( $base_url . '/preview/' . $post->ID . '?secret=' . $secret_key );
 }
 add_filter( 'preview_post_link', __NAMESPACE__ . '\set_headless_preview_link', 10, 2 );
 
