@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be5e56c10b13881b80b7d3e37829be1a",
+    "content-hash": "b4cb4091bca955f95b9f8952b97497bf",
     "packages": [
         {
             "name": "ashhitch/wp-graphql-yoast-seo",
@@ -626,16 +626,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql-jwt-authentication",
-            "version": "v0.7.0",
+            "version": "dev-patch-1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wp-graphql/wp-graphql-jwt-authentication.git",
-                "reference": "5de35ce97efcae2beeb9118e1ad458480ae6187b"
+                "url": "https://github.com/gregrickaby/wp-graphql-jwt-authentication.git",
+                "reference": "6b138807339a2d2f497ec5ee0d355e842498c67f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql-jwt-authentication/zipball/5de35ce97efcae2beeb9118e1ad458480ae6187b",
-                "reference": "5de35ce97efcae2beeb9118e1ad458480ae6187b",
+                "url": "https://api.github.com/repos/gregrickaby/wp-graphql-jwt-authentication/zipball/6b138807339a2d2f497ec5ee0d355e842498c67f",
+                "reference": "6b138807339a2d2f497ec5ee0d355e842498c67f",
                 "shasum": ""
             },
             "require": {
@@ -662,7 +662,23 @@
                     "src/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "install-wp-tests": [
+                    "bash bin/install-wp-tests.sh"
+                ],
+                "test": [
+                    "vendor/bin/codecept run"
+                ],
+                "functional-test": [
+                    "vendor/bin/codecept run functional"
+                ],
+                "acceptance-test": [
+                    "vendor/bin/codecept run acceptance"
+                ],
+                "wpunit-test": [
+                    "vendor/bin/codecept run wpunit"
+                ]
+            },
             "license": [
                 "GPL-3.0+"
             ],
@@ -674,10 +690,9 @@
             ],
             "description": "JWT Authentication for WPGraphQL",
             "support": {
-                "issues": "https://github.com/wp-graphql/wp-graphql-jwt-authentication/issues",
-                "source": "https://github.com/wp-graphql/wp-graphql-jwt-authentication/tree/v0.7.0"
+                "source": "https://github.com/gregrickaby/wp-graphql-jwt-authentication/tree/patch-1"
             },
-            "time": "2023-03-31T21:57:48+00:00"
+            "time": "2023-12-15T16:35:09+00:00"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -774,7 +789,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "wp-graphql/wp-graphql-jwt-authentication": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
