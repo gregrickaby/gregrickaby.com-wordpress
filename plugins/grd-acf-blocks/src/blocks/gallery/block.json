@@ -15,7 +15,7 @@
     "blockVersion": 2,
     "mode": "auto",
     "renderTemplate": "../../plugins/grd-acf-blocks/src/blocks/gallery/gallery.php",
-    "postTypes": ["post"]
+    "postTypes": ["post", "page"]
   },
   "supports": {
     "anchor": false,
