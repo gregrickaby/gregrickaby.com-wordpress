@@ -105,7 +105,7 @@ if ( empty( $photos ) ) {
 		</figure>
 		<?php
 		// Increment counter.
-		$i++;
+		++$i;
 
 		endforeach;
 	?>

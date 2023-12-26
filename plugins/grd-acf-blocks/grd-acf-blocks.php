@@ -4,7 +4,7 @@
  * Description:       Custom ACF Blocks for WordPress.
  * Requires at least: 6.1
  * Requires PHP:      8.0
- * Version:           1.0.9
+ * Version:           1.10.0
  * Author:            Greg Rickaby
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'GRD_ACF_BLOCKS_VERSION', '1.0.9' );
+define( 'GRD_ACF_BLOCKS_VERSION', '1.10.0' );
 define( 'GRD_ACF_BLOCKS_DIR', \trailingslashit( \plugin_dir_path( __FILE__ ) ) );
 
 /**
