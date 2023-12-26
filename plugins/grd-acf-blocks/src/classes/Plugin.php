@@ -50,7 +50,7 @@ class Plugin {
 	 *
 	 * @see https://www.advancedcustomfields.com/resources/register-fields-via-php/
 	 */
-	private function register_acf_fields(): void {
+	public function register_acf_fields(): void {
 		\acf_add_local_field_group(
 			array(
 				'key'                   => 'group_63cc36384ce02',
@@ -115,7 +115,7 @@ class Plugin {
 	 * @see https://www.advancedcustomfields.com/resources/acf-blocks-with-block-json/
 	 * @see https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#blockjson-support
 	 */
-	private function register_acf_blocks(): void {
+	public function register_acf_blocks(): void {
 		\register_block_type( GRD_ACF_BLOCKS_DIR . '/build/blocks/gallery' );
 	}
 }
