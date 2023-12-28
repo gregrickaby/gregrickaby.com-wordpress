@@ -61,21 +61,21 @@ jobs:
       - name: Build Theme
         run: |
           cd ${{ env.THEME_DIR }}
-          composer install --prefer-dist --no-dev
+          composer install
           npm ci --ignore-scripts
           npm run build
 
       - name: Build Blocks Plugin
         run: |
           cd ${{ env.BLOCKS_PLUGIN_DIR }}
-          composer install --prefer-dist --no-dev
+          composer install
           npm ci --ignore-scripts
           npm run build
 
       - name: Build Next.js WordPress Plugin
         run: |
           cd ${{ env.NEXTJS_PLUGIN_DIR }}
-          composer install --prefer-dist --no-dev
+          composer install
 
       - name: Deploy to Prod
         run: |
