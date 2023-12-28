@@ -16,6 +16,7 @@
 
 .htaccess
 .rsync-exclude
+.phpcs.xml
 README.md
 auth.json
 composer.json

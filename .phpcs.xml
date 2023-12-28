@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Coding Standards" namespace="GRD\Standard">
+	<description>A custom coding standard by Greg Rickaby.</description>
+
+	<!-- Set PHP version. -->
+	<config name="testVersion" value="8.2-"/>
+
+	<!-- Only sniff the plugin and its subdirectories. -->
+	<file>./</file>
+
+	<!-- Don't sniff the following directories or file types. -->
+	<exclude-pattern>/build/*</exclude-pattern>
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+
+	<!-- Only sniff PHP files. -->
+	<arg name="extensions" value="php"/>
+
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20"/>
+
+	<!-- Show sniff codes in all reports. -->
+	<arg value="ps"/>
+
+	<!-- Display colors. -->
+	<arg name="colors"/>
+
+	<!-- Enable cache for subsequent runs. -->
+	<arg name="cache"/>
+
+	<!-- Use WordPress coding standard. -->
+	<rule ref="WordPress" />
+
+	<!-- Use WordPress "Extra" coding standard. -->
+	<rule ref="WordPress-Extra">
+		<!-- Allow short array syntax. -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+		<!-- Ignore invalid class file name. -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<!-- Ignore invalid file name. -->
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+	</rule>
+
+	<!-- Use WordPress "Docs" coding standard. -->
+	<rule ref="WordPress-Docs" />
+
+	<!-- Use WordPress PHP Compatibility. -->
+	<rule ref="PHPCompatibilityWP" />
+</ruleset>
