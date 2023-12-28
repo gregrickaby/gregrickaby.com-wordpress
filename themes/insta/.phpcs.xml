@@ -37,6 +37,10 @@
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
 		<!-- Ignore invalid class file name. -->
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+		<!-- Ignore invalid file name. -->
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<!-- Allow short ternary syntax. -->
+		<exclude name="Universal.Operators.DisallowShortTernary.Found"/>
 	</rule>
 
 	<!-- Use WordPress "Docs" coding standard. -->

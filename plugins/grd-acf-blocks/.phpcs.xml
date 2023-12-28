@@ -33,9 +33,13 @@
 
 	<!-- Use WordPress "Extra" coding standard. -->
 	<rule ref="WordPress-Extra">
+		<!-- Allow short array syntax. -->
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax"/>
+		<!-- Ignore invalid class file name. -->
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
-		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+		<!-- Ignore invalid file name. -->
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+		<!-- Allow short ternary syntax. -->
 		<exclude name="Universal.Operators.DisallowShortTernary.Found"/>
 	</rule>
 
