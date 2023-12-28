@@ -9,7 +9,8 @@ on:
 
 env:
   THEME_DIR: themes/insta
-  PLUGIN_DIR: plugins/grd-acf-blocks
+  BLOCKS_PLUGIN_DIR: plugins/grd-acf-blocks
+  NEXTJS_PLUGIN_DIR: plugins/nextjs-wordpress-plugin
 
 jobs:
   deployment:
@@ -60,16 +61,21 @@ jobs:
       - name: Build Theme
         run: |
           cd ${{ env.THEME_DIR }}
-          composer install
+          composer install --prefer-dist --no-dev
           npm ci --ignore-scripts
           npm run build
 
-      - name: Build Plugin
+      - name: Build Blocks Plugin
         run: |
-          cd ${{ env.PLUGIN_DIR }}
-          composer install
+          cd ${{ env.BLOCKS_PLUGIN_DIR }}
+          composer install --prefer-dist --no-dev
           npm ci --ignore-scripts
           npm run build
+
+      - name: Build Next.js WordPress Plugin
+        run: |
+          cd ${{ env.NEXTJS_PLUGIN_DIR }}
+          composer install --prefer-dist --no-dev
 
       - name: Deploy to Prod
         run: |
