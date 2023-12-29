@@ -37,8 +37,8 @@ class Blocks {
 	/**
 	 * Registers a custom REST field for Gutenberg blocks.
 	 *
-	 * This method adds a custom field to WordPress REST API to include
-	 * Gutenberg block data in responses.
+	 * This method adds a custom field to WordPress REST API
+	 * which returns the Gutenberg blocks for a given post.
 	 *
 	 * @return void
 	 */
@@ -62,34 +62,27 @@ class Blocks {
 	 * This method is used as a callback for the 'gutenberg_blocks' REST field,
 	 * and it returns an array of parsed block data for a given post.
 	 *
-	 * @param array  $post    The post array from REST response.
-	 * @param array  $attr    Additional attributes from the REST request.
-	 * @param object $request WP_REST_Request object for the current request.
+	 * @param array $post    The post array from REST response.
 	 *
 	 * @return array Parsed Gutenberg block data, empty if 'blocks' param not present in request.
 	 */
-	public function get_blocks( array $post, array $attr, object $request ): array {
-		$rtn = [];
-
-		// Return early if 'blocks' parameter is not set in the request.
-		if ( ! $request->get_param( 'blocks' ) ) {
-			return $rtn;
-		}
+	public function get_blocks( array $post ): array {
+		// Removed the check for 'blocks' parameter.
 
 		// Check if post data is valid.
 		if ( ! is_array( $post ) || ! isset( $post['id'] ) ) {
-			return $rtn;
+			return [];
 		}
 
 		// Retrieve the post object based on the ID.
 		$post_obj = get_post( absint( $post['id'] ) );
 
-		// If there's an error in retrieving the post, return empty array.
-		if ( is_wp_error( $post_obj ) ) {
-			return $rtn;
+		// If there's an error in retrieving the post or post is null, return empty array.
+		if ( is_wp_error( $post_obj ) || is_null( $post_obj ) ) {
+			return [];
 		}
 
 		// Parse the blocks from the post content and return.
-		return parse_blocks( $post_obj->post_content ) ?? $rtn;
+		return parse_blocks( $post_obj->post_content );
 	}
 }
