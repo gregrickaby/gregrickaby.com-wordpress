@@ -13,7 +13,7 @@
   "repositories": [],
   "autoload": {
     "psr-4": {
-      "Grd\\Acf\\Blocks\\": "src/classes"
+      "Grd\\ACF_Blocks\\": "src/classes"
     }
   },
   "config": {
