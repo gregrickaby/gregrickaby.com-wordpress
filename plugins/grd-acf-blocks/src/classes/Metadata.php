@@ -230,8 +230,7 @@ class Metadata {
 		// Create the caption string.
 		$caption_parts = array_filter(
 			[
-				'make'          => $make,
-				'camera'        => $camera,
+				'camera'        => $make . ' ' . $camera,
 				'lens'          => $lens,
 				'focal_length'  => $focal_length ? $focal_length . 'mm' : '',
 				'aperture'      => $aperture ? 'f/' . $aperture : '',
