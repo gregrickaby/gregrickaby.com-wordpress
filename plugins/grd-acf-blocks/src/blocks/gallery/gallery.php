@@ -20,7 +20,7 @@
  * @since 1.0.0
  */
 
-namespace Grd\Acf\Blocks;
+namespace Grd\ACF_Blocks;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -60,7 +60,7 @@ if ( empty( $photos ) ) {
 		$camera        = $image_meta[0]['image_meta']['camera'] ?: '';
 		$focal_length  = $image_meta[0]['image_meta']['focal_length'] ? round( 1 * $image_meta[0]['image_meta']['focal_length'] ) . 'mm |' : '';
 		$iso           = $image_meta[0]['image_meta']['iso'] ? "ISO {$image_meta[0]['image_meta']['iso']} |" : '';
-		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) . 'sec |' : '';
+		$shutter_speed = $image_meta[0]['image_meta']['shutter_speed'] ? Fraction::fromFloat( $image_meta[0]['image_meta']['shutter_speed'] ) . 's |' : '';
 
 		// Build Exif string.
 		$exif = sprintf(
