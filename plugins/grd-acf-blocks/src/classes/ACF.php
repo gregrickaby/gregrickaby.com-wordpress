@@ -8,6 +8,10 @@
 
 namespace Grd\ACF_Blocks;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * ACF class.
  *

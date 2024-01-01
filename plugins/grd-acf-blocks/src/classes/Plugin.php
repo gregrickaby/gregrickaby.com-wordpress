@@ -9,6 +9,10 @@
 
 namespace Grd\ACF_Blocks;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use Grd\ACF_Blocks\ACF;
 use Grd\ACF_Blocks\Metadata;
 
