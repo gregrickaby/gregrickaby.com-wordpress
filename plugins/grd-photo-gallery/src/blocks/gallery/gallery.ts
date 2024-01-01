@@ -11,7 +11,7 @@ import './gallery.scss'
  */
 document.addEventListener('DOMContentLoaded', () => {
   // Get the ACF Block Gallery grid.
-  const gallery = document.querySelector('.grd-acf-block-grid')
+  const gallery = document.querySelector('.grd-photo-gallery-grid')
 
   // If there is no gallery, return.
   if (!gallery) {
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const masonryGrid = new Masonry(gallery, {
     gutter: 24,
-    itemSelector: '.grd-acf-block-image',
-    columnWidth: '.grd-acf-block-grid-sizer',
+    itemSelector: '.grd-photo-gallery-image',
+    columnWidth: '.grd-photo-gallery-grid-sizer',
     percentPosition: true
   })
 

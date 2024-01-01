@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "@gregrickaby/acf-blocks",
+  "display": "@gregrickaby/photo-gallery",
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",

@@ -1,20 +1,20 @@
 <?php
 /**
- * The main plugin class.
+ * Plugin class.
  *
- * @see https://www.advancedcustomfields.com/resources/including-acf-within-a-plugin-or-theme/
- * @package Grd\Acf\Blocks
+ * @package Grd\Photo_Gallery
  * @since 1.0.0
  */
 
-namespace Grd\ACF_Blocks;
+namespace Grd\Photo_Gallery;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use Grd\ACF_Blocks\ACF;
-use Grd\ACF_Blocks\Metadata;
+use Grd\Photo_Gallery\ACF;
+use Grd\Photo_Gallery\Metadata;
+use Grd\Photo_Gallery\Metaboxes;
 
 /**
  * Plugin class.
@@ -32,5 +32,6 @@ class Plugin {
 	public function __construct() {
 		new ACF();
 		new Metadata();
+		new Metaboxes();
 	}
 }

@@ -2,11 +2,11 @@
 /**
  * ACF class.
  *
- * @package Grd\Acf\Blocks
+ * @package Grd\Photo_Gallery
  * @since 1.0.0
  */
 
-namespace Grd\ACF_Blocks;
+namespace Grd\Photo_Gallery;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -125,6 +125,6 @@ class ACF {
 	 * @see https://www.advancedcustomfields.com/resources/whats-new-with-acf-blocks-in-acf-6/#blockjson-support
 	 */
 	public function register_acf_blocks(): void {
-		register_block_type( GRD_ACF_BLOCKS_DIR . '/build/blocks/gallery' );
+		register_block_type( GRD_PHOTO_GALLERY_DIR . '/build/blocks/gallery' );
 	}
 }

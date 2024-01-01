@@ -1,6 +1,6 @@
 {
-  "name": "gregrickaby/acf-blocks",
-  "description": "Custom ACF Blocks for WordPress.",
+  "name": "gregrickaby/photo-gallery",
+  "description": "A custom photo gallery block and other handy photography-focused features.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "homepage": "https://gregrickaby.com",
@@ -13,7 +13,7 @@
   "repositories": [],
   "autoload": {
     "psr-4": {
-      "Grd\\ACF_Blocks\\": "src/classes"
+      "Grd\\Photo_Gallery\\": "src/classes"
     }
   },
   "config": {
@@ -28,8 +28,7 @@
     }
   },
   "require": {
-    "composer/installers": "^1.11",
-    "phospr/fraction": "dev-master"
+    "composer/installers": "^1.11"
   },
   "require-dev": {
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7",

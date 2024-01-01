@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "193e4db04d8eb011464ad849828609dc",
+    "content-hash": "18cc250051feaaa88c7cbba3fee19a5d",
     "packages": [
         {
             "name": "composer/installers",
@@ -156,50 +156,6 @@
                 }
             ],
             "time": "2021-09-13T08:19:44+00:00"
-        },
-        {
-            "name": "phospr/fraction",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phospr/fraction.git",
-                "reference": "b6161264669afd8144ce3172ed553f49c0483d8e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phospr/fraction/zipball/b6161264669afd8144ce3172ed553f49c0483d8e",
-                "reference": "b6161264669afd8144ce3172ed553f49c0483d8e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.0.*"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phospr\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Haskins-Vaughan",
-                    "email": "tom@tomhv.uk"
-                }
-            ],
-            "description": "A composer-installable fractions library",
-            "support": {
-                "issues": "https://github.com/phospr/fraction/issues",
-                "source": "https://github.com/phospr/fraction/tree/main"
-            },
-            "time": "2019-01-05T17:03:39+00:00"
         }
     ],
     "packages-dev": [
@@ -5149,9 +5105,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "phospr/fraction": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,8 +1,8 @@
 {
-  "name": "@gregrickaby/acf-blocks",
+  "name": "@gregrickaby/photo-gallery",
   "private": true,
-  "version": "1.11.0",
-  "description": "Custom ACF Blocks for WordPress",
+  "version": "1.12.0",
+  "description": "A custom photo gallery block and other handy photography-focused features.",
   "author": "Greg Rickaby <greg@gregrickaby.com>",
   "license": "GPL-2.0-or-later",
   "keywords": [
