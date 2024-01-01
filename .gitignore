@@ -25,7 +25,7 @@ object-cache.php
 
 # plugins
 plugins/*
-!/plugins/grd-acf-blocks/
+!/plugins/grd-photo-gallery/
 !/plugins/nextjs-wordpress-plugin
 
 # mu-plugins
