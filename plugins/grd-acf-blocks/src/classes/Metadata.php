@@ -8,6 +8,10 @@
 
 namespace Grd\ACF_Blocks;
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 use Phospr\Fraction;
 use WP_Post;
 use Imagick;
@@ -34,8 +38,8 @@ class Metadata {
 	 * Register hooks.
 	 */
 	private function hooks(): void {
-		add_filter( 'wp_generate_attachment_metadata', [ $this, 'modify_image_metadata' ], 10, 2 );
-		add_filter( 'wp_generate_attachment_metadata', [ $this, 'generate_caption' ], 11, 2 );
+		add_filter( 'wp_generate_attachment_metadata', [ $this, 'title_to_alt_and_caption' ], 10, 2 );
+		add_filter( 'wp_generate_attachment_metadata', [ $this, 'add_extended_image_meta' ], 11, 2 );
 		add_action( 'add_meta_boxes', [ $this, 'custom_metabox' ] );
 	}
 
@@ -48,8 +52,8 @@ class Metadata {
 			'Other Image Data',
 			[ $this, 'render_custom_metabox' ],
 			'attachment',
-			'side',
-			'default'
+			'normal',
+			'low'
 		);
 	}
 
@@ -66,33 +70,34 @@ class Metadata {
 		}
 
 		// Merge the two arrays.
-		$metadata = array_merge( wp_get_attachment_metadata( $post->ID ), get_post_meta( $post->ID ) );
+		$metadata            = wp_get_attachment_metadata( $post->ID );
+		$extended_image_meta = get_post_meta( $post->ID, 'extended_image_meta', true );
 
 		echo '<div class="grd-metabox">';
 
 		// Camera Details.
 		echo '<h3>Camera Details</h3>';
 		echo '<div>';
-		echo '<p><strong>Make:</strong> ' . esc_html( $metadata['make'][0] ?? 'Not available' ) . '</p>';
+		echo '<p><strong>Make:</strong> ' . esc_html( $extended_image_meta['make'] ?? 'Not available' ) . '</p>';
 		echo '<p><strong>Model:</strong> ' . esc_html( $metadata['image_meta']['camera'] ?? 'Not available' ) . '</p>';
-		echo '<p><strong>Lens:</strong> ' . esc_html( $metadata['lens'][0] ?? 'Not available' ) . '</p>';
+		echo '<p><strong>Lens:</strong> ' . esc_html( $extended_image_meta['lens'] ?? 'Not available' ) . '</p>';
 		echo '</div>';
 
 		// EXIF data.
 		echo '<h3>EXIF</h3>';
 		echo '<div>';
 		echo '<p><strong>Focal Length:</strong> ' . esc_html( $metadata['image_meta']['focal_length'] ?? 'Not available' ) . 'mm</p>';
-		echo '<p><strong>Aperture:</strong> f/' . esc_html( $metadata['image_meta']['aperture'] ?? 'Not available' ) . '</p>';
+		echo '<p><strong>Aperture:</strong> ƒ/' . esc_html( $metadata['image_meta']['aperture'] ?? 'Not available' ) . '</p>';
 		echo '<p><strong>Shutter Speed:</strong> ' . esc_html( Fraction::fromFloat( $metadata['image_meta']['shutter_speed'] ) ?? 'Not available' ) . 's</p>';
 		echo '<p><strong>ISO:</strong> ' . esc_html( $metadata['image_meta']['iso'] ?? 'Not available' ) . '</p>';
 		echo '</div>';
 
 		// Location details.
 		echo '<h3>GPS</h3>';
-		if ( ! empty( $metadata['latitude'][0] ) && ! empty( $metadata['longitude'][0] ) ) {
-			echo '<p><strong>Latitude:</strong> ' . esc_html( $metadata['latitude'][0] ) . '</p>';
-			echo '<p><strong>Longitude:</strong> ' . esc_html( $metadata['longitude'][0] ) . '</p>';
-			echo '<p><a href="' . esc_url( 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( $metadata['latitude'][0] ) . ',' . rawurlencode( $metadata['longitude'][0] ) ) . '" target="_blank">View on Google Maps</a></p>';
+		if ( ! empty( $extended_image_meta['latitude'] ) && ! empty( $extended_image_meta['longitude'] ) ) {
+			echo '<p><strong>Latitude:</strong> ' . esc_html( $extended_image_meta['latitude'] ) . '</p>';
+			echo '<p><strong>Longitude:</strong> ' . esc_html( $extended_image_meta['longitude'] ) . '</p>';
+			echo '<p><a href="' . esc_url( 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode( $extended_image_meta['latitude'] ) . ',' . rawurlencode( $extended_image_meta['longitude'] ) ) . '" target="_blank">View on Google Maps</a></p>';
 		} else {
 			echo '<p>GPS data not available.</p>';
 		}
@@ -103,7 +108,7 @@ class Metadata {
 		echo '<div>';
 		echo '<p><strong>Photographer:</strong> ' . esc_html( $metadata['image_meta']['credit'] ?? 'Not available' ) . '</p>';
 		echo '<p><strong>Copyright:</strong> ' . esc_html( $metadata['image_meta']['copyright'] ?? 'Not available' ) . '</p>';
-		echo '<p><strong>Software:</strong> ' . esc_html( $metadata['software'][0] ?? 'Not available' ) . '</p>';
+		echo '<p><strong>Software:</strong> ' . esc_html( $extended_image_meta['software'] ?? 'Not available' ) . '</p>';
 		echo '</div>';
 
 		// All generated image sizes.
@@ -114,118 +119,125 @@ class Metadata {
 		}
 		echo '</div>';
 
+		// Exif string (for use in gallery).
+		echo '<h3>EXIF String</h3>';
+		echo '<div>';
+		echo '<p>' . esc_html( $extended_image_meta['exif_string'] ?? 'Not available' ) . '</p>';
+		echo '</div>';
+
 		echo '</div>';
 	}
 
 	/**
-	 * Modify image metadata.
+	 * Set the alt text and caption to title if none is set.
 	 *
 	 * @param array $metadata The attachment metadata.
 	 * @param int   $attachment_id The attachment ID.
+	 *
 	 * @return array The modified attachment metadata.
 	 */
-	public function modify_image_metadata( array $metadata, int $attachment_id ): array {
-
-		// Check if the attachment is an image.
-		if ( ! $this->is_image( $attachment_id ) ) {
+	public function title_to_alt_and_caption( array $metadata, int $attachment_id ): array {
+		// Check if the attachment is an image and the title is set.
+		if ( ! $this->is_image( $attachment_id ) || empty( $metadata['image_meta']['title'] ) ) {
+			// If not an image or title is empty, return the metadata as is.
 			return $metadata;
 		}
 
-		// Retrieve existing alt text and EXIF data.
+		// Retrieve existing alt text, if any.
 		$existing_alt_text = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
-		$exif_data         = $this->get_image_exif_data( get_attached_file( $attachment_id ) );
 
-		// Set the alt text to the image title if none is set.
-		if ( empty( $existing_alt_text ) || ! empty( $metadata['image_meta']['title'] ) ) {
+		// If alt text is not already set, use the title as alt text.
+		if ( empty( $existing_alt_text ) ) {
+			// Update the alt text with sanitized title.
 			update_post_meta( $attachment_id, '_wp_attachment_image_alt', sanitize_text_field( $metadata['image_meta']['title'] ) );
 		}
 
-		// Set the camera make.
-		if ( isset( $exif_data['make'] ) ) {
-			update_post_meta( $attachment_id, 'make', sanitize_text_field( $exif_data['make'] ) );
+		// Retrieve existing caption, if any.
+		$existing_caption = get_post_field( 'post_excerpt', $attachment_id );
+
+		// If a caption is not already set, use the title as caption.
+		if ( empty( $existing_caption ) ) {
+			// Update the post's excerpt (caption) with sanitized title.
+			wp_update_post(
+				[
+					'ID'           => $attachment_id,
+					'post_excerpt' => sanitize_text_field( $metadata['image_meta']['title'] ),
+				]
+			);
 		}
 
-		// Set the lens.
-		if ( isset( $exif_data['lens'] ) ) {
-			update_post_meta( $attachment_id, 'lens', sanitize_text_field( $exif_data['lens'] ) );
-		}
-
-		// Set the software.
-		if ( isset( $exif_data['software'] ) ) {
-			update_post_meta( $attachment_id, 'software', sanitize_text_field( $exif_data['software'] ) );
-		}
-
-		// Set the latitude.
-		if ( isset( $exif_data['latitude'] ) ) {
-			update_post_meta( $attachment_id, 'latitude', sanitize_text_field( $exif_data['latitude'] ) );
-		}
-
-		// Set the longitude.
-		if ( isset( $exif_data['longitude'] ) ) {
-			update_post_meta( $attachment_id, 'longitude', sanitize_text_field( $exif_data['longitude'] ) );
-		}
-
+		// Return the updated metadata.
 		return $metadata;
 	}
 
 	/**
-	 * Generate and set the image caption if none is set.
+	 * Add extended image metadata.
 	 *
 	 * @param array $metadata The attachment metadata.
 	 * @param int   $attachment_id The attachment ID.
-	 *
 	 * @return array The modified attachment metadata.
 	 */
-	public function generate_caption( array $metadata, int $attachment_id ): array {
+	public function add_extended_image_meta( array $metadata, int $attachment_id ): array {
 
 		// Check if the attachment is an image.
 		if ( ! $this->is_image( $attachment_id ) ) {
 			return $metadata;
 		}
 
-		// Check if a caption is already set.
-		$existing_caption = get_post_field( 'post_excerpt', $attachment_id );
-		if ( ! empty( $existing_caption ) ) {
+		// Retrieve extended EXIF data.
+		$exif_data = $this->get_extended_exif_data( get_attached_file( $attachment_id ) );
+
+		// Define the EXIF fields to save as extended image metadata.
+		$fields_to_save = [ 'make', 'lens', 'software', 'latitude', 'longitude' ];
+
+		// Initialize extended image metadata array.
+		$extended_image_meta = [];
+
+		// Loop over each field and add to the array.
+		foreach ( $fields_to_save as $field ) {
+			if ( isset( $exif_data[ $field ] ) ) {
+				$extended_image_meta[ $field ] = sanitize_text_field( $exif_data[ $field ] );
+			}
+		}
+
+		// If the extended image metadata array is not empty, bail.
+		if ( empty( $extended_image_meta ) ) {
 			return $metadata;
 		}
 
-		// Create the caption string.
-		$caption = $this->create_caption_string( $metadata, $attachment_id );
+		// Generate a complete EXIF string from the image metadata.
+		$exif_string = $this->generate_single_exif_string( $extended_image_meta, $metadata );
 
-		// If no caption could be generated, return.
-		if ( empty( $caption ) ) {
-			return $metadata;
-		}
+		// Append to the extended image metadata array.
+		$extended_image_meta['exif_string'] = $exif_string;
 
-		// Update the post excerpt (caption).
-		wp_update_post(
-			[
-				'ID'           => $attachment_id,
-				'post_excerpt' => sanitize_text_field( $caption ),
-			]
-		);
+		// Update the post meta.
+		update_post_meta( $attachment_id, 'extended_image_meta', $extended_image_meta );
 
 		return $metadata;
 	}
 
 	/**
-	 * Create a caption string from image metadata.
+	 * Create a single EXIF string from the image metadata.
 	 *
+	 * This is useful for displaying EXIF data in a gallery.
+	 *
+	 * @param array $extended_image_meta The extended image metadata.
 	 * @param array $metadata        The attachment metadata.
-	 * @param int   $attachment_id   The attachment ID.
 	 *
-	 * @return string The generated caption string.
+	 * @return string The generated exif string.
 	 */
-	private function create_caption_string( array $metadata, int $attachment_id ): string {
+	private function generate_single_exif_string( array $extended_image_meta, array $metadata ): string {
 
 		// Extract metadata components.
-		$make          = get_post_meta( $attachment_id, 'make', true ) ?? '';
-		$camera        = $metadata['image_meta']['camera'] ?? '';
-		$lens          = get_post_meta( $attachment_id, 'lens', true ) ?? '';
 		$aperture      = $metadata['image_meta']['aperture'] ?? '';
-		$iso           = $metadata['image_meta']['iso'] ?? '';
+		$camera        = $metadata['image_meta']['camera'] ?? '';
 		$focal_length  = $metadata['image_meta']['focal_length'] ?? '';
+		$iso           = $metadata['image_meta']['iso'] ?? '';
+		$lens          = $extended_image_meta['lens'] ?? '';
+		$make          = $extended_image_meta['make'] ?? '';
 		$shutter_speed = $metadata['image_meta']['shutter_speed'] ? Fraction::fromFloat( $metadata['image_meta']['shutter_speed'] ) : '';
+		$software      = $extended_image_meta['software'] ?? '';
 
 		// Create the caption string.
 		$caption_parts = array_filter(
@@ -233,9 +245,10 @@ class Metadata {
 				'camera'        => $make . ' ' . $camera,
 				'lens'          => $lens,
 				'focal_length'  => $focal_length ? $focal_length . 'mm' : '',
-				'aperture'      => $aperture ? 'f/' . $aperture : '',
+				'aperture'      => $aperture ? 'ƒ/' . $aperture : '',
 				'shutter_speed' => $shutter_speed ? $shutter_speed . 's' : '',
 				'iso'           => $iso ? 'ISO' . $iso : '',
+				'software'      => $software,
 			]
 		);
 
@@ -248,8 +261,7 @@ class Metadata {
 	 * @param string $file_path The image file path.
 	 * @return array EXIF data.
 	 */
-	private function get_image_exif_data( $file_path ): array {
-
+	private function get_extended_exif_data( $file_path ): array {
 		// Set default EXIF data.
 		$exif_data = [];
 
@@ -258,26 +270,48 @@ class Metadata {
 			try {
 				$imagick            = new Imagick( $file_path );
 				$imagick_properties = $imagick->getImageProperties( 'exif:*' );
-
-				$exif_data['make']      = $imagick_properties['exif:Make'] ? ucfirst( strtolower( $imagick_properties['exif:Make'] ) ) : null;
-				$exif_data['lens']      = $imagick_properties['exif:LensModel'] ?? null;
-				$exif_data['software']  = $imagick_properties['exif:Software'] ?? null;
-				$exif_data['latitude']  = $imagick_properties['exif:GPSLatitude'] ? $this->dms_to_decimal( $imagick_properties['exif:GPSLatitude'], $imagick_properties['exif:GPSLatitudeRef'] ) : null;
-				$exif_data['longitude'] = $imagick_properties['exif:GPSLongitude'] ? $this->dms_to_decimal( $imagick_properties['exif:GPSLongitude'], $imagick_properties['exif:GPSLongitudeRef'] ) : null;
-
+				$exif_data          = $this->process_exif_data( $imagick_properties );
 			} catch ( Exception $e ) {
 				error_log( $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 			}
 		} elseif ( function_exists( 'exif_read_data' ) ) {
 			$php_exif_data = exif_read_data( $file_path );
-
-			$exif_data['lens']      = $php_exif_data['UndefinedTag:0xA434'] ?? null;
-			$exif_data['software']  = $php_exif_data['Software'] ?? null;
-			$exif_data['latitude']  = $php_exif_data['GPSLatitude'] ? $this->dms_to_decimal( $php_exif_data['GPSLatitude'], $php_exif_data['GPSLatitudeRef'] ) : null;
-			$exif_data['longitude'] = $php_exif_data['GPSLongitude'] ? $this->dms_to_decimal( $php_exif_data['GPSLongitude'], $php_exif_data['GPSLongitudeRef'] ) : null;
+			$exif_data     = $this->process_exif_data( $php_exif_data );
 		}
 
 		return $exif_data;
+	}
+
+	/**
+	 * Process and extract required fields from EXIF data.
+	 *
+	 * @param array $exif_data Raw EXIF data.
+	 * @return array Processed EXIF data with required fields.
+	 */
+	private function process_exif_data( $exif_data ): array {
+		$processed_data = [];
+
+		$fields = [
+			'make'     => $exif_data['exif:Make'] ?? null,
+			'lens'     => $exif_data['exif:LensModel'] ?? null,
+			'software' => $exif_data['exif:Software'] ?? null,
+		];
+
+		foreach ( $fields as $key => $value ) {
+			if ( null !== $value ) {
+				$processed_data[ $key ] = sanitize_text_field( $value );
+			}
+		}
+
+		// Processing for GPS data.
+		if ( isset( $exif_data['exif:GPSLatitude'], $exif_data['exif:GPSLatitudeRef'] ) ) {
+			$processed_data['latitude'] = $this->dms_to_decimal( $exif_data['exif:GPSLatitude'], $exif_data['exif:GPSLatitudeRef'] );
+		}
+		if ( isset( $exif_data['exif:GPSLongitude'], $exif_data['exif:GPSLongitudeRef'] ) ) {
+			$processed_data['longitude'] = $this->dms_to_decimal( $exif_data['exif:GPSLongitude'], $exif_data['exif:GPSLongitudeRef'] );
+		}
+
+		return $processed_data;
 	}
 
 	/**
