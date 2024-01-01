@@ -54,17 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
     defaultDisplay: 'flex',
     Toolbar: {
       display: {
-        left: ['infobar'],
-        middle: [
-          'zoomIn',
-          'zoomOut',
-          'toggle1to1',
-          'rotateCCW',
-          'rotateCW',
-          'flipX',
-          'flipY'
-        ],
-        right: ['slideshow', 'thumbs', 'download', 'close']
+        left: [],
+        middle: ['prev', 'infobar', 'next'],
+        right: ['download', 'close']
       }
     }
   })
