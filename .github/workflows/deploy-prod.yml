@@ -9,7 +9,7 @@ on:
 
 env:
   THEME_DIR: themes/insta
-  BLOCKS_PLUGIN_DIR: plugins/grd-acf-blocks
+  BLOCKS_PLUGIN_DIR: plugins/grd-photo-gallery
   NEXTJS_PLUGIN_DIR: plugins/nextjs-wordpress-plugin
 
 jobs:

@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "plugins/grd-acf-blocks"
+        working-directory: "plugins/grd-photo-gallery"
 
     steps:
       - name: Checkout Repository
