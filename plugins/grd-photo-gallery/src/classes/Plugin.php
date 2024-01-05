@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Grd\Photo_Gallery\ACF;
 use Grd\Photo_Gallery\Metadata;
 use Grd\Photo_Gallery\Metaboxes;
+use Grd\Photo_Gallery\Cloudinary;
 
 /**
  * Plugin class.
@@ -33,5 +34,6 @@ class Plugin {
 		new ACF();
 		new Metadata();
 		new Metaboxes();
+		new Cloudinary();
 	}
 }
