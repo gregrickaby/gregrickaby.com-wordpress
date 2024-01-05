@@ -128,7 +128,7 @@ class Formatting {
 		$fraction_parts = explode( '/', $fraction );
 
 		// If the fraction is valid (has two parts), divide numerator by denominator.
-		if ( count( $fraction_parts ) == 2 ) {
+		if ( count( $fraction_parts ) === 2 ) {
 			return (float) $fraction_parts[0] / (float) $fraction_parts[1];
 		}
 
