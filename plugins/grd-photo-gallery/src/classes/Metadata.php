@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use Grd\Photo_Gallery\Formatting;
+use Grd\Photo_Gallery\Cloudinary;
 use Imagick;
 use Exception;
 
@@ -37,7 +38,7 @@ class Metadata {
 	 * Register hooks.
 	 */
 	private function hooks(): void {
-		add_filter( 'wp_generate_attachment_metadata', [ $this, 'title_to_alt_and_caption' ], 10, 2 );
+		add_filter( 'wp_generate_attachment_metadata', [ $this, 'set_alt_caption_description' ], 10, 2 );
 		add_filter( 'wp_generate_attachment_metadata', [ $this, 'add_extended_image_meta' ], 11, 2 );
 	}
 
@@ -49,37 +50,55 @@ class Metadata {
 	 *
 	 * @return array The modified attachment metadata.
 	 */
-	public function title_to_alt_and_caption( array $metadata, int $attachment_id ): array {
-		// Check if the attachment is an image and the title is set.
-		if ( ! $this->is_image( $attachment_id ) || empty( $metadata['image_meta']['title'] ) ) {
-			// If not an image or title is empty, return the metadata as is.
+	public function set_alt_caption_description( array $metadata, int $attachment_id ): array {
+		// If not an image, bail.
+		if ( ! $this->is_image( $attachment_id ) ) {
 			return $metadata;
 		}
 
 		// Retrieve existing alt text, if any.
 		$existing_alt_text = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
 
-		// If alt text is not already set, use the title as alt text.
+		// No alt text? Generate alt text from Cloudinary.
 		if ( empty( $existing_alt_text ) ) {
-			// Update the alt text with sanitized title.
-			update_post_meta( $attachment_id, '_wp_attachment_image_alt', sanitize_text_field( $metadata['image_meta']['title'] ) );
+
+			// Get the full image URL.
+			$image_url = wp_get_attachment_url( $attachment_id );
+
+			// Instantiate the AI class.
+			$cloudinary = new Cloudinary();
+
+			// Get the description from Cloudinary.
+			$description = $cloudinary->get_description( $image_url );
+
+			// Save the description as alt text.
+			update_post_meta( $attachment_id, '_wp_attachment_image_alt', sanitize_text_field( $description ) );
+
+			// Save the description as the description.
+			wp_update_post(
+				[
+					'ID'           => $attachment_id,
+					'post_content' => sanitize_text_field( $description ),
+				]
+			);
 		}
 
 		// Retrieve existing caption, if any.
 		$existing_caption = get_post_field( 'post_excerpt', $attachment_id );
 
-		// If a caption is not already set, use the title as caption.
-		if ( empty( $existing_caption ) ) {
-			// Update the post's excerpt (caption) with sanitized title.
-			wp_update_post(
-				[
-					'ID'           => $attachment_id,
-					'post_excerpt' => sanitize_text_field( $metadata['image_meta']['title'] ),
-				]
-			);
+		// If there is already a caption, bail.
+		if ( ! empty( $existing_caption ) ) {
+			return $metadata;
 		}
 
-		// Return the updated metadata.
+		// Update the post's excerpt (caption) with the title.
+		wp_update_post(
+			[
+				'ID'           => $attachment_id,
+				'post_excerpt' => sanitize_text_field( $metadata['image_meta']['title'] ),
+			]
+		);
+
 		return $metadata;
 	}
 
