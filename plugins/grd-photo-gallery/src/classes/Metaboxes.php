@@ -237,13 +237,13 @@ class Metaboxes {
 
 		// Display a success message.
 		if ( get_transient( 'grd_rescan_success' ) ) {
-			echo '<div class="notice notice-success is-dismissible"><p>Metadata successfully rescanned.</p></div>';
+			echo '<div class="notice notice-success is-dismissible"><p>Success! Image metadata was successfully scanned and saved.</p></div>';
 			delete_transient( 'grd_rescan_success' );
 		}
 
 		// Display an error message.
 		if ( get_transient( 'grd_rescan_error' ) ) {
-			echo '<div class="notice notice-error is-dismissible"><p>Error rescanning metadata.</p></div>';
+			echo '<div class="notice notice-error is-dismissible"><p>Error! There was an error scanning the image.</p></div>';
 			delete_transient( 'grd_rescan_error' );
 		}
 	}
