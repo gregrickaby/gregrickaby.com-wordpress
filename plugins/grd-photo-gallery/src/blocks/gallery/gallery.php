@@ -72,7 +72,7 @@ if ( empty( $photos ) ) {
 			?>
 			<figure class="grd-photo-gallery-image" data-image-number="<?php echo esc_attr( $i ); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 				<a
-					data-caption="<?php echo esc_html( $fancy_caption ); ?>"
+					data-caption="<?php echo esc_html( $caption ); ?>"
 					data-fancybox
 					data-slug="<?php echo esc_attr( $photo_id ); ?>"
 					href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
@@ -82,7 +82,7 @@ if ( empty( $photos ) ) {
 				<?php if ( $caption ) : ?>
 					<figcaption class="grd-photo-gallery-image-caption">
 						<a
-							data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
+							data-caption="<?php echo esc_attr( $caption ); ?>"
 							data-slug="<?php echo esc_attr( $photo_id ); ?>"
 							href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
 							title="<?php echo esc_attr( $caption ); ?>"
