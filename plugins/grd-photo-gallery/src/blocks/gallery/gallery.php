@@ -54,6 +54,7 @@ if ( empty( $photos ) ) {
 			$alt_text   = $photo['alt'] ?? '';
 			$title_text = $photo['title'] ?? '';
 			$caption    = $photo['caption'] ?? '';
+			$keywords   = $metadata['image_meta']['keywords'] ?? '';
 
 			// If the photo has a caption use it, otherwise, check for the title or alt text.
 			if ( ! $caption ) {
@@ -67,12 +68,23 @@ if ( empty( $photos ) ) {
 				$exif = Formatting::format_exif_string( $extended_metadata, $metadata );
 			}
 
+			// Prepend each keyword with '#'.
+			$keywords = array_map(
+				function ( $keyword ) {
+					return '#' . $keyword;
+				},
+				$keywords
+			);
+
+			// Use implode to build a string separated by space.
+			$tags = implode( ' ', $keywords );
+
 			// Build fancybox caption.
-			$fancy_caption = sprintf( '<p>%s</p><span class="exif">%s</span>', $caption, $exif );
+			$fancy_caption = sprintf( '<p>%s</p> <span class="exif">%s</span> <p class="exif">%s</p>', $caption, $exif, $tags );
 			?>
 			<figure class="grd-photo-gallery-image" data-image-number="<?php echo esc_attr( $i ); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 				<a
-					data-caption="<?php echo esc_html( $fancy_caption ); ?>"
+					data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
 					data-fancybox
 					data-slug="<?php echo esc_attr( $photo_id ); ?>"
 					href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
