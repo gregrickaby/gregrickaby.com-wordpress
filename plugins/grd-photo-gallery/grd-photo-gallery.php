@@ -4,7 +4,7 @@
  * Description:       An ACF photo gallery block which displays photos in Fancybox. This plugin also includes robust support for EXIF data.
  * Requires at least: 6.1
  * Requires PHP:      8.1
- * Version:           1.13.0
+ * Version:           1.14.0
  * Author:            Greg Rickaby
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,8 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'GRD_PHOTO_GALLERY_VERSION', '1.13.0' );
+define( 'GRD_PHOTO_GALLERY_VERSION', '1.14.0' );
 define( 'GRD_PHOTO_GALLERY_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+define( 'GRD_PHOTO_GALLERY_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
 
 /**
  * Autoload classes.

@@ -1,7 +1,7 @@
 {
   "name": "@gregrickaby/photo-gallery",
   "private": true,
-  "version": "1.13.0",
+  "version": "1.14.0",
   "description": "A custom photo gallery block and other handy photography-focused features.",
   "author": "Greg Rickaby <greg@gregrickaby.com>",
   "license": "GPL-2.0-or-later",

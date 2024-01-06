@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use Grd\Photo_Gallery\Formatting;
+use Grd\Photo_Gallery\Metadata;
 use WP_Post;
 
 /**
@@ -26,9 +27,17 @@ use WP_Post;
 class Metaboxes {
 
 	/**
+	 * Nonce label.
+	 *
+	 * @var string
+	 */
+	private $nonce_label;
+
+	/**
 	 * Constructor.
 	 */
 	public function __construct() {
+		$this->nonce_label = 'grd_rescan_nonce';
 		$this->hooks();
 	}
 
@@ -36,13 +45,39 @@ class Metaboxes {
 	 * Register hooks.
 	 */
 	private function hooks(): void {
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 9999 );
 		add_action( 'add_meta_boxes', [ $this, 'custom_metabox' ] );
+		add_action( 'attachment_submitbox_misc_actions', [ $this, 'add_rescan_button_to_submitbox' ], 9999 );
+		add_action( 'wp_ajax_rescan_metadata', [ $this, 'rescan_metadata_ajax_handler' ] );
+	}
+
+	/**
+	 * Enqueue scripts.
+	 */
+	public function enqueue_scripts(): void {
+		wp_enqueue_script(
+			'grd-rescan-script',
+			GRD_PHOTO_GALLERY_URL . 'src/admin/js/rescan.js',
+			[ 'jquery' ],
+			GRD_PHOTO_GALLERY_VERSION,
+			true
+		);
+
+		wp_localize_script(
+			'grd-rescan-script',
+			'ajax_object',
+			[
+				'ajax_url'      => admin_url( 'admin-ajax.php' ),
+				'attachment_id' => get_the_ID(),
+				'nonce'         => wp_create_nonce( $this->nonce_label ),
+			]
+		);
 	}
 
 	/**
 	 * Register a custom metabox for image attachments.
 	 */
-	public function custom_metabox() {
+	public function custom_metabox(): void {
 		add_meta_box(
 			'other_image_data',
 			'Other Image Data',
@@ -51,6 +86,17 @@ class Metaboxes {
 			'normal',
 			'low'
 		);
+	}
+
+	/**
+	 * Add a rescan button to the submitbox.
+	 */
+	public function add_rescan_button_to_submitbox(): void {
+		echo '<div class="misc-pub-section misc-pub-rescan-metadata" style="display: flex; align-items: center; gap: 8px;">';
+		echo '<button class="button" id="rescan-metadata">Rescan Metadata</button>';
+		echo '<div id="rescan-message"></div>';
+		wp_nonce_field( 'rescan_metadata_action', 'rescan_metadata_nonce' );
+		echo '</div>';
 	}
 
 	/**
@@ -122,5 +168,38 @@ class Metaboxes {
 		echo '</div>';
 
 		echo '</div>';
+	}
+
+	/**
+	 * AJAX handler for rescanning metadata.
+	 */
+	public function rescan_metadata_ajax_handler(): void {
+
+		// Sanitize and verify nonce.
+		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+		if ( ! wp_verify_nonce( $nonce, $this->nonce_label ) ) {
+			wp_die( 'Nonce verification failed', 'Invalid request', 403 );
+		}
+
+		// Sanitize and verify attachment ID.
+		$attachment_id = isset( $_POST['attachment_id'] ) ? absint( $_POST['attachment_id'] ) : false;
+		if ( ! $attachment_id ) {
+			wp_die( 'No attachment ID provided', 'Invalid request', 400 );
+		}
+
+		// Instantiate the metadata class.
+		$metadata = new Metadata();
+
+		// Rescan metadata.
+		$current_metadata = wp_get_attachment_metadata( $attachment_id );
+
+		// Update the post's excerpt (caption) with the title.
+		$metadata->set_alt_caption_description( $current_metadata, $attachment_id );
+
+		// Add extended image metadata.
+		$metadata->add_extended_image_meta( $current_metadata, $attachment_id );
+
+		// Kill the process.
+		wp_die();
 	}
 }
