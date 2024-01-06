@@ -219,8 +219,6 @@ class Metaboxes {
 			set_transient( 'grd_rescan_success', true, 5 );
 
 		} catch ( Exception $e ) {
-
-			// Log the error.
 			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 
 			// Set a transient to display an error message.

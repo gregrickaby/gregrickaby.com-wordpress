@@ -141,6 +141,7 @@ class Cloudinary {
 
 		} catch ( Exception $e ) {
 			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+			return [];
 		}
 	}
 
