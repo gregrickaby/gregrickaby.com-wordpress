@@ -36,6 +36,8 @@ class Metadata {
 
 	/**
 	 * Register hooks.
+	 *
+	 * @return void
 	 */
 	private function hooks(): void {
 		add_filter( 'wp_generate_attachment_metadata', [ $this, 'set_alt_caption_description' ], 10, 2 );
@@ -51,55 +53,94 @@ class Metadata {
 	 * @return array The modified attachment metadata.
 	 */
 	public function set_alt_caption_description( array $metadata, int $attachment_id ): array {
-		// If not an image, bail.
+
+		// Check if the attachment is an image.
 		if ( ! $this->is_image( $attachment_id ) ) {
 			return $metadata;
 		}
 
-		// Retrieve existing alt text, if any.
+		// Set the alt text.
+		$this->set_alt_text( $attachment_id );
+
+		// Set the caption.
+		$this->set_caption( $attachment_id, $metadata );
+
+		return $metadata;
+	}
+
+	/**
+	 * Set the alt text for an image.
+	 *
+	 * @param int $attachment_id The attachment ID.
+	 *
+	 * @return void
+	 */
+	private function set_alt_text( int $attachment_id ): void {
+
+		// Check if the alt text is already set.
 		$existing_alt_text = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
 
-		// No alt text? Generate alt text from Cloudinary.
-		if ( empty( $existing_alt_text ) ) {
-
-			// Get the full image URL.
-			$image_url = wp_get_attachment_url( $attachment_id );
-
-			// Instantiate the AI class.
-			$cloudinary = new Cloudinary();
-
-			// Get the description from Cloudinary.
-			$description = $cloudinary->get_description( $image_url );
-
-			// Save the description as alt text.
-			update_post_meta( $attachment_id, '_wp_attachment_image_alt', sanitize_text_field( $description ) );
-
-			// Save the description as the description.
-			wp_update_post(
-				[
-					'ID'           => $attachment_id,
-					'post_content' => sanitize_text_field( $description ),
-				]
-			);
+		// If the alt text is already set, bail.
+		if ( ! empty( $existing_alt_text ) ) {
+			return;
 		}
 
-		// Retrieve existing caption, if any.
-		$existing_caption = get_post_field( 'post_excerpt', $attachment_id );
+		// Get the image URL.
+		$image_url = wp_get_attachment_url( $attachment_id );
 
-		// If there is already a caption, bail.
-		if ( ! empty( $existing_caption ) ) {
-			return $metadata;
+		// Get the image description from Cloudinary.
+		$cloudinary  = new Cloudinary();
+		$description = $cloudinary->get_description( $image_url );
+
+		// If the description is empty, bail.
+		if ( empty( $description ) ) {
+			return;
 		}
 
-		// Update the post's excerpt (caption) with the title.
+		// Save the alt text field.
+		update_post_meta( $attachment_id, '_wp_attachment_image_alt', sanitize_text_field( $description ) );
+
+		// Save the image description field.
 		wp_update_post(
 			[
 				'ID'           => $attachment_id,
-				'post_excerpt' => sanitize_text_field( $metadata['image_meta']['title'] ),
+				'post_content' => sanitize_text_field( $description ),
 			]
 		);
+	}
 
-		return $metadata;
+	/**
+	 * Set the caption for an image.
+	 *
+	 * @param int $attachment_id The attachment ID.
+	 *
+	 * @return void
+	 */
+	private function set_caption( int $attachment_id ): void {
+
+		// Check if the caption is already set.
+		$existing_caption = get_post_field( 'post_excerpt', $attachment_id );
+
+		// If the caption is already set, bail.
+		if ( ! empty( $existing_caption ) ) {
+			return;
+		}
+
+		// Check if the image has a title.
+		$image_title = get_the_title( $attachment_id );
+
+		// If the image does not have a title, bail.
+		if ( empty( $image_title ) ) {
+			return;
+		}
+
+		// Save the caption field.
+		wp_update_post(
+			[
+				'ID'           => $attachment_id,
+				'post_excerpt' => sanitize_text_field( $image_title ),
+			]
+		);
 	}
 
 	/**
@@ -155,6 +196,8 @@ class Metadata {
 	 *
 	 * @param string $file_path The image file path.
 	 *
+	 * @throws Exception If there's an error retrieving EXIF data.
+	 *
 	 * @return array EXIF data.
 	 */
 	private function get_extended_exif_data( string $file_path ): array {
@@ -182,6 +225,7 @@ class Metadata {
 	 * Process and extract required fields from EXIF data.
 	 *
 	 * @param array $exif_data Raw EXIF data.
+	 *
 	 * @return array Processed EXIF data with required fields.
 	 */
 	private function process_exif_data( array $exif_data ): array {

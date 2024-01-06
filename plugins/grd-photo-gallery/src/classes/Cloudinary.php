@@ -58,8 +58,6 @@ class Cloudinary {
 	 * Constructor.
 	 */
 	public function __construct() {
-
-		// Set Cloudinary credentials.
 		$this->api_key    = defined( 'CLOUDINARY_API_KEY' ) ? CLOUDINARY_API_KEY : null;
 		$this->api_secret = defined( 'CLOUDINARY_API_SECRET' ) ? CLOUDINARY_API_SECRET : null;
 		$this->cloud_name = defined( 'CLOUDINARY_CLOUD_NAME' ) ? CLOUDINARY_CLOUD_NAME : null;
@@ -73,6 +71,9 @@ class Cloudinary {
 	 * @return string The AI generated image description.
 	 */
 	public function get_description( string $image_url ): string {
+
+		// Replace .test with .com for local development.
+		$image_url = str_replace( '.test', '.com', $image_url );
 
 		// Upload the image to Cloudinary.
 		$response = $this->upload_image( $image_url );
@@ -94,6 +95,7 @@ class Cloudinary {
 	 * @param string $image_url URL of the image to upload.
 	 *
 	 * @throws Exception If there's an error uploading the image.
+	 *
 	 * @return array The response from Cloudinary.
 	 */
 	private function upload_image( string $image_url ): array {
@@ -154,6 +156,7 @@ class Cloudinary {
 	 * @see https://cloudinary.com/documentation/image_upload_api_reference#destroy
 	 *
 	 * @throws Exception If there's an error deleting the image.
+	 *
 	 * @return void
 	 */
 	private function delete_image(): void {

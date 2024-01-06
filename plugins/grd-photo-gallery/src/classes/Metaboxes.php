@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Grd\Photo_Gallery\Formatting;
 use Grd\Photo_Gallery\Metadata;
 use WP_Post;
+use Exception;
 
 /**
  * Metadata class.
@@ -43,16 +44,21 @@ class Metaboxes {
 
 	/**
 	 * Register hooks.
+	 *
+	 * @return void
 	 */
 	private function hooks(): void {
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 9999 );
 		add_action( 'add_meta_boxes', [ $this, 'custom_metabox' ] );
 		add_action( 'attachment_submitbox_misc_actions', [ $this, 'add_rescan_button_to_submitbox' ], 9999 );
 		add_action( 'wp_ajax_rescan_metadata', [ $this, 'rescan_metadata_ajax_handler' ] );
+		add_action( 'admin_notices', [ $this, 'display_rescan_notices' ] );
 	}
 
 	/**
 	 * Enqueue scripts.
+	 *
+	 * @return void
 	 */
 	public function enqueue_scripts(): void {
 		wp_enqueue_script(
@@ -76,16 +82,19 @@ class Metaboxes {
 
 	/**
 	 * Add a rescan button to the submitbox.
+	 *
+	 * @return void
 	 */
 	public function add_rescan_button_to_submitbox(): void {
 		echo '<div class="misc-pub-section misc-pub-rescan-metadata" style="display: flex; align-items: center; gap: 8px;">';
 		echo '<button class="button" id="rescan-metadata">Rescan Metadata</button>';
-		echo '<div id="rescan-message"></div>';
 		echo '</div>';
 	}
 
 	/**
 	 * Register a custom metabox for image attachments.
+	 *
+	 * @return void
 	 */
 	public function custom_metabox(): void {
 		add_meta_box(
@@ -102,6 +111,8 @@ class Metaboxes {
 	 * Render the custom attachment metabox.
 	 *
 	 * @param WP_Post $post The post object.
+	 *
+	 * @return void
 	 */
 	public function render_custom_metabox( WP_Post $post ): void {
 
@@ -171,34 +182,69 @@ class Metaboxes {
 
 	/**
 	 * AJAX handler for rescanning metadata.
+	 *
+	 * @throws Exception If nonce verification fails or no attachment ID is provided.
+	 *
+	 * @return void
 	 */
 	public function rescan_metadata_ajax_handler(): void {
 
-		// Sanitize and verify nonce.
-		$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
-		if ( ! wp_verify_nonce( $nonce, $this->nonce_label ) ) {
-			wp_die( 'Nonce verification failed', 'Invalid request', 403 );
+		try {
+
+			// Sanitize and verify nonce.
+			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+			if ( ! wp_verify_nonce( $nonce, $this->nonce_label ) ) {
+				throw new Exception( 'Nonce verification failed' );
+			}
+
+			// Sanitize and verify attachment ID.
+			$attachment_id = isset( $_POST['attachment_id'] ) ? absint( $_POST['attachment_id'] ) : false;
+			if ( ! $attachment_id ) {
+				throw new Exception( 'No attachment ID provided' );
+			}
+
+			// Instantiate the metadata class.
+			$metadata = new Metadata();
+
+			// Rescan metadata.
+			$current_metadata = wp_get_attachment_metadata( $attachment_id );
+
+			// Update the post's excerpt (caption) with the title.
+			$metadata->set_alt_caption_description( $current_metadata, $attachment_id );
+
+			// Add extended image metadata.
+			$metadata->add_extended_image_meta( $current_metadata, $attachment_id );
+
+			// Set a transient to display a success message.
+			set_transient( 'grd_rescan_success', true, 5 );
+
+		} catch ( Exception $e ) {
+
+			// Set a transient to display an error message.
+			set_transient( 'grd_rescan_error', true, 5 );
 		}
-
-		// Sanitize and verify attachment ID.
-		$attachment_id = isset( $_POST['attachment_id'] ) ? absint( $_POST['attachment_id'] ) : false;
-		if ( ! $attachment_id ) {
-			wp_die( 'No attachment ID provided', 'Invalid request', 400 );
-		}
-
-		// Instantiate the metadata class.
-		$metadata = new Metadata();
-
-		// Rescan metadata.
-		$current_metadata = wp_get_attachment_metadata( $attachment_id );
-
-		// Update the post's excerpt (caption) with the title.
-		$metadata->set_alt_caption_description( $current_metadata, $attachment_id );
-
-		// Add extended image metadata.
-		$metadata->add_extended_image_meta( $current_metadata, $attachment_id );
 
 		// Kill the process.
 		wp_die();
+	}
+
+	/**
+	 * Display rescan notices.
+	 *
+	 * @return void
+	 */
+	public function display_rescan_notices(): void {
+
+		// Display a success message.
+		if ( get_transient( 'grd_rescan_success' ) ) {
+			echo '<div class="notice notice-success is-dismissible"><p>Metadata successfully rescanned.</p></div>';
+			delete_transient( 'grd_rescan_success' );
+		}
+
+		// Display an error message.
+		if ( get_transient( 'grd_rescan_error' ) ) {
+			echo '<div class="notice notice-error is-dismissible"><p>Error rescanning metadata.</p></div>';
+			delete_transient( 'grd_rescan_error' );
+		}
 	}
 }
