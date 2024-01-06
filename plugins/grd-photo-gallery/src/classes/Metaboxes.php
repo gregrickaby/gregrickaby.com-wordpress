@@ -48,6 +48,8 @@ class Metaboxes {
 	 * @return void
 	 */
 	private function hooks(): void {
+		add_filter( 'manage_media_columns', [ $this, 'add_custom_column' ] );
+		add_action( 'manage_media_custom_column', [ $this, 'display_quick_edit_rescan_link' ], 10, 2 );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 9999 );
 		add_action( 'add_meta_boxes', [ $this, 'custom_metabox' ] );
 		add_action( 'attachment_submitbox_misc_actions', [ $this, 'add_rescan_button_to_submitbox' ], 9999 );
@@ -73,11 +75,36 @@ class Metaboxes {
 			'grd-rescan-script',
 			'ajax_object',
 			[
-				'ajax_url'      => admin_url( 'admin-ajax.php' ),
-				'attachment_id' => get_the_ID(),
-				'nonce'         => wp_create_nonce( $this->nonce_label ),
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'nonce'    => wp_create_nonce( $this->nonce_label ),
 			]
 		);
+	}
+
+	/**
+	 * Add a custom column to the media library.
+	 *
+	 * @param array $columns The existing columns.
+	 *
+	 * @return array
+	 */
+	public function add_custom_column( $columns ): array {
+		$columns['rescan_metadata'] = 'Rescan Metadata';
+		return $columns;
+	}
+
+	/**
+	 * Display a rescan button in the quick edit.
+	 *
+	 * @param string $column_name The column name.
+	 * @param int    $attachment_id The attachment ID.
+	 *
+	 * @return void
+	 */
+	public function display_quick_edit_rescan_link( $column_name, $attachment_id ) {
+		if ( 'rescan_metadata' === $column_name ) {
+			echo '<button class="button" id="rescan-metadata" data-attachment-id="' . esc_attr( $attachment_id ) . '">Rescan Metadata</button>';
+		}
 	}
 
 	/**
@@ -87,7 +114,7 @@ class Metaboxes {
 	 */
 	public function add_rescan_button_to_submitbox(): void {
 		echo '<div class="misc-pub-section misc-pub-rescan-metadata" style="display: flex; align-items: center; gap: 8px;">';
-		echo '<button class="button" id="rescan-metadata">Rescan Metadata</button>';
+		echo '<button class="button" id="rescan-metadata" data-attachment-id="' . esc_attr( get_the_ID() ) . '">Rescan Metadata</button>';
 		echo '</div>';
 	}
 
