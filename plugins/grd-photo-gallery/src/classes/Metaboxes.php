@@ -194,13 +194,13 @@ class Metaboxes {
 			// Sanitize and verify nonce.
 			$nonce = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 			if ( ! wp_verify_nonce( $nonce, $this->nonce_label ) ) {
-				throw new Exception( 'Nonce verification failed' );
+				throw new Exception( 'Nonce verification failed.' );
 			}
 
 			// Sanitize and verify attachment ID.
 			$attachment_id = isset( $_POST['attachment_id'] ) ? absint( $_POST['attachment_id'] ) : false;
 			if ( ! $attachment_id ) {
-				throw new Exception( 'No attachment ID provided' );
+				throw new Exception( 'No attachment ID provided.' );
 			}
 
 			// Instantiate the metadata class.
@@ -219,6 +219,9 @@ class Metaboxes {
 			set_transient( 'grd_rescan_success', true, 5 );
 
 		} catch ( Exception $e ) {
+
+			// Log the error.
+			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 
 			// Set a transient to display an error message.
 			set_transient( 'grd_rescan_error', true, 5 );

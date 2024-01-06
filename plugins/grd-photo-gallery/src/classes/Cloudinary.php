@@ -133,17 +133,14 @@ class Cloudinary {
 
 			// If there's an error or the response code isn't 200, bail.
 			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
-				throw new Exception();
+				throw new Exception( 'There was an error uploading the image to Cloudinary.' . wp_remote_retrieve_response_message( $response ) );
 			}
 
 			// Return the response body.
 			return json_decode( wp_remote_retrieve_body( $response ), true );
 
 		} catch ( Exception $e ) {
-			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore
-			if ( is_wp_error( $response ) ) {
-				error_log( 'WP Error: ' . wp_remote_retrieve_response_message( $response ) ); // phpcs:ignore
-			}
+			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 	}
 
@@ -191,13 +188,10 @@ class Cloudinary {
 
 			// If there's an error or the response code isn't 200, throw an exception.
 			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
-				throw new Exception();
+				throw new Exception( 'There was an error deleting the image from Cloudinary.' . wp_remote_retrieve_response_message( $response ) );
 			}
 		} catch ( Exception $e ) {
-			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore
-			if ( is_wp_error( $response ) ) {
-				error_log( 'WP Error: ' . wp_remote_retrieve_response_message( $response ) ); // phpcs:ignore
-			}
+			error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 		}
 	}
 

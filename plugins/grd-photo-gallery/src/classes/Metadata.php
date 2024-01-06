@@ -206,13 +206,16 @@ class Metadata {
 
 		// Attempt to retrieve EXIF data using Imagick.
 		if ( class_exists( 'Imagick' ) && file_exists( $file_path ) ) {
+
 			try {
 				$imagick            = new Imagick( $file_path );
 				$imagick_properties = $imagick->getImageProperties( 'exif:*' );
 				$exif_data          = $this->process_exif_data( $imagick_properties );
 			} catch ( Exception $e ) {
-				error_log( $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+				error_log( 'Error in ' . __METHOD__ . ': ' . $e->getMessage() ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
 			}
+
+			// Attempt to retrieve EXIF data using PHP's native function.
 		} elseif ( function_exists( 'exif_read_data' ) ) {
 			$php_exif_data = exif_read_data( $file_path );
 			$exif_data     = $this->process_exif_data( $php_exif_data );
