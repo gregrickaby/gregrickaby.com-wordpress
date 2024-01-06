@@ -14,18 +14,13 @@ jQuery(document).ready(function ($) {
     }
 
     $.post(ajax_object.ajax_url, data)
-      .done(function (response) {
-        if (!response.success) {
-          messageBox.text('Error! Metadata could not be rescanned.')
-        } else {
-          messageBox.text('Success! Metadata has been rescanned.')
-        }
-        // Show the message for 3 seconds, then fade out.
-        messageBox.show().delay(3000).fadeOut()
+      .success(function () {
+        messageBox.text('Success! Metadata has been rescanned.')
+        location.reload()
       })
       .fail(function () {
         messageBox
-          .text('Error! Unable to process request.')
+          .text('Error! Unable to rescan metadata.')
           .show()
           .delay(3000)
           .fadeOut()

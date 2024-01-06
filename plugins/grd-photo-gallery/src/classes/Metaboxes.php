@@ -57,7 +57,7 @@ class Metaboxes {
 	public function enqueue_scripts(): void {
 		wp_enqueue_script(
 			'grd-rescan-script',
-			GRD_PHOTO_GALLERY_URL . 'src/admin/js/rescan.js',
+			GRD_PHOTO_GALLERY_URL . 'src/assets/admin/js/rescan.js',
 			[ 'jquery' ],
 			GRD_PHOTO_GALLERY_VERSION,
 			true
@@ -75,6 +75,16 @@ class Metaboxes {
 	}
 
 	/**
+	 * Add a rescan button to the submitbox.
+	 */
+	public function add_rescan_button_to_submitbox(): void {
+		echo '<div class="misc-pub-section misc-pub-rescan-metadata" style="display: flex; align-items: center; gap: 8px;">';
+		echo '<button class="button" id="rescan-metadata">Rescan Metadata</button>';
+		echo '<div id="rescan-message"></div>';
+		echo '</div>';
+	}
+
+	/**
 	 * Register a custom metabox for image attachments.
 	 */
 	public function custom_metabox(): void {
@@ -86,17 +96,6 @@ class Metaboxes {
 			'normal',
 			'low'
 		);
-	}
-
-	/**
-	 * Add a rescan button to the submitbox.
-	 */
-	public function add_rescan_button_to_submitbox(): void {
-		echo '<div class="misc-pub-section misc-pub-rescan-metadata" style="display: flex; align-items: center; gap: 8px;">';
-		echo '<button class="button" id="rescan-metadata">Rescan Metadata</button>';
-		echo '<div id="rescan-message"></div>';
-		wp_nonce_field( 'rescan_metadata_action', 'rescan_metadata_nonce' );
-		echo '</div>';
 	}
 
 	/**
