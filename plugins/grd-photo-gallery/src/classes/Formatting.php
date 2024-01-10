@@ -70,6 +70,12 @@ class Formatting {
 	 * @return string The formatted shutter speed.
 	 */
 	public static function format_shutter_speed( string $shutter_speed ): string {
+
+		// Bail if shutter speed is empty.
+		if ( empty( $shutter_speed ) ) {
+			return '';
+		}
+
 		// Convert to float if it's not already a fraction.
 		if ( strpos( $shutter_speed, '/' ) === false ) {
 			$shutter_speed = (float) $shutter_speed;
@@ -101,6 +107,12 @@ class Formatting {
 	 * @return float The coordinate in decimal degrees.
 	 */
 	public static function dms_to_decimal( string $dms, string $hemisphere ): float {
+
+		// Bail if DMS or hemisphere is empty.
+		if ( empty( $dms ) || empty( $hemisphere ) ) {
+			return 0;
+		}
+
 		// Split the DMS string into parts (degrees, minutes, seconds).
 		$parts = explode( ', ', $dms );
 
@@ -124,6 +136,12 @@ class Formatting {
 	 * @return float The float value of the fraction.
 	 */
 	private static function convert_to_float( string $fraction ): float {
+
+		// Bail if the fraction is empty.
+		if ( empty( $fraction ) ) {
+			return 0;
+		}
+
 		// Split the fraction into numerator and denominator.
 		$fraction_parts = explode( '/', $fraction );
 
