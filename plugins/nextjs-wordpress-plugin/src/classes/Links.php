@@ -12,6 +12,7 @@ namespace NextJS_WordPress_Plugin;
 
 use WP_Post;
 use WP_REST_Response;
+use DOMDocument;
 
 /**
  * Modify various WordPress URLs to integrate with a headless client.
@@ -41,7 +42,7 @@ class Links {
 	public function __construct() {
 
 		// Set the frontend URL and preview secret.
-		$this->frontend_url   = defined( 'NEXTJS_FRONTEND_URL' ) ? rtrim( NEXTJS_FRONTEND_URL, '/' ) : null;
+		$this->frontend_url   = $this->get_frontend_url();
 		$this->preview_secret = defined( 'NEXTJS_PREVIEW_SECRET' ) ? NEXTJS_PREVIEW_SECRET : null;
 
 		// Apply the hooks and filters.
@@ -77,6 +78,7 @@ class Links {
 			return $link;
 		}
 
+		// Return the original link if the post is not published.
 		return add_query_arg(
 			[ 'secret' => $this->preview_secret ],
 			esc_url_raw( "{$this->frontend_url}/preview/{$post->ID}" )
@@ -124,18 +126,32 @@ class Links {
 	/**
 	 * Customize the REST preview link to point to the headless client.
 	 *
+	 * This function modifies the REST response to change the preview link of a post.
+	 * For draft posts, it sets the preview link to a draft preview link.
+	 * For published posts, it changes the link to point to the frontend, if the permalink contains the site URL.
+	 *
 	 * @param WP_REST_Response $response The REST response object.
-	 * @param WP_Post          $post The current post object.
+	 * @param WP_Post          $post     The current post object.
 	 * @return WP_REST_Response Modified response object with updated preview link.
 	 */
 	public function set_headless_rest_preview_link( WP_REST_Response $response, WP_Post $post ): WP_REST_Response {
+
+		// Check if the post status is 'draft' and set the preview link accordingly.
 		if ( 'draft' === $post->post_status ) {
-			// Set preview link for draft posts.
 			$response->data['link'] = get_preview_post_link( $post );
-		} elseif ( 'publish' === $post->post_status ) {
-			// Modify the permalink for published posts to point to the frontend.
+			return $response;
+		}
+
+		// For published posts, modify the permalink to point to the frontend.
+		if ( 'publish' === $post->post_status ) {
+
+			// Get the post permalink.
 			$permalink = get_permalink( $post );
+
+			// Check if the permalink contains the site URL.
 			if ( false !== stristr( $permalink, get_site_url() ) ) {
+
+				// Replace the site URL with the frontend URL.
 				$response->data['link'] = str_ireplace(
 					get_site_url(),
 					$this->get_frontend_url(),
@@ -147,37 +163,78 @@ class Links {
 		return $response;
 	}
 
+
 	/**
-	 * Override links within post content on save to point to the headless client.
+	 * Override post links.
+	 *
+	 * In order to link to the headless client, we need to override
+	 * the links within the post content except for links that contain
+	 * an image.
 	 *
 	 * @param int $post_id Post ID.
 	 */
 	public function override_post_links( int $post_id ): void {
+
+		// Remove the action to avoid an infinite loop.
 		remove_action( 'save_post', [ $this, 'override_post_links' ] );
 
+		// Get the post.
 		$post = get_post( $post_id );
 
+		// No post? Bail.
 		if ( ! $post ) {
+
+			// Re-add the action.
+			add_action( 'save_post', [ $this, 'override_post_links' ] );
+
 			return;
 		}
 
+		// Get the post content.
 		$post_content = $post->post_content;
-		if ( false !== stripos( $post_content, get_site_url() ) ) {
-			$new_post_content = str_ireplace(
-				get_site_url(),
-				$this->get_frontend_url(),
-				$post_content
-			);
 
-			// Update the post with the modified content.
-			wp_update_post(
-				[
-					'ID'           => $post_id,
-					'post_content' => wp_slash( $new_post_content ),
-				]
-			);
+		// Create a DOMDocument and load the HTML content.
+		$dom = new DOMDocument();
+		$dom->loadHTML( mb_convert_encoding( $post_content, 'HTML-ENTITIES', 'UTF-8' ), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+
+		// Get all <a> tags.
+		$a_tags = $dom->getElementsByTagName( 'a' );
+
+		// Loop through each <a> tag.
+		foreach ( $a_tags as $a_tag ) {
+
+			// Check if the <a> tag contains an <img> tag.
+			if ( $a_tag->getElementsByTagName( 'img' )->length > 0 ) {
+				continue;
+			}
+
+			// Get the original URL.
+			$original_url = $a_tag->getAttribute( 'href' );
+
+			// If the URL does not contain the site URL, skip it.
+			if ( stripos( $original_url, get_site_url() ) === false ) {
+				continue;
+			}
+
+			// Replace the URL domain if it matches the site URL.
+			$new_url = str_ireplace( get_site_url(), $this->get_frontend_url(), $original_url );
+
+			// Update the href attribute.
+			$a_tag->setAttribute( 'href', $new_url );
 		}
 
+		// Save the modified HTML back to post_content.
+		$new_post_content = $dom->saveHTML();
+
+		// Update the post with the modified content.
+		wp_update_post(
+			[
+				'ID'           => $post_id,
+				'post_content' => wp_slash( $new_post_content ),
+			]
+		);
+
+		// Re-add the action.
 		add_action( 'save_post', [ $this, 'override_post_links' ] );
 	}
 
@@ -187,9 +244,12 @@ class Links {
 	 * @return string|null Trimmed frontend URL or null if not defined.
 	 */
 	private function get_frontend_url(): ?string {
+
+		// Return the frontend URL if defined.
 		if ( defined( 'NEXTJS_FRONTEND_URL' ) ) {
 			return rtrim( NEXTJS_FRONTEND_URL, '/' );
 		}
+
 		return null;
 	}
 }
