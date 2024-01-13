@@ -54,7 +54,6 @@ if ( empty( $photos ) ) {
 			$alt_text   = $photo['alt'] ?? '';
 			$title_text = $photo['title'] ?? '';
 			$caption    = $photo['caption'] ?? '';
-			$keywords   = $metadata['image_meta']['keywords'] ?? '';
 
 			// If the photo has a caption use it, otherwise, check for the title or alt text.
 			if ( ! $caption ) {
