@@ -181,8 +181,8 @@ class Links {
 		// Get the post.
 		$post = get_post( $post_id );
 
-		// No post? Bail.
-		if ( ! $post ) {
+		// No post or post is not a post or page.
+		if ( ! $post || 'post' !== $post->post_type || 'page' !== $post->post_type ) {
 
 			// Re-add the action.
 			add_action( 'save_post', [ $this, 'override_post_links' ] );
