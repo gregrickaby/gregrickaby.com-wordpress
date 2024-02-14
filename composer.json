@@ -54,7 +54,7 @@
     "wp-graphql/wp-graphql-acf": "^0.6.1",
     "wpackagist-plugin/akismet": "^5.0",
     "wpackagist-plugin/limit-login-attempts": "^1.0",
-    "wpackagist-plugin/wordpress-seo": "^21.6",
+    "wpackagist-plugin/wordpress-seo": "^22.0",
     "wpackagist-plugin/wp-graphql": "^1.19",
     "wp-graphql/wp-graphql-jwt-authentication": "dev-patch-1"
   },
