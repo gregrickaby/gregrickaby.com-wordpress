@@ -37,8 +37,8 @@ if ( empty( $photos ) ) {
 }
 ?>
 
-<section id="grd-photo-gallery-gallery">
-	<div class="grd-photo-gallery-grid">
+<section id="grd-photo-gallery-gallery" data-testid="grd-photo-gallery">
+	<div class="grd-photo-gallery-grid" data-testid="grd-photo-gallery-grid">
 		<div class="grd-photo-gallery-grid-sizer"></div>
 		<?php
 		// Start counter.
@@ -70,20 +70,22 @@ if ( empty( $photos ) ) {
 			// Build fancybox caption.
 			$fancy_caption = sprintf( '<p>%s</p> <span class="exif">%s</span>', $caption, $exif );
 			?>
-			<figure class="grd-photo-gallery-image" data-image-number="<?php echo esc_attr( $i ); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+			<figure class="grd-photo-gallery-image" data-image-number="<?php echo esc_attr( $i ); ?>" data-testid="image-<?php echo esc_attr( $i ); ?>"itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
 				<a
 					data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
 					data-fancybox
 					data-slug="<?php echo esc_attr( $photo_id ); ?>"
+					data-testid="image-link"
 					href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
 				>
 					<?php echo wp_get_attachment_image( $photo_id, 'medium' ); ?>
 				</a>
 				<?php if ( $caption ) : ?>
-					<figcaption class="grd-photo-gallery-image-caption">
+					<figcaption class="grd-photo-gallery-image-caption" data-testid="image-caption">
 						<a
 							data-caption="<?php echo esc_attr( $fancy_caption ); ?>"
 							data-slug="<?php echo esc_attr( $photo_id ); ?>"
+							data-testid="image-caption-link"
 							href="<?php echo esc_url( wp_get_original_image_url( $photo_id ) ); ?>"
 							title="<?php echo esc_attr( $caption ); ?>"
 						>
