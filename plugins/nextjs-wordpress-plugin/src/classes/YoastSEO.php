@@ -34,6 +34,7 @@ class YoastSEO {
 	public function hooks(): void {
 		add_filter( 'wpseo_canonical', [ $this, 'filter_canonical' ] );
 		add_filter( 'wpseo_opengraph_url', [ $this, 'filter_canonical' ] );
+		add_filter( 'wpseo_twitter_url', [ $this, 'filter_canonical' ] );
 	}
 
 	/**
