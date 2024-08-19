@@ -60,22 +60,15 @@ class Revalidation {
 			return;
 		}
 
-		// Determine the slug based on post type.
-		$post_type = $post->post_type;
-		$post_name = $post->post_name;
-		switch ( $post_type ) {
-			case 'post':
-				$slug = "/blog/{$post_name}";
-				break;
-			case 'book':
-				$slug = "/books/{$post_name}";
-				break;
-			default:
-				$slug = $post_name;
-				break;
+		// Get the slug.
+		$slug = $post->post_name;
+
+		// If there isn't a slug, bail.
+		if ( !$slug ) {
+			return;
 		}
 
-		// Trigger revalidation.
+		// Trigger revalidation based on slug.
 		$this->on_demand_revalidation( $slug );
 	}
 
