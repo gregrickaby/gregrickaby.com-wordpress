@@ -23,6 +23,7 @@ uploads/
 db.php
 object-cache.php
 docket-cache-data/
+cache/
 
 # plugins
 plugins/*
