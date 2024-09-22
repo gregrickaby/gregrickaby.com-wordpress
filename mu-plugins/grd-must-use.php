@@ -49,6 +49,11 @@ add_filter( 'the_generator', '__return_false' );
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
 /**
+ * Allow comments via REST API.
+ */
+add_filter( 'rest_allow_anonymous_comments', '__return_true' );
+
+/**
  * Change default REST-API header from "null" to "*".
  */
 function grd_cors_control() {
