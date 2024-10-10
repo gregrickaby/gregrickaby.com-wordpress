@@ -19,12 +19,12 @@
   },
   "main": "build/index.js",
   "devDependencies": {
-    "@wordpress/scripts": "^30.0.2",
+    "@wordpress/scripts": "^30.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "stylelint-config-prettier": "^9.0.5",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   },
   "scripts": {
     "build": "npm run pot && wp-scripts build",
